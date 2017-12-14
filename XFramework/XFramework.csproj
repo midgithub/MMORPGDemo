@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{07787DBE-2D65-48D1-882D-5E5B1E48362F}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XFramework</RootNamespace>
     <AssemblyName>XFramework</AssemblyName>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,11 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Base\GameFrameworkAction.cs" />
+    <Compile Include="Base\GameFrameworkEntry.cs" />
+    <Compile Include="Base\GameFrameworkEventArgs.cs" />
+    <Compile Include="Base\GameFrameworkException.cs" />
+    <Compile Include="Base\GameFrameworkFunc.cs" />
+    <Compile Include="Base\GameFrameworkModule.cs" />
+    <Compile Include="Base\Log\Log.cs" />
+    <Compile Include="Base\Log\Log.ILogHelper.cs" />
+    <Compile Include="Base\Log\LogLevel.cs" />
+    <Compile Include="Base\ReferencePool\IReference.cs" />
+    <Compile Include="Base\ReferencePool\ReferencePool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Base\EventPool\" />
+    <Folder Include="Base\TaskPool\" />
+    <Folder Include="Base\Variable\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
