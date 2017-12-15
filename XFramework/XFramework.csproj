@@ -46,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\EventPool\BaseEventArgs.cs" />
+    <Compile Include="Base\EventPool\EventPool.cs" />
+    <Compile Include="Base\EventPool\EventPool.Event.cs" />
+    <Compile Include="Base\EventPool\EventPoolMode.cs" />
     <Compile Include="Base\GameFrameworkAction.cs" />
     <Compile Include="Base\GameFrameworkEntry.cs" />
     <Compile Include="Base\GameFrameworkEventArgs.cs" />
@@ -57,14 +61,15 @@
     <Compile Include="Base\Log\LogLevel.cs" />
     <Compile Include="Base\ReferencePool\IReference.cs" />
     <Compile Include="Base\ReferencePool\ReferencePool.cs" />
+    <Compile Include="Base\TaskPool\ITask.cs" />
+    <Compile Include="Base\TaskPool\ITaskAgent.cs" />
+    <Compile Include="Base\TaskPool\TaskPool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Base\EventPool\" />
-    <Folder Include="Base\TaskPool\" />
     <Folder Include="Base\Variable\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
