@@ -64,14 +64,23 @@
     <Compile Include="Base\TaskPool\ITask.cs" />
     <Compile Include="Base\TaskPool\ITaskAgent.cs" />
     <Compile Include="Base\TaskPool\TaskPool.cs" />
+    <Compile Include="Base\Variable\GenericVariable.cs" />
+    <Compile Include="Base\Variable\Variable.cs" />
+    <Compile Include="Debugger\DebuggerManager.cs" />
+    <Compile Include="Debugger\DebuggerManager.DebuggerWindowGroup.cs" />
+    <Compile Include="Debugger\IDebuggerManager.cs" />
+    <Compile Include="Debugger\IDebuggerWindow.cs" />
+    <Compile Include="Debugger\IDebuggerWindowGroup.cs" />
+    <Compile Include="Event\EventManager.cs" />
+    <Compile Include="Event\GameEventArgs.cs" />
+    <Compile Include="Event\IEventManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Base\Variable\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
