@@ -66,6 +66,10 @@
     <Compile Include="Base\TaskPool\TaskPool.cs" />
     <Compile Include="Base\Variable\GenericVariable.cs" />
     <Compile Include="Base\Variable\Variable.cs" />
+    <Compile Include="DataNode\DataNodeManager.DataNode.cs" />
+    <Compile Include="DataNode\DataNodeManagercs.cs" />
+    <Compile Include="DataNode\IDataNode.cs" />
+    <Compile Include="DataNode\IDataNodeManager.cs" />
     <Compile Include="Debugger\DebuggerManager.cs" />
     <Compile Include="Debugger\DebuggerManager.DebuggerWindowGroup.cs" />
     <Compile Include="Debugger\IDebuggerManager.cs" />
