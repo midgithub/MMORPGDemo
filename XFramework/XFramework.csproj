@@ -70,6 +70,16 @@
     <Compile Include="DataNode\DataNodeManagercs.cs" />
     <Compile Include="DataNode\IDataNode.cs" />
     <Compile Include="DataNode\IDataNodeManager.cs" />
+    <Compile Include="DataTable\DataTableBase.cs" />
+    <Compile Include="DataTable\DataTableManager.DataTable.cs" />
+    <Compile Include="DataTable\IDataRow.cs" />
+    <Compile Include="DataTable\IDataTable.cs" />
+    <Compile Include="DataTable\IDataTableHelper.cs" />
+    <Compile Include="DataTable\IDataTableManager..cs" />
+    <Compile Include="DataTable\LoadDataTableDependencyAssetEventArgs.cs" />
+    <Compile Include="DataTable\LoadDataTableFailureEventArgs.cs" />
+    <Compile Include="DataTable\LoadDataTableSuccessEventArgs.cs" />
+    <Compile Include="DataTable\LoadDataTableUpdateEventArgs.cs" />
     <Compile Include="Debugger\DebuggerManager.cs" />
     <Compile Include="Debugger\DebuggerManager.DebuggerWindowGroup.cs" />
     <Compile Include="Debugger\IDebuggerManager.cs" />
@@ -79,6 +89,7 @@
     <Compile Include="Event\GameEventArgs.cs" />
     <Compile Include="Event\IEventManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\IResourceManager.cs" />
     <Compile Include="Utility\Assembly.cs" />
     <Compile Include="Utility\Converter.cs" />
     <Compile Include="Utility\Encryption.cs" />
