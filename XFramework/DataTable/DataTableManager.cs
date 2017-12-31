@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using XFramework.Base;
 using XFramework.Resource;
+using XFramework.Util;
 
 namespace XFramework.DataTable
 {
@@ -193,7 +194,7 @@ namespace XFramework.DataTable
         /// <returns>是否存在数据表。</returns>
         public bool HasDataTable<T>() where T : IDataRow
         {
-            return InternalHasDataTable(Utility.Utility.Text.GetFullName<T>(string.Empty));
+            return InternalHasDataTable(Utility.Text.GetFullName<T>(string.Empty));
         }
 
         /// <summary>
@@ -213,7 +214,7 @@ namespace XFramework.DataTable
                 throw new GameFrameworkException(string.Format("Data row type '{0}' is invalid.", dataRowType.FullName));
             }
 
-            return InternalHasDataTable(Utility.Utility.Text.GetFullName(dataRowType, string.Empty));
+            return InternalHasDataTable(Utility.Text.GetFullName(dataRowType, string.Empty));
         }
 
         /// <summary>
@@ -224,7 +225,7 @@ namespace XFramework.DataTable
         /// <returns>是否存在数据表。</returns>
         public bool HasDataTable<T>(string name) where T : IDataRow
         {
-            return InternalHasDataTable(Utility.Utility.Text.GetFullName<T>(name));
+            return InternalHasDataTable(Utility.Text.GetFullName<T>(name));
         }
 
         /// <summary>
@@ -245,7 +246,7 @@ namespace XFramework.DataTable
                 throw new GameFrameworkException(string.Format("Data row type '{0}' is invalid.", dataRowType.FullName));
             }
 
-            return InternalHasDataTable(Utility.Utility.Text.GetFullName(dataRowType, name));
+            return InternalHasDataTable(Utility.Text.GetFullName(dataRowType, name));
         }
 
         /// <summary>
@@ -255,7 +256,7 @@ namespace XFramework.DataTable
         /// <returns>要获取的数据表。</returns>
         public IDataTable<T> GetDataTable<T>() where T : IDataRow
         {
-            return (IDataTable<T>)InternelGetDataTable(Utility.Utility.Text.GetFullName<T>(string.Empty));
+            return (IDataTable<T>)InternelGetDataTable(Utility.Text.GetFullName<T>(string.Empty));
         }
 
         /// <summary>
@@ -275,7 +276,7 @@ namespace XFramework.DataTable
                 throw new GameFrameworkException(string.Format("Data row type '{0}' is invalid.", dataRowType.FullName));
             }
 
-            return InternelGetDataTable(Utility.Utility.Text.GetFullName(dataRowType, string.Empty));
+            return InternelGetDataTable(Utility.Text.GetFullName(dataRowType, string.Empty));
         }
 
         /// <summary>
@@ -286,7 +287,7 @@ namespace XFramework.DataTable
         /// <returns>要获取的数据表。</returns>
         public IDataTable<T> GetDataTable<T>(string name) where T : IDataRow
         {
-            return (IDataTable<T>)InternelGetDataTable(Utility.Utility.Text.GetFullName<T>(name));
+            return (IDataTable<T>)InternelGetDataTable(Utility.Text.GetFullName<T>(name));
         }
 
         /// <summary>
@@ -307,7 +308,7 @@ namespace XFramework.DataTable
                 throw new GameFrameworkException(string.Format("Data row type '{0}' is invalid.", dataRowType.FullName));
             }
 
-            return InternelGetDataTable(Utility.Utility.Text.GetFullName(dataRowType, name));
+            return InternelGetDataTable(Utility.Text.GetFullName(dataRowType, name));
         }
 
         /// <summary>
@@ -348,7 +349,7 @@ namespace XFramework.DataTable
         {
             if (HasDataTable<T>(name))
             {
-                throw new GameFrameworkException(string.Format("Already exist data table '{0}'.", Utility.Utility.Text.GetFullName<T>(name)));
+                throw new GameFrameworkException(string.Format("Already exist data table '{0}'.", Utility.Text.GetFullName<T>(name)));
             }
 
             DataTable<T> dataTable = new DataTable<T>(name);
@@ -358,7 +359,7 @@ namespace XFramework.DataTable
                 dataTable.AddDataRow(dataRowText);
             }
 
-            m_DataTables.Add(Utility.Utility.Text.GetFullName<T>(name), dataTable);
+            m_DataTables.Add(Utility.Text.GetFullName<T>(name), dataTable);
             return dataTable;
         }
 
@@ -394,7 +395,7 @@ namespace XFramework.DataTable
 
             if (HasDataTable(dataRowType, name))
             {
-                throw new GameFrameworkException(string.Format("Already exist data table '{0}'.", Utility.Utility.Text.GetFullName(dataRowType, name)));
+                throw new GameFrameworkException(string.Format("Already exist data table '{0}'.", Utility.Text.GetFullName(dataRowType, name)));
             }
 
             Type dataTableType = typeof (DataTable<>).MakeGenericType(dataRowType);
@@ -405,7 +406,7 @@ namespace XFramework.DataTable
                 dataTable.AddDataRow(dataRowText);
             }
 
-            m_DataTables.Add(Utility.Utility.Text.GetFullName(dataRowType, name), dataTable);
+            m_DataTables.Add(Utility.Text.GetFullName(dataRowType, name), dataTable);
             return dataTable;
         }
 
@@ -415,7 +416,7 @@ namespace XFramework.DataTable
         /// <typeparam name="T">数据表行的类型。</typeparam>
         public bool DestroyDataTable<T>() where T : IDataRow
         {
-            return InternalDestroyDataTable(Utility.Utility.Text.GetFullName<T>(string.Empty));
+            return InternalDestroyDataTable(Utility.Text.GetFullName<T>(string.Empty));
         }
 
         /// <summary>
@@ -435,7 +436,7 @@ namespace XFramework.DataTable
                 throw new GameFrameworkException(string.Format("Data row type '{0}' is invalid.", dataRowType.FullName));
             }
 
-            return InternalDestroyDataTable(Utility.Utility.Text.GetFullName(dataRowType, string.Empty));
+            return InternalDestroyDataTable(Utility.Text.GetFullName(dataRowType, string.Empty));
         }
 
         /// <summary>
@@ -445,7 +446,7 @@ namespace XFramework.DataTable
         /// <param name="name">数据表名称。</param>
         public bool DestroyDataTable<T>(string name) where T : IDataRow
         {
-            return InternalDestroyDataTable(Utility.Utility.Text.GetFullName<T>(name));
+            return InternalDestroyDataTable(Utility.Text.GetFullName<T>(name));
         }
 
         /// <summary>
@@ -466,7 +467,7 @@ namespace XFramework.DataTable
                 throw new GameFrameworkException(string.Format("Data row type '{0}' is invalid.", dataRowType.FullName));
             }
 
-            return InternalDestroyDataTable(Utility.Utility.Text.GetFullName(dataRowType, name));
+            return InternalDestroyDataTable(Utility.Text.GetFullName(dataRowType, name));
         }
 
         private bool InternalHasDataTable(string fullName)

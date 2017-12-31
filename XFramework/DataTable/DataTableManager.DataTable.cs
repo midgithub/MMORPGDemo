@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using XFramework.Base;
+using XFramework.Util;
 
 namespace XFramework.DataTable
 {
@@ -287,12 +288,12 @@ namespace XFramework.DataTable
                         throw;
                     }
 
-                    throw new GameFrameworkException(string.Format("Can not parse data table '{0}' at '{1}' with exception '{2}'.",Utility.Utility.Text.GetFullName<T>(Name), dataRowText, exception.ToString()), exception);
+                    throw new GameFrameworkException(string.Format("Can not parse data table '{0}' at '{1}' with exception '{2}'.",Utility.Text.GetFullName<T>(Name), dataRowText, exception.ToString()), exception);
                 }
 
                 if (HasDataRow(dataRow.Id))
                 {
-                    throw new GameFrameworkException(string.Format("Already exist '{0}' in data table '{1}'.", dataRow.Id.ToString(),Utility.Utility.Text.GetFullName<T>(Name)));
+                    throw new GameFrameworkException(string.Format("Already exist '{0}' in data table '{1}'.", dataRow.Id.ToString(),Utility.Text.GetFullName<T>(Name)));
                 }
 
                 m_DataSet.Add(dataRow.Id, dataRow);
