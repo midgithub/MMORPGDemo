@@ -1,4 +1,5 @@
-﻿namespace XFramework.Entity
+﻿using XFramework.Base;
+namespace XFramework.Entity
 {
     /// <summary>
     /// 隐藏实体完成事件。
