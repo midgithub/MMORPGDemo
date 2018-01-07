@@ -8,6 +8,10 @@ namespace XFramework.DataTable
 {
     internal partial class DataTableManager
     {
+        /// <summary>
+        /// 数据表。
+        /// </summary>
+        /// <typeparam name="T">数据表行的类型。</typeparam>
         private sealed class DataTable<T> : DataTableBase, IDataTable<T> where T : class, IDataRow, new()
         {
             private readonly Dictionary<int, T> m_DataSet;
@@ -15,10 +19,11 @@ namespace XFramework.DataTable
             private T m_MaxIdDataRow;
 
             /// <summary>
-            /// 初始化数据表的新实例
+            /// 初始化数据表的新实例。
             /// </summary>
-            /// <param name="name"></param>
-            public DataTable(string name) : base(name)
+            /// <param name="name">数据表名称。</param>
+            public DataTable(string name)
+                : base(name)
             {
                 m_DataSet = new Dictionary<int, T>();
                 m_MinIdDataRow = null;
@@ -26,11 +31,14 @@ namespace XFramework.DataTable
             }
 
             /// <summary>
-            /// 获取数据表行的类型
+            /// 获取数据表行的类型。
             /// </summary>
             public override Type Type
             {
-                get { return typeof (T); }
+                get
+                {
+                    return typeof(T);
+                }
             }
 
             /// <summary>
@@ -288,12 +296,12 @@ namespace XFramework.DataTable
                         throw;
                     }
 
-                    throw new GameFrameworkException(string.Format("Can not parse data table '{0}' at '{1}' with exception '{2}'.",Utility.Text.GetFullName<T>(Name), dataRowText, exception.ToString()), exception);
+                    throw new GameFrameworkException(string.Format("Can not parse data table '{0}' at '{1}' with exception '{2}'.", Utility.Text.GetFullName<T>(Name), dataRowText, exception.ToString()), exception);
                 }
 
                 if (HasDataRow(dataRow.Id))
                 {
-                    throw new GameFrameworkException(string.Format("Already exist '{0}' in data table '{1}'.", dataRow.Id.ToString(),Utility.Text.GetFullName<T>(Name)));
+                    throw new GameFrameworkException(string.Format("Already exist '{0}' in data table '{1}'.", dataRow.Id.ToString(), Utility.Text.GetFullName<T>(Name)));
                 }
 
                 m_DataSet.Add(dataRow.Id, dataRow);
@@ -307,10 +315,7 @@ namespace XFramework.DataTable
                 {
                     m_MaxIdDataRow = dataRow;
                 }
-
             }
-
         }
-
     }
 }

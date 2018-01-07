@@ -1163,7 +1163,7 @@ namespace XFramework.Resource
         {
             if (string.IsNullOrEmpty(assetName))
             {
-                throw new GameFrameworkException("Asset name is invalid");
+                throw new GameFrameworkException("Asset name is invalid.");
             }
 
             AssetInfo assetInfo = default(AssetInfo);
@@ -1175,7 +1175,7 @@ namespace XFramework.Resource
             return null;
         }
 
-        private AssetDependencyInfo? GetAssetDenpendencyInfo(string assetName)
+        private AssetDependencyInfo? GetAssetDependencyInfo(string assetName)
         {
             if (string.IsNullOrEmpty(assetName))
             {

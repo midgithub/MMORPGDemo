@@ -122,10 +122,9 @@ namespace XFramework.Resource
                     {
                         updateCount++;
                         updateTotalLength += ci.Length;
-                        updateTotalZipLength += ci.Length;
+                        updateTotalZipLength += ci.ZipLength;
 
-                        ResourceNeedUpdate(ci.ResourceName, ci.LoadType, ci.Length, ci.HashCode, ci.ZipLength,
-                            ci.ZipHashCode);
+                        ResourceNeedUpdate(ci.ResourceName, ci.LoadType, ci.Length, ci.HashCode, ci.ZipLength, ci.ZipHashCode);
                     }
                     else if (ci.Status == CheckInfo.CheckStatus.Disuse || ci.Status == CheckInfo.CheckStatus.Unavailable)
                     {
@@ -540,8 +539,7 @@ namespace XFramework.Resource
                 }
             }
 
-            private void ProcessResourceInfo(ResourceName resourceName, LoadType loadType, int length, int hashCode,
-                bool storageInReadOnly)
+            private void ProcessResourceInfo(ResourceName resourceName, LoadType loadType, int length, int hashCode, bool storageInReadOnly)
             {
                 if (m_ResourceManager.m_ResourceInfos.ContainsKey(resourceName))
                 {

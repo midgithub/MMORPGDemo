@@ -12,7 +12,10 @@ namespace XFramework.DataTable
         /// <summary>
         /// 获取数据表名称。
         /// </summary>
-        string Name { get; }
+        string Name
+        {
+            get;
+        }
 
         /// <summary>
         /// 获取数据表行的类型。
@@ -112,8 +115,5 @@ namespace XFramework.DataTable
         /// <param name="comparison">要排序的条件。</param>
         /// <returns>所有排序后的符合条件的数据表行。</returns>
         T[] GetAllDataRows(Predicate<T> condition, Comparison<T> comparison);
-
-
     }
-
 }

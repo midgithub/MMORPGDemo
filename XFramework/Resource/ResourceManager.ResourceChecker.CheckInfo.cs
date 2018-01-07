@@ -179,7 +179,7 @@ namespace XFramework.Resource
                     if (!m_VersionInfo.Exist)
                     {
                         m_Status = CheckStatus.Disuse;
-                        m_NeedRemove = m_ReadOnlyInfo.Exist;
+                        m_NeedRemove = m_ReadWriteInfo.Exist;
                         return;
                     }
 

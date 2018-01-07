@@ -34,7 +34,7 @@ namespace XFramework.Util
             {
                 if (bytes == null)
                 {
-                    throw new GameFrameworkException("The bytes data is invalid.");
+                    return null;
                 }
 
                 if (code == null)
@@ -48,7 +48,7 @@ namespace XFramework.Util
                     throw new GameFrameworkException("Code length is invalid.");
                 }
 
-
+                int codeIndex = 0;
                 int bytesLength = bytes.Length;
                 if (length <= 0 || length > bytesLength)
                 {
@@ -58,7 +58,6 @@ namespace XFramework.Util
                 byte[] result = new byte[bytesLength];
                 Buffer.BlockCopy(bytes, 0, result, 0, bytesLength);
 
-                int codeIndex = 0;
                 for (int i = 0; i < length; i++)
                 {
                     result[i] ^= code[codeIndex++];

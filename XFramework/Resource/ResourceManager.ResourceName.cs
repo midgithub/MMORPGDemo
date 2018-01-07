@@ -6,9 +6,9 @@ namespace XFramework.Resource
     internal partial class ResourceManager
     {
         /// <summary>
-        /// 资源名称
+        /// 资源名称。
         /// </summary>
-        public struct ResourceName : IComparable,IComparable<ResourceName>,IEquatable<ResourceName>
+        private struct ResourceName : IComparable, IComparable<ResourceName>, IEquatable<ResourceName>
         {
             private readonly string m_Name;
             private readonly string m_Variant;
@@ -82,7 +82,7 @@ namespace XFramework.Resource
                     return m_Name.GetHashCode();
                 }
 
-                return m_Name.GetHashCode() ^ m_Variant.GetHashCode();
+                return (m_Name.GetHashCode() ^ m_Variant.GetHashCode());
             }
 
             public override bool Equals(object value)
@@ -114,7 +114,7 @@ namespace XFramework.Resource
 
                 if (!(value is ResourceName))
                 {
-                    throw new GameFrameworkException("Type of value is not ResourceName.");
+                    throw new GameFrameworkException("Type of value is invalid.");
                 }
 
                 return CompareTo((ResourceName)value);

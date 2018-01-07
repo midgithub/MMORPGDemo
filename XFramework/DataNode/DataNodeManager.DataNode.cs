@@ -36,29 +36,6 @@ namespace XFramework.DataNode
             }
 
             /// <summary>
-            /// 检测数据结点名称是否合法。
-            /// </summary>
-            /// <param name="name">要检测的数据节点名称。</param>
-            /// <returns>是否是合法的数据结点名称。</returns>
-            private static bool IsValidName(string name)
-            {
-                if (string.IsNullOrEmpty(name))
-                {
-                    return false;
-                }
-
-                foreach (string pathSplit in PathSplit)
-                {
-                    if (name.Contains(pathSplit))
-                    {
-                        return false;
-                    }
-                }
-
-                return true;
-            }
-
-            /// <summary>
             /// 获取数据结点的名称。
             /// </summary>
             public string Name
@@ -289,7 +266,28 @@ namespace XFramework.DataNode
                 return string.Format("[{0}] {1}", m_Data.Type.Name, m_Data.ToString());
             }
 
-        }
+            /// <summary>
+            /// 检测数据结点名称是否合法。
+            /// </summary>
+            /// <param name="name">要检测的数据节点名称。</param>
+            /// <returns>是否是合法的数据结点名称。</returns>
+            private static bool IsValidName(string name)
+            {
+                if (string.IsNullOrEmpty(name))
+                {
+                    return false;
+                }
 
+                foreach (string pathSplit in PathSplit)
+                {
+                    if (name.Contains(pathSplit))
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+        }
     }
 }

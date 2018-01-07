@@ -259,11 +259,10 @@ namespace XFramework.Resource
 
                 if (!CheckAsset(assetName, out resourceInfo, out dependencyAssetNames, out scatteredDependencyAssetNames,out resourceChildName))
                 {
-                    string errorMessage = string.Format("Can not load aset '{0}'.",assetName);
+                    string errorMessage = string.Format("Can not load asset '{0}'.", assetName);
                     if (loadAssetCallbacks.LoadAssetFailureCallback != null)
                     {
-                        loadAssetCallbacks.LoadAssetFailureCallback(assetName, LoadResourceStatus.NotReady, errorMessage,
-                            userData);
+                        loadAssetCallbacks.LoadAssetFailureCallback(assetName, LoadResourceStatus.NotReady, errorMessage, userData);
                         return;
                     }
 
@@ -401,12 +400,11 @@ namespace XFramework.Resource
                 return true;
             }
 
-            private bool CheckAsset(string assetName, out ResourceInfo? resourceInfo, out string[] dependencyAssetNames,
-                out string[] scatteredDenpendencyAssetNames, out string resourceChildName)
+            private bool CheckAsset(string assetName, out ResourceInfo? resourceInfo, out string[] dependencyAssetNames, out string[] scatteredDependencyAssetNames, out string resourceChildName)
             {
                 resourceInfo = null;
                 dependencyAssetNames = null;
-                scatteredDenpendencyAssetNames = null;
+                scatteredDependencyAssetNames = null;
                 resourceChildName = null;
 
                 if (string.IsNullOrEmpty(assetName))
@@ -434,14 +432,14 @@ namespace XFramework.Resource
 
                 resourceChildName = assetName.Substring(childNamePosition + 1);
 
-                AssetDependencyInfo? assetDependencyInfo = m_ResourceManager.GetAssetDenpendencyInfo(assetName);
+                AssetDependencyInfo? assetDependencyInfo = m_ResourceManager.GetAssetDependencyInfo(assetName);
                 if (!assetDependencyInfo.HasValue)
                 {
                     return true;
                 }
 
                 dependencyAssetNames = assetDependencyInfo.Value.GetDependencyAssetNames();
-                scatteredDenpendencyAssetNames = assetDependencyInfo.Value.GetScatteredDependencyAssetNames();
+                scatteredDependencyAssetNames = assetDependencyInfo.Value.GetScatteredDependencyAssetNames();
                 return true;
             }
 
@@ -457,7 +455,6 @@ namespace XFramework.Resource
                         return bytes;
                 }
             }
-
         }
     }
 }

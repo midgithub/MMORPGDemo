@@ -564,7 +564,7 @@ namespace XFramework.ObjectPool
                     toReleaseCount -= toReleaseObjects.Count;
                 }
 
-                for (LinkedListNode<T> i = candidateObjects.First; toReleaseCount > 0 && i != null; i.Next)
+                for (LinkedListNode<T> i = candidateObjects.First; toReleaseCount > 0 && i != null; i = i.Next)
                 {
                     for (LinkedListNode<T> j = i.Next; j != null; j = j.Next)
                     {

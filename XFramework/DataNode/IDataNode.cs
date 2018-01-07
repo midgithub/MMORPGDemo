@@ -3,19 +3,25 @@
 namespace XFramework.DataNode
 {
     /// <summary>
-    /// 数据结点接口
+    /// 数据结点接口。
     /// </summary>
     public interface IDataNode
     {
         /// <summary>
-        /// 获取数据结点的名称
+        /// 获取数据结点的名称。
         /// </summary>
-        string Name { get; }
+        string Name
+        {
+            get;
+        }
 
         /// <summary>
-        /// 获取数据结点的完整名称
+        /// 获取数据结点的完整名称。
         /// </summary>
-        string FullName { get; }
+        string FullName
+        {
+            get;
+        }
 
         /// <summary>
         /// 获取父数据结点。
@@ -115,5 +121,4 @@ namespace XFramework.DataNode
         /// <returns>数据字符串。</returns>
         string ToDataString();
     }
-
 }

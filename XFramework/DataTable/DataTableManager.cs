@@ -341,6 +341,17 @@ namespace XFramework.DataTable
         /// <summary>
         /// 创建数据表。
         /// </summary>
+        /// <param name="dataRowType">数据表行的类型。</param>
+        /// <param name="text">要解析的数据表文本。</param>
+        /// <returns>要创建的数据表。</returns>
+        public DataTableBase CreateDataTable(Type dataRowType, string text)
+        {
+            return CreateDataTable(dataRowType, string.Empty, text);
+        }
+
+        /// <summary>
+        /// 创建数据表。
+        /// </summary>
         /// <typeparam name="T">数据表行的类型。</typeparam>
         /// <param name="name">数据表名称。</param>
         /// <param name="text">要解析的数据表文本。</param>
@@ -367,17 +378,6 @@ namespace XFramework.DataTable
         /// 创建数据表。
         /// </summary>
         /// <param name="dataRowType">数据表行的类型。</param>
-        /// <param name="text">要解析的数据表文本。</param>
-        /// <returns>要创建的数据表。</returns>
-        public DataTableBase CreateDataTable(Type dataRowType, string text)
-        {
-            return CreateDataTable(dataRowType, string.Empty, text);
-        }
-
-        /// <summary>
-        /// 创建数据表。
-        /// </summary>
-        /// <param name="dataRowType">数据表行的类型。</param>
         /// <param name="name">数据表名称。</param>
         /// <param name="text">要解析的数据表文本。</param>
         /// <returns>要创建的数据表。</returns>
@@ -388,7 +388,7 @@ namespace XFramework.DataTable
                 throw new GameFrameworkException("Data row type is invalid.");
             }
 
-            if (typeof (IDataRow).IsAssignableFrom(dataRowType))
+            if (!typeof(IDataRow).IsAssignableFrom(dataRowType))
             {
                 throw new GameFrameworkException(string.Format("Data row type '{0}' is invalid.", dataRowType.FullName));
             }
@@ -398,7 +398,7 @@ namespace XFramework.DataTable
                 throw new GameFrameworkException(string.Format("Already exist data table '{0}'.", Utility.Text.GetFullName(dataRowType, name)));
             }
 
-            Type dataTableType = typeof (DataTable<>).MakeGenericType(dataRowType);
+            Type dataTableType = typeof(DataTable<>).MakeGenericType(dataRowType);
             DataTableBase dataTable = (DataTableBase)Activator.CreateInstance(dataTableType, name);
             string[] dataRowTexts = m_DataTableHelper.SplitToDataRows(text);
             foreach (string dataRowText in dataRowTexts)
@@ -555,6 +555,5 @@ namespace XFramework.DataTable
                 m_LoadDataTableDependencyAssetEventHandler(this, new LoadDataTableDependencyAssetEventArgs(dataTableAssetName, dependencyAssetName, loadedCount, totalCount, userData));
             }
         }
-
     }
 }

@@ -327,11 +327,6 @@ namespace XFramework.Base
             }
         }
 
-        /// <summary>
-        /// 获取引用池
-        /// </summary>
-        /// <param name="fullName">引用池名字</param>
-        /// <returns>引用池</returns>
         private static Queue<IReference> GetReferencePool(string fullName)
         {
             Queue<IReference> referencePool = null;

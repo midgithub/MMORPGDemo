@@ -56,30 +56,6 @@ namespace XFramework.Base
         }
 
         /// <summary>
-        /// 处理事件结点。
-        /// </summary>
-        /// <param name="sender">事件源。</param>
-        /// <param name="e">事件参数。</param>
-        private void HandleEvent(object sender, T e)
-        {
-            EventHandler<T> handlers = null;
-            if (m_EventHandlers.TryGetValue(e.Id, out handlers))
-            {
-                if (handlers != null)
-                {
-                    handlers(sender, e);
-                    ReferencePool.Release(e);
-                    return;
-                }
-            }
-
-            if ((m_EventPoolMode & EventPoolMode.AllowNoHandler) == 0)
-            {
-                throw new GameFrameworkException(string.Format("Event '{0}' not allow no handler.", e.Id.ToString()));
-            }
-        }
-
-        /// <summary>
         /// 关闭并清理事件池。
         /// </summary>
         public void Shutdown()
@@ -149,20 +125,20 @@ namespace XFramework.Base
             EventHandler<T> eventHandler = null;
             if (!m_EventHandlers.TryGetValue(id, out eventHandler) || eventHandler == null)
             {
-                m_EventHandlers.Add(id,handler);
+                m_EventHandlers[id] = handler;
             }
-            else if((m_EventPoolMode & EventPoolMode.AllowMultiHandler) == 0)
+            else if ((m_EventPoolMode & EventPoolMode.AllowMultiHandler) == 0)
             {
-                throw new GameFrameworkException(string.Format("Event '{0}' not allow Multi handler"));
+                throw new GameFrameworkException(string.Format("Event '{0}' not allow multi handler.", id.ToString()));
             }
-            else if((m_EventPoolMode & EventPoolMode.AllowDuplicateHandler) == 0 && Check(id,handler))
+            else if ((m_EventPoolMode & EventPoolMode.AllowDuplicateHandler) == 0 && Check(id, handler))
             {
                 throw new GameFrameworkException(string.Format("Event '{0}' not allow duplicate handler.", id.ToString()));
             }
             else
             {
                 eventHandler += handler;
-                m_EventHandlers.Add(id, handler);
+                m_EventHandlers[id] = eventHandler;
             }
 
         }
@@ -207,6 +183,30 @@ namespace XFramework.Base
         public void FireNow(object sender, T e)
         {
             HandleEvent(sender, e);
+        }
+
+        /// <summary>
+        /// 处理事件结点。
+        /// </summary>
+        /// <param name="sender">事件源。</param>
+        /// <param name="e">事件参数。</param>
+        private void HandleEvent(object sender, T e)
+        {
+            EventHandler<T> handlers = null;
+            if (m_EventHandlers.TryGetValue(e.Id, out handlers))
+            {
+                if (handlers != null)
+                {
+                    handlers(sender, e);
+                    ReferencePool.Release(e);
+                    return;
+                }
+            }
+
+            if ((m_EventPoolMode & EventPoolMode.AllowNoHandler) == 0)
+            {
+                throw new GameFrameworkException(string.Format("Event '{0}' not allow no handler.", e.Id.ToString()));
+            }
         }
     }
 }
