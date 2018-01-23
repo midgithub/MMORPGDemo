@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityGameFramework.Runtime;
 using XFramework.Resource;
 
 namespace UnityRuntimeFramework.Resource

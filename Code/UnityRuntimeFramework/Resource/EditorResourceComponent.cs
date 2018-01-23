@@ -5,6 +5,7 @@ using System.Text;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityGameFramework.Runtime;
 using UnityRuntimeFramework.Base;
 using XFramework.Base;
 using XFramework.Download;

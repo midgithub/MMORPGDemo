@@ -5,8 +5,9 @@
 // Feedback: mailto:jiangyin@gameframework.cn
 //------------------------------------------------------------
 
-using GameFramework;
 using System.Threading;
+using XFramework.Base;
+using XFramework.Util;
 
 namespace UnityGameFramework.Runtime
 {
