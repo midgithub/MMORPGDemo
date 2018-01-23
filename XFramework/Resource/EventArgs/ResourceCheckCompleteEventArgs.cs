@@ -1,4 +1,6 @@
-﻿namespace XFramework.Resource
+﻿using XFramework.Base;
+
+namespace XFramework.Resource
 {
     /// <summary>
     /// 资源检查完成事件。
