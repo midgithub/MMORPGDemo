@@ -1,20 +1,12 @@
-﻿//------------------------------------------------------------
-// Game Framework v3.x
-// Copyright © 2013-2018 Jiang Yin. All rights reserved.
-// Homepage: http://gameframework.cn/
-// Feedback: mailto:jiangyin@gameframework.cn
-//------------------------------------------------------------
-
-using System.Threading;
+﻿using System.Threading;
 using XFramework.Base;
-using XFramework.Util;
 
-namespace UnityGameFramework.Runtime
+namespace UnityRuntimeFramework.Util
 {
     /// <summary>
     /// 性能分析辅助器。
     /// </summary>
-    internal class ProfilerHelper : Utility.Profiler.IProfilerHelper
+    internal class ProfilerHelper : XFramework.Util.Utility.Profiler.IProfilerHelper
     {
         private Thread m_MainThread = null;
 

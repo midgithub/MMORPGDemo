@@ -58,6 +58,23 @@
     <Compile Include="Base\GameEntry.cs" />
     <Compile Include="Base\GameFrameworkComponent.cs" />
     <Compile Include="Base\ShutdownType.cs" />
+    <Compile Include="DataNode\DataNodeComponent.cs" />
+    <Compile Include="DataTable\DataTableComponent.cs" />
+    <Compile Include="DataTable\DataTableHelperBase.cs" />
+    <Compile Include="DataTable\DefaultDataTableHelper.cs" />
+    <Compile Include="DataTable\EventArgs\LoadDataTableDependencyAssetEventArgs.cs" />
+    <Compile Include="DataTable\EventArgs\LoadDataTableFailureEventArgs.cs" />
+    <Compile Include="DataTable\EventArgs\LoadDataTableSuccessEventArgs.cs" />
+    <Compile Include="DataTable\EventArgs\LoadDataTableUpdateEventArgs.cs" />
+    <Compile Include="DataTable\LoadDataTableInfo.cs" />
+    <Compile Include="Download\DefaultDownloadAgentHelper.cs" />
+    <Compile Include="Download\DownloadAgentHelperBase.cs" />
+    <Compile Include="Download\DownloadComponent.cs" />
+    <Compile Include="Download\EventArgs\DownloadFailureEventArgs.cs" />
+    <Compile Include="Download\EventArgs\DownloadStartEventArgs.cs" />
+    <Compile Include="Download\EventArgs\DownloadSuccessEventArgs.cs" />
+    <Compile Include="Download\EventArgs\DownloadUpdateEventArgs.cs" />
+    <Compile Include="Download\UnityWebRequestDownloadAgentHelper.cs" />
     <Compile Include="Event\EventComponent.cs" />
     <Compile Include="ObjectPool\ObjectPoolComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +114,9 @@
       <Project>{07787dbe-2d65-48d1-882d-5e5b1e48362f}</Project>
       <Name>XFramework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

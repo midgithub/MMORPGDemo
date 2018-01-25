@@ -1,8 +1,8 @@
 ﻿using System;
 using UnityEngine;
-using UnityGameFramework.Runtime;
 using UnityRuntimeFramework.Base;
 using UnityRuntimeFramework.Event;
+using UnityRuntimeFramework.Util;
 using XFramework.Base;
 using XFramework.Download;
 using XFramework.ObjectPool;
@@ -70,13 +70,13 @@ namespace UnityRuntimeFramework.Resource
         private Transform m_InstanceRoot = null;
 
         [SerializeField]
-        private string m_ResourceHelperTypeName = "UnityGameFramework.Runtime.DefaultResourceHelper";
+        private string m_ResourceHelperTypeName = "UnityRuntimeFramework.Resource.DefaultResourceHelper";
 
         [SerializeField]
         private ResourceHelperBase m_CustomResourceHelper = null;
 
         [SerializeField]
-        private string m_LoadResourceAgentHelperTypeName = "UnityGameFramework.Runtime.DefaultLoadResourceAgentHelper";
+        private string m_LoadResourceAgentHelperTypeName = "UnityRuntimeFramework.Resource.DefaultLoadResourceAgentHelper";
 
         [SerializeField]
         private LoadResourceAgentHelperBase m_CustomLoadResourceAgentHelper = null;

@@ -106,7 +106,6 @@ namespace XFramework.DataTable
             }
         }
 
-
         /// <summary>
         /// 数据表管理器轮询。
         /// </summary>
