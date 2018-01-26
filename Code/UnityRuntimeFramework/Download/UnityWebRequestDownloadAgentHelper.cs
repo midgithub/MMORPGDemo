@@ -1,15 +1,14 @@
 ﻿using System;
-using UnityEngine.Networking;
-using XFramework.Download;
 using System.Collections.Generic;
 using XFramework.Base;
+using XFramework.Download;
 #if UNITY_5_4_OR_NEWER
 using UnityEngine.Networking;
 #else
 using UnityEngine.Experimental.Networking;
 #endif
 
-namespace UnityRuntimeFramework.Download
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 使用 UnityWebRequest 实现的下载代理辅助器。
@@ -218,6 +217,5 @@ namespace UnityRuntimeFramework.Download
                 m_DownloadAgentHelperCompleteEventHandler(this, new DownloadAgentHelperCompleteEventArgs((int)m_UnityWebRequest.downloadedBytes, m_UnityWebRequest.downloadHandler.data));
             }
         }
-
     }
 }

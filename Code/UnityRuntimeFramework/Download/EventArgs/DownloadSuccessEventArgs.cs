@@ -1,6 +1,6 @@
 ﻿using XFramework.Event;
 
-namespace UnityRuntimeFramework.Download
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 下载成功事件。

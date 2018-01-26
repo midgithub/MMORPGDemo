@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityRuntimeFramework.Base;
 using XFramework.Base;
 using XFramework.Download;
 using XFramework.ObjectPool;
 using XFramework.Resource;
 
-namespace UnityRuntimeFramework.Resource
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 编辑器资源组件。
     /// </summary>
     [DisallowMultipleComponent]
-    [AddComponentMenu("Game Framework/EditorResource")]
     public sealed class EditorResourceComponent : MonoBehaviour, IResourceManager
     {
         private string m_ReadOnlyPath = null;
@@ -946,6 +946,5 @@ namespace UnityRuntimeFramework.Resource
                 }
             }
         }
-
     }
 }

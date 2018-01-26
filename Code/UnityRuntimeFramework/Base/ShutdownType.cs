@@ -1,4 +1,4 @@
-﻿namespace UnityRuntimeFramework.Base
+﻿namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 关闭游戏框架类型。

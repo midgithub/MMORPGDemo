@@ -1,6 +1,6 @@
 ﻿using XFramework.Event;
 
-namespace UnityRuntimeFramework.Scene
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 加载场景时加载依赖资源事件。

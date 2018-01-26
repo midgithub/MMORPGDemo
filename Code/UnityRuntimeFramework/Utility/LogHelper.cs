@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using XFramework.Base;
 
-namespace UnityRuntimeFramework.Util
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 日志辅助器。

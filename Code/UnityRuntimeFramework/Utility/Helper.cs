@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using XFramework.Base;
+using XFramework.Util;
 
-namespace UnityRuntimeFramework.Util
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 辅助器创建器相关的实用函数。
@@ -33,7 +34,7 @@ namespace UnityRuntimeFramework.Util
             T helper = null;
             if (!string.IsNullOrEmpty(helperTypeName))
             {
-                System.Type helperType = XFramework.Util.Utility.Assembly.GetType(helperTypeName);
+                System.Type helperType = Utility.Assembly.GetType(helperTypeName);
                 if (helperType == null)
                 {
                     Log.Warning("Can not find helper type '{0}'.", helperTypeName);

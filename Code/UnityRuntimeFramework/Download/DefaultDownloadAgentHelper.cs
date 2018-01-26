@@ -4,7 +4,7 @@ using UnityEngine;
 using XFramework.Base;
 using XFramework.Download;
 
-namespace UnityRuntimeFramework.Download
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 默认下载代理辅助器。
@@ -192,6 +192,5 @@ namespace UnityRuntimeFramework.Download
                 m_DownloadAgentHelperCompleteEventHandler(this, new DownloadAgentHelperCompleteEventArgs(m_WWW.bytesDownloaded, m_WWW.bytes));
             }
         }
-
     }
 }

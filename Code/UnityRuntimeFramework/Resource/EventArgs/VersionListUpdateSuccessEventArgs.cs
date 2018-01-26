@@ -1,6 +1,6 @@
 ﻿using XFramework.Event;
 
-namespace UnityRuntimeFramework.Resource
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 版本资源列表更新成功事件。

@@ -1,6 +1,6 @@
 ﻿using XFramework.Event;
 
-namespace UnityRuntimeFramework.Scene
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 加载场景更新事件。

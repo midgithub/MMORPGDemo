@@ -1,4 +1,4 @@
-﻿namespace UnityRuntimeFramework.Resource
+﻿namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 读写区路径类型。

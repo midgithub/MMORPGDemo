@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Threading;
 using UnityEngine;
-using UnityRuntimeFramework.ObjectPool;
-using UnityRuntimeFramework.Resource;
 using XFramework.Base;
 using XFramework.Localization;
 using XFramework.Resource;
 using XFramework.Util;
 
-namespace UnityRuntimeFramework.Base
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 基础组件。
@@ -22,7 +20,6 @@ namespace UnityRuntimeFramework.Base
         private string m_GameVersion = string.Empty;
         private int m_InternalApplicationVersion = 0;
         private float m_GameSpeedBeforePause = 1f;
-
 
         [SerializeField]
         private bool m_EditorResourceMode = true;
@@ -53,7 +50,6 @@ namespace UnityRuntimeFramework.Base
 
         [SerializeField]
         private bool m_NeverSleep = true;
-
 
         /// <summary>
         /// 获取或设置游戏版本号。
@@ -215,8 +211,7 @@ namespace UnityRuntimeFramework.Base
             base.Awake();
 
             InitLogHelper();
-            Log.Info("Game Framework version is {0}. Unity Game Framework version is {1}.", GameFrameworkEntry.Version,
-                GameEntry.Version);
+            Log.Info("Game Framework version is {0}. Unity Game Framework version is {1}.", GameFrameworkEntry.Version, GameEntry.Version);
 
 #if UNITY_5_3_OR_NEWER || UNITY_5_3
             InitZipHelper();
@@ -228,6 +223,7 @@ namespace UnityRuntimeFramework.Base
             {
                 Utility.Converter.ScreenDpi = DefaultDpi;
             }
+
             m_EditorResourceMode &= Application.isEditor;
             if (m_EditorResourceMode)
             {
@@ -238,7 +234,6 @@ namespace UnityRuntimeFramework.Base
             Time.timeScale = m_GameSpeed;
             Application.runInBackground = m_RunInBackground;
             Screen.sleepTimeout = m_NeverSleep ? SleepTimeout.NeverSleep : SleepTimeout.SystemSetting;
-
 #else
             Log.Error("Game Framework only applies with Unity 5.3 and above, but current Unity version is {0}.", Application.unityVersion);
             GameEntry.Shutdown(ShutdownType.Quit);
@@ -421,6 +416,5 @@ namespace UnityRuntimeFramework.Base
                 resourceCompoent.ForceUnloadUnusedAssets(true);
             }
         }
-
     }
 }

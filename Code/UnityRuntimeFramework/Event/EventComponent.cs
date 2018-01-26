@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
-using UnityRuntimeFramework.Base;
 using XFramework.Base;
 using XFramework.Event;
 
-namespace UnityRuntimeFramework.Event
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 事件组件。

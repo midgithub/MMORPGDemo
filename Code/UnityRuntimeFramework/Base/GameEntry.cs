@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using XFramework.Base;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using XFramework.Base;
 
-namespace UnityRuntimeFramework.Base
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 游戏入口。
@@ -54,6 +54,28 @@ namespace UnityRuntimeFramework.Base
             while (current != null)
             {
                 if (current.Value.GetType() == type)
+                {
+                    return current.Value;
+                }
+
+                current = current.Next;
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// 获取游戏框架组件。
+        /// </summary>
+        /// <param name="typeName">要获取的游戏框架组件类型名称。</param>
+        /// <returns>要获取的游戏框架组件。</returns>
+        public static GameFrameworkComponent GetComponent(string typeName)
+        {
+            LinkedListNode<GameFrameworkComponent> current = s_GameFrameworkComponents.First;
+            while (current != null)
+            {
+                Type type = current.Value.GetType();
+                if (type.FullName == typeName || type.Name == typeName)
                 {
                     return current.Value;
                 }

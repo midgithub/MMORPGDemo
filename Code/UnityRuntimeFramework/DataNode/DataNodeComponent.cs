@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using UnityRuntimeFramework.Base;
 using XFramework.Base;
 using XFramework.DataNode;
 
-namespace UnityRuntimeFramework.DataNode
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 数据结点组件。

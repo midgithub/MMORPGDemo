@@ -1,4 +1,4 @@
-﻿namespace UnityRuntimeFramework.Resource
+﻿namespace UnityGameFramework.Runtime
 {
     internal sealed class SceneAsset
     {

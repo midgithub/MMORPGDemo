@@ -2,7 +2,7 @@
 using UnityEngine;
 using XFramework.DataTable;
 
-namespace UnityRuntimeFramework.DataTable
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 数据表辅助器基类。

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using XFramework.Resource;
 
-namespace UnityRuntimeFramework.Resource
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 资源辅助器基类。

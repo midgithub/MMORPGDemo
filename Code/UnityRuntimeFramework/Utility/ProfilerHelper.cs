@@ -1,12 +1,13 @@
 ﻿using System.Threading;
 using XFramework.Base;
+using XFramework.Util;
 
-namespace UnityRuntimeFramework.Util
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 性能分析辅助器。
     /// </summary>
-    internal class ProfilerHelper : XFramework.Util.Utility.Profiler.IProfilerHelper
+    internal class ProfilerHelper : Utility.Profiler.IProfilerHelper
     {
         private Thread m_MainThread = null;
 

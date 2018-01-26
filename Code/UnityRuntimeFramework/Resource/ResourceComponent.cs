@@ -1,14 +1,11 @@
 ﻿using System;
 using UnityEngine;
-using UnityRuntimeFramework.Base;
-using UnityRuntimeFramework.Event;
-using UnityRuntimeFramework.Util;
 using XFramework.Base;
 using XFramework.Download;
 using XFramework.ObjectPool;
 using XFramework.Resource;
 
-namespace UnityRuntimeFramework.Resource
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 资源组件。
@@ -70,13 +67,13 @@ namespace UnityRuntimeFramework.Resource
         private Transform m_InstanceRoot = null;
 
         [SerializeField]
-        private string m_ResourceHelperTypeName = "UnityRuntimeFramework.Resource.DefaultResourceHelper";
+        private string m_ResourceHelperTypeName = "UnityGameFramework.Runtime.DefaultResourceHelper";
 
         [SerializeField]
         private ResourceHelperBase m_CustomResourceHelper = null;
 
         [SerializeField]
-        private string m_LoadResourceAgentHelperTypeName = "UnityRuntimeFramework.Resource.DefaultLoadResourceAgentHelper";
+        private string m_LoadResourceAgentHelperTypeName = "UnityGameFramework.Runtime.DefaultLoadResourceAgentHelper";
 
         [SerializeField]
         private LoadResourceAgentHelperBase m_CustomLoadResourceAgentHelper = null;
@@ -450,9 +447,7 @@ namespace UnityRuntimeFramework.Resource
             }
 
             m_EditorResourceMode = baseComponent.EditorResourceMode;
-            m_ResourceManager = m_EditorResourceMode
-                ? baseComponent.EditorResourceHelper
-                : GameFrameworkEntry.GetModule<IResourceManager>();
+            m_ResourceManager = m_EditorResourceMode ? baseComponent.EditorResourceHelper : GameFrameworkEntry.GetModule<IResourceManager>();
             if (m_ResourceManager == null)
             {
                 Log.Fatal("Resource manager is invalid.");
@@ -806,6 +801,5 @@ namespace UnityRuntimeFramework.Resource
         {
             m_EventComponent.Fire(this, ReferencePool.Acquire<ResourceUpdateAllCompleteEventArgs>().Fill(e));
         }
-
     }
 }

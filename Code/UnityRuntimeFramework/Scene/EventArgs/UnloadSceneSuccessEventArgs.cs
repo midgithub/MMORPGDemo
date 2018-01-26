@@ -1,6 +1,6 @@
 ﻿using XFramework.Event;
 
-namespace UnityRuntimeFramework.Scene
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 卸载场景成功事件。

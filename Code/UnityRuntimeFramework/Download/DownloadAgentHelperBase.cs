@@ -2,7 +2,7 @@
 using UnityEngine;
 using XFramework.Download;
 
-namespace UnityRuntimeFramework.Download
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 下载代理辅助器基类。

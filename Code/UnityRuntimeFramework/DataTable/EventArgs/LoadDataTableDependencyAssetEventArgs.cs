@@ -1,7 +1,7 @@
 ﻿using System;
 using XFramework.Event;
 
-namespace UnityRuntimeFramework.DataTable
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 加载数据表时加载依赖资源事件。

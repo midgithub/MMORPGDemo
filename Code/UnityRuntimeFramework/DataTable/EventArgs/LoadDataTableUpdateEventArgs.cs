@@ -1,7 +1,7 @@
 ﻿using System;
 using XFramework.Event;
 
-namespace UnityRuntimeFramework.DataTable
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 加载数据表更新事件。

@@ -5,7 +5,7 @@ using XFramework.Fsm;
 using XFramework.Network;
 using XFramework.Procedure;
 
-namespace UnityRuntimeFramework.Base
+namespace UnityGameFramework.Runtime
 {
     internal static class AvoidJIT
     {

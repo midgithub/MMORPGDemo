@@ -5,7 +5,7 @@ using XFramework.Base;
 using XFramework.Resource;
 using XFramework.Util;
 
-namespace UnityRuntimeFramework.Resource
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 默认加载资源代理辅助器。

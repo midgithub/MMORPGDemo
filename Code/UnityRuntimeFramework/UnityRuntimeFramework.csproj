@@ -75,8 +75,25 @@
     <Compile Include="Download\EventArgs\DownloadSuccessEventArgs.cs" />
     <Compile Include="Download\EventArgs\DownloadUpdateEventArgs.cs" />
     <Compile Include="Download\UnityWebRequestDownloadAgentHelper.cs" />
+    <Compile Include="Entity\AttachEntityInfo.cs" />
+    <Compile Include="Entity\DefaultEntityGroupHelper.cs" />
+    <Compile Include="Entity\DefaultEntityHelper.cs" />
+    <Compile Include="Entity\Entity.cs" />
+    <Compile Include="Entity\EntityComponent.cs" />
+    <Compile Include="Entity\EntityComponent.EntityGroup.cs" />
+    <Compile Include="Entity\EntityGroupHelperBase.cs" />
+    <Compile Include="Entity\EntityHelperBase.cs" />
+    <Compile Include="Entity\EntityLogic.cs" />
+    <Compile Include="Entity\EventArgs\HideEntityCompleteEventArgs.cs" />
+    <Compile Include="Entity\EventArgs\ShowEntityDependencyAssetEventArgs.cs" />
+    <Compile Include="Entity\EventArgs\ShowEntityFailureEventArgs.cs" />
+    <Compile Include="Entity\ShowEntityInfo.cs" />
+    <Compile Include="Entity\EventArgs\ShowEntitySuccessEventArgs.cs" />
+    <Compile Include="Entity\EventArgs\ShowEntityUpdateEventArgs.cs" />
     <Compile Include="Event\EventComponent.cs" />
+    <Compile Include="Fsm\FsmComponent.cs" />
     <Compile Include="ObjectPool\ObjectPoolComponent.cs" />
+    <Compile Include="Procedure\ProcedureComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource\DefaultLoadResourceAgentHelper.cs" />
     <Compile Include="Resource\DefaultResourceHelper.cs" />
@@ -102,21 +119,50 @@
     <Compile Include="Scene\EventArgs\UnloadSceneFailureEventArgs.cs" />
     <Compile Include="Scene\EventArgs\UnloadSceneSuccessEventArgs.cs" />
     <Compile Include="Scene\SceneComponent.cs" />
+    <Compile Include="Setting\DefaultSettingHelper.cs" />
+    <Compile Include="Setting\SettingComponent.cs" />
+    <Compile Include="Setting\SettingHelperBase.cs" />
     <Compile Include="Utility\Helper.cs" />
     <Compile Include="Utility\JsonHelper.cs" />
     <Compile Include="Utility\LogHelper.cs" />
     <Compile Include="Utility\ProfilerHelper.cs" />
     <Compile Include="Utility\UnityExtension.cs" />
     <Compile Include="Utility\ZipHelper.cs" />
+    <Compile Include="Variable\VarBool.cs" />
+    <Compile Include="Variable\VarByte.cs" />
+    <Compile Include="Variable\VarBytes.cs" />
+    <Compile Include="Variable\VarChar.cs" />
+    <Compile Include="Variable\VarChars.cs" />
+    <Compile Include="Variable\VarColor.cs" />
+    <Compile Include="Variable\VarDateTime.cs" />
+    <Compile Include="Variable\VarDecimal.cs" />
+    <Compile Include="Variable\VarDouble.cs" />
+    <Compile Include="Variable\VarFloat.cs" />
+    <Compile Include="Variable\VarGameObject.cs" />
+    <Compile Include="Variable\VarInt.cs" />
+    <Compile Include="Variable\VarLong.cs" />
+    <Compile Include="Variable\VarMaterial.cs" />
+    <Compile Include="Variable\VarObject.cs" />
+    <Compile Include="Variable\VarQuaternion.cs" />
+    <Compile Include="Variable\VarRect.cs" />
+    <Compile Include="Variable\VarSByte.cs" />
+    <Compile Include="Variable\VarShort.cs" />
+    <Compile Include="Variable\VarString.cs" />
+    <Compile Include="Variable\VarTexture.cs" />
+    <Compile Include="Variable\VarTransform.cs" />
+    <Compile Include="Variable\VarUInt.cs" />
+    <Compile Include="Variable\VarULong.cs" />
+    <Compile Include="Variable\VarUnityObject.cs" />
+    <Compile Include="Variable\VarUShort.cs" />
+    <Compile Include="Variable\VarVector2.cs" />
+    <Compile Include="Variable\VarVector3.cs" />
+    <Compile Include="Variable\VarVector4.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XFramework\XFramework.csproj">
       <Project>{07787dbe-2d65-48d1-882d-5e5b1e48362f}</Project>
       <Name>XFramework</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
-using UnityRuntimeFramework.Base;
-using UnityRuntimeFramework.Event;
-using UnityRuntimeFramework.Util;
 using XFramework.Base;
 using XFramework.Download;
 
-namespace UnityRuntimeFramework.Download
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 下载组件。
@@ -21,7 +18,7 @@ namespace UnityRuntimeFramework.Download
         private Transform m_InstanceRoot = null;
 
         [SerializeField]
-        private string m_DownloadAgentHelperTypeName = "UnityRuntimeFramework.Download.UnityWebRequestDownloadAgentHelper";
+        private string m_DownloadAgentHelperTypeName = "UnityGameFramework.Runtime.UnityWebRequestDownloadAgentHelper";
 
         [SerializeField]
         private DownloadAgentHelperBase m_CustomDownloadAgentHelper = null;
@@ -245,6 +242,5 @@ namespace UnityRuntimeFramework.Download
             Log.Warning("Download failure, download serial id '{0}', download path '{1}', download uri '{2}', error message '{3}'.", e.SerialId.ToString(), e.DownloadPath, e.DownloadUri, e.ErrorMessage);
             m_EventComponent.Fire(this, ReferencePool.Acquire<DownloadFailureEventArgs>().Fill(e));
         }
-
     }
 }

@@ -1,13 +1,14 @@
-﻿using System.IO;
-using ICSharpCode.SharpZipLib.GZip;
+﻿using ICSharpCode.SharpZipLib.GZip;
+using System.IO;
 using XFramework.Base;
+using XFramework.Util;
 
-namespace UnityRuntimeFramework.Util
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 压缩解压缩辅助器。
     /// </summary>
-    internal class ZipHelper : XFramework.Util.Utility.Zip.IZipHelper
+    internal class ZipHelper : Utility.Zip.IZipHelper
     {
         /// <summary>
         /// 压缩数据。

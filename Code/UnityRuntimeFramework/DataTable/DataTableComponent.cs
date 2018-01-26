@@ -1,13 +1,10 @@
 ﻿using System;
 using UnityEngine;
-using UnityRuntimeFramework.Base;
-using UnityRuntimeFramework.Event;
-using UnityRuntimeFramework.Util;
 using XFramework.Base;
 using XFramework.DataTable;
 using XFramework.Resource;
 
-namespace UnityRuntimeFramework.DataTable
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 数据表组件。
@@ -428,6 +425,5 @@ namespace UnityRuntimeFramework.DataTable
                 m_EventComponent.Fire(this, ReferencePool.Acquire<LoadDataTableDependencyAssetEventArgs>().Fill(e));
             }
         }
-
     }
 }

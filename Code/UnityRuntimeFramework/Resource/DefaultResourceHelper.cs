@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityGameFramework.Runtime;
 using XFramework.Resource;
 
-namespace UnityRuntimeFramework.Resource
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 默认资源辅助器。
@@ -141,5 +140,4 @@ namespace UnityRuntimeFramework.Resource
         }
 #endif
     }
-
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UnityRuntimeFramework.Base
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 游戏框架组件抽象类。

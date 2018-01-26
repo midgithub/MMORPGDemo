@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
-using UnityRuntimeFramework.Base;
 using XFramework.Base;
 using XFramework.ObjectPool;
 
-namespace UnityRuntimeFramework.ObjectPool
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 对象池组件。
@@ -29,6 +28,7 @@ namespace UnityRuntimeFramework.ObjectPool
                 return;
             }
         }
+
         private void Start()
         {
 

@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityRuntimeFramework.Base;
-using UnityRuntimeFramework.Resource;
 using XFramework.Base;
 using XFramework.Util;
 
-namespace UnityRuntimeFramework.DataTable
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// 默认数据表辅助器。
@@ -91,6 +89,5 @@ namespace UnityRuntimeFramework.DataTable
                 return;
             }
         }
-
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UnityRuntimeFramework.DataTable
+namespace UnityGameFramework.Runtime
 {
     internal sealed class LoadDataTableInfo
     {
@@ -17,9 +17,6 @@ namespace UnityRuntimeFramework.DataTable
             m_UserData = userData;
         }
 
-        /// <summary>
-        /// 获取数据行的类型。
-        /// </summary>
         public Type DataRowType
         {
             get
@@ -28,9 +25,6 @@ namespace UnityRuntimeFramework.DataTable
             }
         }
 
-        /// <summary>
-        /// 获取数据表名称。
-        /// </summary>
         public string DataTableName
         {
             get
@@ -39,9 +33,6 @@ namespace UnityRuntimeFramework.DataTable
             }
         }
 
-        /// <summary>
-        /// 数据表的类型
-        /// </summary>
         public string DataTableNameInType
         {
             get
@@ -50,9 +41,6 @@ namespace UnityRuntimeFramework.DataTable
             }
         }
 
-        /// <summary>
-        /// 获取用户自定义数据。
-        /// </summary>
         public object UserData
         {
             get

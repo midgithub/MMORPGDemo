@@ -1,12 +1,13 @@
 ﻿using System;
 using UnityEngine;
+using XFramework.Util;
 
-namespace UnityRuntimeFramework.Util
+namespace UnityGameFramework.Runtime
 {
     /// <summary>
     /// JSON 函数集辅助器。
     /// </summary>
-    internal class JsonHelper : XFramework.Util.Utility.Json.IJsonHelper
+    internal class JsonHelper : Utility.Json.IJsonHelper
     {
         /// <summary>
         /// 将对象序列化为 JSON 字符串。
