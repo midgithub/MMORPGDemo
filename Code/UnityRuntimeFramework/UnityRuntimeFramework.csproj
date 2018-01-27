@@ -122,6 +122,17 @@
     <Compile Include="Setting\DefaultSettingHelper.cs" />
     <Compile Include="Setting\SettingComponent.cs" />
     <Compile Include="Setting\SettingHelperBase.cs" />
+    <Compile Include="Sound\DefaultSoundAgentHelper.cs" />
+    <Compile Include="Sound\DefaultSoundGroupHelper.cs" />
+    <Compile Include="Sound\DefaultSoundHelper.cs" />
+    <Compile Include="Sound\EventArgs\PlaySoundDependencyAssetEventArgs.cs" />
+    <Compile Include="Sound\EventArgs\PlaySoundFailureEventArgs.cs" />
+    <Compile Include="Sound\EventArgs\PlaySoundSuccessEventArgs.cs" />
+    <Compile Include="Sound\EventArgs\PlaySoundUpdateEventArgs.cs" />
+    <Compile Include="Sound\PlaySoundInfo.cs" />
+    <Compile Include="Sound\SoundAgentHelperBase.cs" />
+    <Compile Include="Sound\SoundGroupHelperBase.cs" />
+    <Compile Include="Sound\SoundHelperBase.cs" />
     <Compile Include="Utility\Helper.cs" />
     <Compile Include="Utility\JsonHelper.cs" />
     <Compile Include="Utility\LogHelper.cs" />
