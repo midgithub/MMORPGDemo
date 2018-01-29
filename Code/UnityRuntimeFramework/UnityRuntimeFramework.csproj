@@ -18,7 +18,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;UNITY_EDITOR;UNITY_5_3;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_2_0;UNITY_2017_2;UNITY_2017;PLATFORM_ARCH_64;UNITY_64;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -38,6 +38,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -67,6 +69,33 @@
     <Compile Include="DataTable\EventArgs\LoadDataTableSuccessEventArgs.cs" />
     <Compile Include="DataTable\EventArgs\LoadDataTableUpdateEventArgs.cs" />
     <Compile Include="DataTable\LoadDataTableInfo.cs" />
+    <Compile Include="Debugger\DebuggerActiveWindowType.cs" />
+    <Compile Include="Debugger\DebuggerComponent.ConsoleWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.ConsoleWindow.LogNode.cs" />
+    <Compile Include="Debugger\DebuggerComponent.cs" />
+    <Compile Include="Debugger\DebuggerComponent.EnvironmentInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.FpsCounter.cs" />
+    <Compile Include="Debugger\DebuggerComponent.GraphicsInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.InputAccelerationInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.InputCompassInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.InputGyroscopeInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.InputLocationInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.InputSummaryInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.InputTouchInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.ObjectPoolInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.OperationsWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.PathInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.ProfilerInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.QualityInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.RuntimeMemoryInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.RuntimeMemoryInformationWindow.Sample.cs" />
+    <Compile Include="Debugger\DebuggerComponent.SceneInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.ScreenInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.ScrollableDebuggerWindowBase.cs" />
+    <Compile Include="Debugger\DebuggerComponent.SettingsWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.SystemInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.TimeInformationWindow.cs" />
+    <Compile Include="Debugger\DebuggerComponent.WebPlayerInformationWindow.cs" />
     <Compile Include="Download\DefaultDownloadAgentHelper.cs" />
     <Compile Include="Download\DownloadAgentHelperBase.cs" />
     <Compile Include="Download\DownloadComponent.cs" />
@@ -100,6 +129,13 @@
     <Compile Include="Localization\LoadDictionaryInfo.cs" />
     <Compile Include="Localization\LocalizationComponent.cs" />
     <Compile Include="Localization\LocalizationHelperBase.cs" />
+    <Compile Include="Network\EventArgs\NetworkClosedEventArgs.cs" />
+    <Compile Include="Network\NetworkComponent.cs" />
+    <Compile Include="Network\EventArgs\NetworkConnectedEventArgs.cs" />
+    <Compile Include="Network\EventArgs\NetworkCustomErrorEventArgs.cs" />
+    <Compile Include="Network\EventArgs\NetworkErrorEventArgs.cs" />
+    <Compile Include="Network\EventArgs\NetworkMissHeartBeatEventArgs.cs" />
+    <Compile Include="Network\EventArgs\NetworkSendPacketEventArgs.cs" />
     <Compile Include="ObjectPool\ObjectPoolComponent.cs" />
     <Compile Include="Procedure\ProcedureComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -193,6 +229,14 @@
     <Compile Include="Variable\VarVector2.cs" />
     <Compile Include="Variable\VarVector3.cs" />
     <Compile Include="Variable\VarVector4.cs" />
+    <Compile Include="WebRequest\DefaultWebRequestAgentHelper.cs" />
+    <Compile Include="WebRequest\UnityWebRequestAgentHelper.cs" />
+    <Compile Include="WebRequest\WebRequestAgentHelperBase.cs" />
+    <Compile Include="WebRequest\WebRequestComponent.cs" />
+    <Compile Include="WebRequest\EventArgs\WebRequestFailureEventArgs.cs" />
+    <Compile Include="WebRequest\EventArgs\WebRequestStartEventArgs.cs" />
+    <Compile Include="WebRequest\EventArgs\WebRequestSuccessEventArgs.cs" />
+    <Compile Include="WebRequest\WWWFormInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XFramework\XFramework.csproj">
