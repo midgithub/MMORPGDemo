@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFramework", "XFramework\XF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityRuntimeFramework", "UnityRuntimeFramework\UnityRuntimeFramework.csproj", "{5E102D94-9310-41B0-9DAD-E9E1BC1C3F5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEditorExtension", "UnityEditorExtension\UnityEditorExtension.csproj", "{D497815E-5D2B-4CB1-AD7A-92EDB3C569F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5E102D94-9310-41B0-9DAD-E9E1BC1C3F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E102D94-9310-41B0-9DAD-E9E1BC1C3F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E102D94-9310-41B0-9DAD-E9E1BC1C3F5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D497815E-5D2B-4CB1-AD7A-92EDB3C569F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D497815E-5D2B-4CB1-AD7A-92EDB3C569F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D497815E-5D2B-4CB1-AD7A-92EDB3C569F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D497815E-5D2B-4CB1-AD7A-92EDB3C569F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
