@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\Libs\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.XML" />
     <Reference Include="UnityEditor">
@@ -44,6 +47,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssetBundleAnalyzer\AssetBundleAnalyzer.cs" />
+    <Compile Include="AssetBundleAnalyzer\AssetBundleAnalyzerController.cs" />
+    <Compile Include="AssetBundleAnalyzer\AssetBundleAnalyzerController.Stamp.cs" />
+    <Compile Include="AssetBundleAnalyzer\AssetsOrder.cs" />
+    <Compile Include="AssetBundleAnalyzer\DependencyData.cs" />
+    <Compile Include="AssetBundleAnalyzer\ScatteredAssetsOrder.cs" />
+    <Compile Include="AssetBundleBuilder\AssetBundleBuilder.cs" />
+    <Compile Include="AssetBundleBuilder\AssetBundleBuilderConfigPathAttribute.cs" />
+    <Compile Include="AssetBundleBuilder\AssetBundleBuilderController.AssetBundleCode.cs" />
+    <Compile Include="AssetBundleBuilder\AssetBundleBuilderController.AssetBundleData.cs" />
+    <Compile Include="AssetBundleBuilder\AssetBundleBuilderController.AssetData.cs" />
+    <Compile Include="AssetBundleBuilder\AssetBundleBuilderController.BuildReport.cs" />
+    <Compile Include="AssetBundleBuilder\AssetBundleBuilderController.cs" />
+    <Compile Include="AssetBundleBuilder\AssetBundleBuilderController.VersionListData.cs" />
+    <Compile Include="AssetBundleBuilder\BuildAssetBundle.cs" />
     <Compile Include="AssetBundleBuilder\IBuildEventHandler.cs" />
     <Compile Include="AssetBundleCollection\Asset.cs" />
     <Compile Include="AssetBundleCollection\AssetBundle.cs" />
@@ -51,6 +69,15 @@
     <Compile Include="AssetBundleCollection\AssetBundleCollectionConfigPathAttribute.cs" />
     <Compile Include="AssetBundleCollection\AssetBundleLoadType.cs" />
     <Compile Include="AssetBundleCollection\AssetBundleType.cs" />
+    <Compile Include="AssetBundleEditor\AssetBundleEditor.AssetBundleFolder.cs" />
+    <Compile Include="AssetBundleEditor\AssetBundleEditor.AssetBundleItem.cs" />
+    <Compile Include="AssetBundleEditor\AssetBundleEditor.cs" />
+    <Compile Include="AssetBundleEditor\AssetBundleEditor.MenuState.cs" />
+    <Compile Include="AssetBundleEditor\AssetBundleEditorConfigPathAttribute.cs" />
+    <Compile Include="AssetBundleEditor\AssetBundleEditorController.cs" />
+    <Compile Include="AssetBundleEditor\AssetSorterType.cs" />
+    <Compile Include="AssetBundleEditor\SourceAsset.cs" />
+    <Compile Include="AssetBundleEditor\SourceFolder.cs" />
     <Compile Include="Inspector\BaseComponentInspector.cs" />
     <Compile Include="Inspector\DataNodeComponentInspector.cs" />
     <Compile Include="Inspector\DataTableComponentInspector.cs" />
@@ -84,6 +111,10 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GameFramework\GameFramework.csproj">
+      <Project>{109d7f39-79ab-4862-9f73-0b8c638930c6}</Project>
+      <Name>GameFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UnityRuntimeFramework\UnityRuntimeFramework.csproj">
       <Project>{5e102d94-9310-41b0-9dad-e9e1bc1c3f5a}</Project>
       <Name>UnityRuntimeFramework</Name>
