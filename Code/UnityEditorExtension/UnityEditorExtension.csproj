@@ -79,17 +79,14 @@
     <Compile Include="Misc\LogRedirection.cs" />
     <Compile Include="Misc\OpenFolder.cs" />
     <Compile Include="Misc\Type.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnityRuntimeFramework\UnityRuntimeFramework.csproj">
       <Project>{5e102d94-9310-41b0-9dad-e9e1bc1c3f5a}</Project>
       <Name>UnityRuntimeFramework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\XFramework\XFramework.csproj">
-      <Project>{07787dbe-2d65-48d1-882d-5e5b1e48362f}</Project>
-      <Name>XFramework</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
