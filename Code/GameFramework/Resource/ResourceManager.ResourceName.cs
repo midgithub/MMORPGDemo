@@ -1,7 +1,13 @@
-﻿using System;
-using XFramework.Base;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Resource
+using System;
+
+namespace GameFramework.Resource
 {
     internal partial class ResourceManager
     {
@@ -130,7 +136,6 @@ namespace XFramework.Resource
 
                 return string.Compare(m_Variant, resourceName.m_Variant);
             }
- 
         }
     }
 }

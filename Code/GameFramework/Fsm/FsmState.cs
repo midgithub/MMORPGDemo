@@ -1,8 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using XFramework.Base;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Fsm
+using System;
+using System.Collections.Generic;
+
+namespace GameFramework.Fsm
 {
     /// <summary>
     /// 有限状态机状态基类。
@@ -168,6 +174,5 @@ namespace XFramework.Fsm
                 }
             }
         }
-
     }
 }

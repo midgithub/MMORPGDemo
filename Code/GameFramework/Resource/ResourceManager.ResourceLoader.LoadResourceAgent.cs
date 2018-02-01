@@ -1,10 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using XFramework.Base;
-using XFramework.ObjectPool;
-using XFramework.Util;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Resource
+using GameFramework.ObjectPool;
+using System;
+using System.Collections.Generic;
+
+namespace GameFramework.Resource
 {
     internal partial class ResourceManager
     {
@@ -133,7 +138,6 @@ namespace XFramework.Resource
                     {
                         return;
                     }
-
 
                     if (m_WaitingType == WaitingType.WaitForAsset)
                     {
@@ -307,13 +311,14 @@ namespace XFramework.Resource
                 private void OnAssetObjectReady(AssetObject assetObject)
                 {
                     m_Helper.Reset();
+
                     object asset = assetObject.Target;
                     if (m_Task.IsScene)
                     {
-                        m_ResourceLoader.m_SceneToAssetMap.Add(m_Task.AssetName,asset);
+                        m_ResourceLoader.m_SceneToAssetMap.Add(m_Task.AssetName, asset);
                     }
 
-                    m_Task.OnLoadAssetSuccess(this,asset,(float)(DateTime.Now - m_Task.StartTime).TotalSeconds);
+                    m_Task.OnLoadAssetSuccess(this, asset, (float)(DateTime.Now - m_Task.StartTime).TotalSeconds);
                     m_Task.Done = true;
                 }
 
@@ -429,7 +434,6 @@ namespace XFramework.Resource
                     OnError(e.Status, e.ErrorMessage);
                 }
             }
-
         }
     }
 }

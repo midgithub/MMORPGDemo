@@ -1,10 +1,15 @@
-﻿using System;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
-using XFramework.Base;
 
-namespace XFramework.Resource
+namespace GameFramework.Resource
 {
-
     internal partial class ResourceManager
     {
         private partial class ResourceLoader
@@ -48,8 +53,8 @@ namespace XFramework.Resource
                     {
                         return m_SerialId;
                     }
-
                 }
+
                 public bool Done
                 {
                     get
@@ -153,6 +158,7 @@ namespace XFramework.Resource
                 {
                     return m_DependencyAssets.ToArray();
                 }
+
                 public void LoadMain(LoadResourceAgent agent, object resource)
                 {
                     m_Resource = resource;
@@ -178,9 +184,7 @@ namespace XFramework.Resource
                 {
                     m_DependencyAssets.Add(dependencyAsset);
                 }
-
             }
         }
-
     }
 }

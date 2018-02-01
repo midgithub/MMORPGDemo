@@ -1,9 +1,14 @@
-﻿using System.Collections.Generic;
-using XFramework.Base;
-using XFramework.ObjectPool;
-using XFramework.Util;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Resource
+using GameFramework.ObjectPool;
+using System.Collections.Generic;
+
+namespace GameFramework.Resource
 {
     internal partial class ResourceManager
     {
@@ -63,7 +68,6 @@ namespace XFramework.Resource
                     return m_TaskPool.WorkingAgentCount;
                 }
             }
-
 
             /// <summary>
             /// 获取等待加载资源任务数量。
@@ -257,7 +261,7 @@ namespace XFramework.Resource
                 string[] scatteredDependencyAssetNames = null;
                 string resourceChildName = null;
 
-                if (!CheckAsset(assetName, out resourceInfo, out dependencyAssetNames, out scatteredDependencyAssetNames,out resourceChildName))
+                if (!CheckAsset(assetName, out resourceInfo, out dependencyAssetNames, out scatteredDependencyAssetNames, out resourceChildName))
                 {
                     string errorMessage = string.Format("Can not load asset '{0}'.", assetName);
                     if (loadAssetCallbacks.LoadAssetFailureCallback != null)
@@ -269,7 +273,7 @@ namespace XFramework.Resource
                     throw new GameFrameworkException(errorMessage);
                 }
 
-                LoadAssetTask mainTask = new LoadAssetTask(assetName,resourceInfo.Value,dependencyAssetNames,scatteredDependencyAssetNames,resourceChildName,loadAssetCallbacks,userData);
+                LoadAssetTask mainTask = new LoadAssetTask(assetName, resourceInfo.Value, dependencyAssetNames, scatteredDependencyAssetNames, resourceChildName, loadAssetCallbacks, userData);
                 foreach (string dependencyAssetName in dependencyAssetNames)
                 {
                     if (!LoadDependencyAsset(dependencyAssetName, mainTask, userData))

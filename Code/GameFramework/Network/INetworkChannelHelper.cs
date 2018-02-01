@@ -1,6 +1,13 @@
-﻿using System.IO;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Network
+using System.IO;
+
+namespace GameFramework.Network
 {
     /// <summary>
     /// 网络频道辅助器接口。

@@ -1,4 +1,11 @@
-﻿namespace XFramework.Entity
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+namespace GameFramework.Entity
 {
     /// <summary>
     /// 实体接口。
@@ -98,6 +105,5 @@
         /// <param name="elapseSeconds">逻辑流逝时间，以秒为单位。</param>
         /// <param name="realElapseSeconds">真实流逝时间，以秒为单位。</param>
         void OnUpdate(float elapseSeconds, float realElapseSeconds);
-
     }
 }

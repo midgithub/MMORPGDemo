@@ -1,4 +1,11 @@
-﻿namespace XFramework.Base
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+namespace GameFramework
 {
     /// <summary>
     /// 封装一个方法，该方法不具有参数，但却返回 TResult 参数指定的类型的值。

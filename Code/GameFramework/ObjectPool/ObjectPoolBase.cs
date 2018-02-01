@@ -1,6 +1,13 @@
-﻿using System;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.ObjectPool
+using System;
+
+namespace GameFramework.ObjectPool
 {
     /// <summary>
     /// 对象池基类。
@@ -53,7 +60,6 @@ namespace XFramework.ObjectPool
         {
             get;
         }
-
 
         /// <summary>
         /// 获取对象池中能被释放的对象的数量。
@@ -132,6 +138,5 @@ namespace XFramework.ObjectPool
         internal abstract void Update(float elapseSeconds, float realElapseSeconds);
 
         internal abstract void Shutdown();
-
     }
 }

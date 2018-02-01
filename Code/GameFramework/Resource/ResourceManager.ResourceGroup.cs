@@ -1,7 +1,13 @@
-﻿using System.Collections.Generic;
-using XFramework.Base;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Resource
+using System.Collections.Generic;
+
+namespace GameFramework.Resource
 {
     internal partial class ResourceManager
     {
@@ -52,6 +58,7 @@ namespace XFramework.Resource
                 }
             }
 
+            /// <summary>
             /// 获取资源组已准备完成资源数量。
             /// </summary>
             public int ReadyResourceCount
@@ -125,9 +132,6 @@ namespace XFramework.Resource
                 m_ResourceNames.Add(new ResourceName(name, variant));
                 m_TotalLength += length;
             }
-
-
         }
-
     }
 }

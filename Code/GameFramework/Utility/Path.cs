@@ -1,10 +1,14 @@
-﻿using System;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
 using System.IO;
-using XFramework.Base;
 
-namespace XFramework.Util
+namespace GameFramework
 {
-
     public static partial class Utility
     {
         /// <summary>
@@ -138,12 +142,11 @@ namespace XFramework.Util
                     Directory.Delete(directoryName);
                     return true;
                 }
-                catch (Exception)
+                catch
                 {
                     return false;
                 }
             }
-
         }
     }
 }

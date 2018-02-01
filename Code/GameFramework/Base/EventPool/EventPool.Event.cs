@@ -1,6 +1,13 @@
-﻿namespace XFramework.Base
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+namespace GameFramework
 {
-    internal sealed partial class EventPool<T> where T : BaseEventArgs
+    internal partial class EventPool<T>
     {
         /// <summary>
         /// 事件结点。
@@ -33,5 +40,4 @@
             }
         }
     }
-
 }

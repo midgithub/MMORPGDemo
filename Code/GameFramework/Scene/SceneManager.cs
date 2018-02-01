@@ -1,10 +1,15 @@
-﻿using System;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+using GameFramework.Resource;
+using System;
 using System.Collections.Generic;
-using XFramework.Base;
-using XFramework.Resource;
 
-
-namespace XFramework.Scene
+namespace GameFramework.Scene
 {
     /// <summary>
     /// 场景管理器。
@@ -412,6 +417,5 @@ namespace XFramework.Scene
 
             throw new GameFrameworkException(string.Format("Unload scene failure, scene asset name '{0}'.", sceneAssetName));
         }
-
     }
 }

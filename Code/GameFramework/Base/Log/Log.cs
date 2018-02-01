@@ -1,6 +1,13 @@
-﻿using System.Diagnostics;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Base
+using System.Diagnostics;
+
+namespace GameFramework
 {
     /// <summary>
     /// 日志类。
@@ -17,8 +24,6 @@ namespace XFramework.Base
         {
             s_LogHelper = logHelper;
         }
-
-        #region 日志级别：Debug调试
 
         /// <summary>
         /// 记录调试级别日志，仅在带有 DEBUG 预编译选项时产生。
@@ -117,9 +122,6 @@ namespace XFramework.Base
             s_LogHelper.Log(LogLevel.Debug, string.Format(format, args));
         }
 
-        #endregion
-
-        #region 日志级别：Info信息
         /// <summary>
         /// 打印信息级别日志，用于记录程序正常运行日志信息。
         /// </summary>
@@ -210,9 +212,7 @@ namespace XFramework.Base
 
             s_LogHelper.Log(LogLevel.Info, string.Format(format, args));
         }
-        #endregion
 
-        #region 日志级别：Warning警告
         /// <summary>
         /// 打印警告级别日志，建议在发生局部功能逻辑错误，但尚不会导致游戏崩溃或异常时使用。
         /// </summary>
@@ -303,9 +303,7 @@ namespace XFramework.Base
 
             s_LogHelper.Log(LogLevel.Warning, string.Format(format, args));
         }
-        #endregion
 
-        #region 日志级别：Error错误
         /// <summary>
         /// 打印错误级别日志，建议在发生功能逻辑错误，但尚不会导致游戏崩溃或异常时使用。
         /// </summary>
@@ -396,9 +394,7 @@ namespace XFramework.Base
 
             s_LogHelper.Log(LogLevel.Error, string.Format(format, args));
         }
-        #endregion
 
-        #region 日志级别：Fatal严重错误
         /// <summary>
         /// 打印严重错误级别日志，建议在发生严重错误，可能导致游戏崩溃或异常时使用，此时应尝试重启进程或重建游戏框架。
         /// </summary>
@@ -489,8 +485,5 @@ namespace XFramework.Base
 
             s_LogHelper.Log(LogLevel.Fatal, string.Format(format, args));
         }
-        #endregion
-
-
     }
 }

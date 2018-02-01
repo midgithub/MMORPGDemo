@@ -1,8 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using XFramework.Base;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Util
+using System;
+using System.Collections.Generic;
+
+namespace GameFramework
 {
     public static partial class Utility
     {
@@ -12,7 +18,7 @@ namespace XFramework.Util
         public static class Assembly
         {
             private static readonly System.Reflection.Assembly[] s_Assemblies = null;
-            private static readonly Dictionary<string,Type> s_CachedTypes = new Dictionary<string, Type>();
+            private static readonly Dictionary<string, Type> s_CachedTypes = new Dictionary<string, Type>();
 
             static Assembly()
             {
@@ -80,8 +86,6 @@ namespace XFramework.Util
 
                 return null;
             }
-
         }
-
     }
 }

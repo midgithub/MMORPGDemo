@@ -1,9 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using XFramework.Base;
-using XFramework.Util;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.ObjectPool
+using System;
+using System.Collections.Generic;
+
+namespace GameFramework.ObjectPool
 {
     internal partial class ObjectPoolManager
     {
@@ -169,7 +174,6 @@ namespace XFramework.ObjectPool
                     m_Priority = value;
                 }
             }
-
 
             /// <summary>
             /// 创建对象。
@@ -540,7 +544,7 @@ namespace XFramework.ObjectPool
                 return canReleaseObjects;
             }
 
-            private LinkedList<T> DefaultReleaseObjectFilterCallback(LinkedList<T> candidateObjects, int toReleaseCount,DateTime expireTime)
+            private LinkedList<T> DefaultReleaseObjectFilterCallback(LinkedList<T> candidateObjects, int toReleaseCount, DateTime expireTime)
             {
                 LinkedList<T> toReleaseObjects = new LinkedList<T>();
 
@@ -579,10 +583,9 @@ namespace XFramework.ObjectPool
                     toReleaseObjects.AddLast(i.Value);
                     toReleaseCount--;
                 }
+
                 return toReleaseObjects;
-            } 
-
+            }
         }
-
     }
 }

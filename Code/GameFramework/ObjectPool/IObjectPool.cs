@@ -1,7 +1,13 @@
-﻿using System;
-using XFramework.Event;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.ObjectPool
+using System;
+
+namespace GameFramework.ObjectPool
 {
     /// <summary>
     /// 对象池接口。
@@ -9,7 +15,6 @@ namespace XFramework.ObjectPool
     /// <typeparam name="T">对象类型。</typeparam>
     public interface IObjectPool<T> where T : ObjectBase
     {
-
         /// <summary>
         /// 获取对象池名称。
         /// </summary>

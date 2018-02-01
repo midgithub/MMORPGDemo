@@ -1,10 +1,15 @@
-﻿using System;
-using System.IO;
-using XFramework.Base;
-using XFramework.Download;
-using XFramework.Util;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Resource
+using GameFramework.Download;
+using System;
+using System.IO;
+
+namespace GameFramework.Resource
 {
     internal partial class ResourceManager
     {
@@ -173,10 +178,7 @@ namespace XFramework.Resource
                 byte[] bytes = File.ReadAllBytes(e.DownloadPath);
                 if (m_VersionListZipLength != bytes.Length)
                 {
-                    string errorMessage =
-                        string.Format("Latest version list zip length error,need '{0}',downloaded '{1}'.",
-                            m_VersionListZipLength, bytes.Length);
-
+                    string errorMessage = string.Format("Latest version list zip length error, need '{0}', downloaded '{1}'.", m_VersionListZipLength.ToString(), bytes.Length.ToString());
                     OnDownloadFailure(this, new DownloadFailureEventArgs(e.SerialId, e.DownloadPath, e.DownloadUri, errorMessage, e.UserData));
                     return;
                 }
@@ -214,7 +216,6 @@ namespace XFramework.Resource
                     return;
                 }
 
-
                 File.WriteAllBytes(e.DownloadPath, bytes);
 
                 if (VersionListUpdateSuccess != null)
@@ -241,7 +242,6 @@ namespace XFramework.Resource
                     VersionListUpdateFailure(e.DownloadUri, e.ErrorMessage);
                 }
             }
-
         }
     }
 }

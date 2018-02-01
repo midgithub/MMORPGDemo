@@ -1,7 +1,13 @@
-﻿using System;
-using XFramework.Base;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Fsm
+using System;
+
+namespace GameFramework.Fsm
 {
     /// <summary>
     /// 有限状态机接口。
@@ -169,6 +175,5 @@ namespace XFramework.Fsm
         /// <param name="name">有限状态机数据名称。</param>
         /// <returns>是否移除有限状态机数据成功。</returns>
         bool RemoveData(string name);
-
     }
 }

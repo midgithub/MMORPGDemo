@@ -1,11 +1,16 @@
-﻿using System;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+using GameFramework.Download;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using XFramework.Base;
-using XFramework.Download;
-using XFramework.Util;
 
-namespace XFramework.Resource
+namespace GameFramework.Resource
 {
     internal partial class ResourceManager
     {
@@ -203,8 +208,7 @@ namespace XFramework.Resource
 
             private void GenerateReadWriteList()
             {
-                string file = Utility.Path.GetCombinePath(m_ResourceManager.m_ReadWritePath,
-                    Utility.Path.GetResourceNameWithSuffix(ResourceListFileName));
+                string file = Utility.Path.GetCombinePath(m_ResourceManager.m_ReadWritePath, Utility.Path.GetResourceNameWithSuffix(ResourceListFileName));
                 string backupFile = null;
 
                 if (File.Exists(file))
@@ -232,9 +236,7 @@ namespace XFramework.Resource
                         binaryWriter.Write(ReadWriteListVersionHeader);
                         binaryWriter.Write(encryptCode);
                         binaryWriter.Write(m_ResourceManager.m_ReadWriteResourceInfos.Count);
-                        foreach (
-                            KeyValuePair<ResourceName, ReadWriteResourceInfo> i in
-                                m_ResourceManager.m_ReadWriteResourceInfos)
+                        foreach (KeyValuePair<ResourceName, ReadWriteResourceInfo> i in m_ResourceManager.m_ReadWriteResourceInfos)
                         {
                             byte[] nameBytes = Utility.Encryption.GetXorBytes(Utility.Converter.GetBytes(i.Key.Name), encryptCode);
                             binaryWriter.Write((byte)nameBytes.Length);
@@ -284,10 +286,7 @@ namespace XFramework.Resource
                         fileStream = null;
                     }
                 }
-
-
             }
-
 
             private void OnDownloadStart(object sender, DownloadStartEventArgs e)
             {
@@ -334,7 +333,6 @@ namespace XFramework.Resource
                 {
                     throw new GameFrameworkException("You must set download manager first.");
                 }
-
 
                 if (e.CurrentLength > updateInfo.ZipLength)
                 {
@@ -447,7 +445,6 @@ namespace XFramework.Resource
                 {
                     ResourceUpdateSuccess(updateInfo.ResourceName, e.DownloadPath, e.DownloadUri, updateInfo.Length, updateInfo.ZipLength);
                 }
-
             }
 
             private void OnDownloadFailure(object sender, DownloadFailureEventArgs e)
@@ -483,6 +480,5 @@ namespace XFramework.Resource
                 }
             }
         }
-
     }
 }

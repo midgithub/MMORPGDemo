@@ -1,8 +1,14 @@
-﻿using XFramework.Base;
-using XFramework.Fsm;
-using ProcedureOwner = XFramework.Fsm.IFsm<XFramework.Procedure.IProcedureManager>;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Procedure
+using GameFramework.Fsm;
+using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
+
+namespace GameFramework.Procedure
 {
     /// <summary>
     /// 流程基类。

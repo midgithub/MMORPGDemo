@@ -1,7 +1,13 @@
-﻿using XFramework.Base;
-using XFramework.ObjectPool;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Resource
+using GameFramework.ObjectPool;
+
+namespace GameFramework.Resource
 {
     internal partial class ResourceManager
     {
@@ -19,7 +25,7 @@ namespace XFramework.Resource
                 private readonly IResourceHelper m_ResourceHelper;
 
                 public AssetObject(string name, object target, object[] dependencyAssets, object resource, IObjectPool<AssetObject> assetPool, IObjectPool<ResourceObject> resourcePool, IResourceHelper resourceHelper)
-                   : base(name, target)
+                    : base(name, target)
                 {
                     if (dependencyAssets == null)
                     {
@@ -68,8 +74,6 @@ namespace XFramework.Resource
                     m_ResourcePool.Unspawn(m_Resource);
                 }
             }
-
         }
-
     }
 }

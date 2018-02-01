@@ -1,8 +1,15 @@
-﻿using System;
-using XFramework.ObjectPool;
-using XFramework.Resource;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.UI
+using GameFramework.ObjectPool;
+using GameFramework.Resource;
+using System;
+
+namespace GameFramework.UI
 {
     /// <summary>
     /// 界面管理器接口。

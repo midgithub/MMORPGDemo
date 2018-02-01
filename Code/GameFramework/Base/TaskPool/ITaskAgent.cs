@@ -1,4 +1,11 @@
-﻿namespace XFramework.Base
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+namespace GameFramework
 {
     /// <summary>
     /// 任务代理接口。
@@ -41,6 +48,5 @@
         /// 停止正在处理的任务并重置任务代理。
         /// </summary>
         void Reset();
-
     }
 }

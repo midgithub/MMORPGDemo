@@ -1,10 +1,15 @@
-﻿using System;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.IO;
-using XFramework.Base;
-using XFramework.Util;
 
-namespace XFramework.Resource
+namespace GameFramework.Resource
 {
     internal partial class ResourceManager
     {
@@ -47,7 +52,6 @@ namespace XFramework.Resource
             {
                 m_CheckInfos.Clear();
             }
-
 
             public void CheckResources(string currentVariant)
             {
@@ -105,7 +109,7 @@ namespace XFramework.Resource
                 int updateCount = 0;
                 int updateTotalLength = 0;
                 int updateTotalZipLength = 0;
-                foreach (KeyValuePair<ResourceName,CheckInfo> checkInfo in m_CheckInfos)
+                foreach (KeyValuePair<ResourceName, CheckInfo> checkInfo in m_CheckInfos)
                 {
                     CheckInfo ci = checkInfo.Value;
                     ci.RefreshStatus(m_CurrentVariant);
@@ -507,7 +511,6 @@ namespace XFramework.Resource
                 }
             }
 
-
             private void ProcessAssetInfo(ResourceName resourceName, string[] assetNames)
             {
                 foreach (string assetName in assetNames)
@@ -543,10 +546,10 @@ namespace XFramework.Resource
             {
                 if (m_ResourceManager.m_ResourceInfos.ContainsKey(resourceName))
                 {
-                    throw new GameFrameworkException(string.Format("Resource info '{0}' is already exist.",resourceName.FullName));
+                    throw new GameFrameworkException(string.Format("Resource info '{0}' is already exist.", resourceName.FullName));
                 }
 
-                m_ResourceManager.m_ResourceInfos.Add(resourceName,new ResourceInfo(resourceName,loadType,length,hashCode,storageInReadOnly));
+                m_ResourceManager.m_ResourceInfos.Add(resourceName, new ResourceInfo(resourceName, loadType, length, hashCode, storageInReadOnly));
             }
         }
     }

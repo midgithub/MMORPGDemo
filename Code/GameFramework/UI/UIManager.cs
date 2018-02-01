@@ -1,10 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using XFramework.Base;
-using XFramework.ObjectPool;
-using XFramework.Resource;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.UI
+using GameFramework.ObjectPool;
+using GameFramework.Resource;
+using System;
+using System.Collections.Generic;
+
+namespace GameFramework.UI
 {
     /// <summary>
     /// 界面管理器。
@@ -245,7 +251,6 @@ namespace XFramework.UI
             m_ObjectPoolManager = objectPoolManager;
             m_InstancePool = m_ObjectPoolManager.CreateSingleSpawnObjectPool<UIFormInstanceObject>("UI Instance Pool");
         }
-
 
         /// <summary>
         /// 设置资源管理器。
@@ -827,9 +832,6 @@ namespace XFramework.UI
                 throw new GameFrameworkException("Open UI form info is invalid.");
             }
 
-            UIFormInstanceObject uiFormInstanceObject = new UIFormInstanceObject(uiFormAssetName, uiFormAsset, m_UIFormHelper.InstantiateUIForm(uiFormAsset), m_UIFormHelper);
-            m_InstancePool.Register(uiFormInstanceObject, true);
-
             m_UIFormsBeingLoaded.Remove(openUIFormInfo.SerialId);
             m_UIFormAssetNamesBeingLoaded.Remove(uiFormAssetName);
             if (m_UIFormsToReleaseOnLoad.Contains(openUIFormInfo.SerialId))
@@ -839,6 +841,9 @@ namespace XFramework.UI
                 m_UIFormHelper.ReleaseUIForm(uiFormAsset, null);
                 return;
             }
+
+            UIFormInstanceObject uiFormInstanceObject = new UIFormInstanceObject(uiFormAssetName, uiFormAsset, m_UIFormHelper.InstantiateUIForm(uiFormAsset), m_UIFormHelper);
+            m_InstancePool.Register(uiFormInstanceObject, true);
 
             InternalOpenUIForm(openUIFormInfo.SerialId, uiFormAssetName, openUIFormInfo.UIGroup, uiFormInstanceObject.Target, openUIFormInfo.PauseCoveredUIForm, true, duration, openUIFormInfo.UserData);
         }
@@ -891,6 +896,5 @@ namespace XFramework.UI
                 m_OpenUIFormDependencyAssetEventHandler(this, new OpenUIFormDependencyAssetEventArgs(openUIFormInfo.SerialId, uiFormAssetName, openUIFormInfo.UIGroup.Name, openUIFormInfo.PauseCoveredUIForm, dependencyAssetName, loadedCount, totalCount, openUIFormInfo.UserData));
             }
         }
-
     }
 }

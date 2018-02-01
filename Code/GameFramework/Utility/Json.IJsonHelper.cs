@@ -1,10 +1,16 @@
-﻿using System;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Util
+using System;
+
+namespace GameFramework
 {
     public static partial class Utility
     {
-
         public static partial class Json
         {
             /// <summary>
@@ -34,10 +40,7 @@ namespace XFramework.Util
                 /// <param name="json">要反序列化的 JSON 字符串。</param>
                 /// <returns>反序列化后的对象。</returns>
                 object ToObject(Type objectType, string json);
-
             }
-
-
         }
     }
 }

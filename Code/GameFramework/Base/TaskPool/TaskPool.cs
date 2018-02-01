@@ -1,6 +1,13 @@
-﻿using System.Collections.Generic;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Base
+using System.Collections.Generic;
+
+namespace GameFramework
 {
     /// <summary>
     /// 任务池。
@@ -106,7 +113,6 @@ namespace XFramework.Base
             }
         }
 
-
         /// <summary>
         /// 关闭并清理任务池。
         /// </summary>
@@ -193,7 +199,5 @@ namespace XFramework.Base
             }
             m_WorkingAgents.Clear();
         }
-
     }
-
 }

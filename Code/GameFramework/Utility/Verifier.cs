@@ -1,8 +1,15 @@
-﻿using System.IO;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace XFramework.Util
+namespace GameFramework
 {
     public static partial class Utility
     {
@@ -11,7 +18,7 @@ namespace XFramework.Util
         /// </summary>
         public static partial class Verifier
         {
-            private static readonly byte[] Zero = new byte[] {0, 0, 0, 0};
+            private static readonly byte[] Zero = new byte[] { 0, 0, 0, 0 };
 
             /// <summary>
             /// 计算二进制流的 CRC32。

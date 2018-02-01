@@ -1,4 +1,11 @@
-﻿namespace XFramework.Download
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+namespace GameFramework.Download
 {
     internal partial class DownloadManager
     {
@@ -15,9 +22,6 @@
                     m_ElapseSeconds = 0f;
                 }
 
-                /// <summary>
-                /// 下载大小
-                /// </summary>
                 public int DownloadedLength
                 {
                     get
@@ -26,9 +30,6 @@
                     }
                 }
 
-                /// <summary>
-                /// 下载耗时
-                /// </summary>
                 public float ElapseSeconds
                 {
                     get
@@ -42,7 +43,6 @@
                     m_ElapseSeconds += realElapseSeconds;
                 }
             }
-
         }
     }
 }

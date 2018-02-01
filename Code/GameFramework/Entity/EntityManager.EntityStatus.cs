@@ -1,4 +1,11 @@
-﻿namespace XFramework.Entity
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+namespace GameFramework.Entity
 {
     internal partial class EntityManager
     {
@@ -7,44 +14,13 @@
         /// </summary>
         private enum EntityStatus
         {
-            /// <summary>
-            /// 即将初始化
-            /// </summary>
             WillInit,
-
-            /// <summary>
-            /// 初始化完毕
-            /// </summary>
             Inited,
-
-            /// <summary>
-            /// 即将显示
-            /// </summary>
             WillShow,
-
-            /// <summary>
-            /// 显示完毕
-            /// </summary>
             Showed,
-
-            /// <summary>
-            /// 即将隐藏
-            /// </summary>
             WillHide,
-
-            /// <summary>
-            /// 隐藏完毕
-            /// </summary>
             Hidden,
-
-            /// <summary>
-            /// 即将回收
-            /// </summary>
             WillRecycle,
-
-            /// <summary>
-            /// 回收完毕
-            /// </summary>
             Recycled,
         }
     }

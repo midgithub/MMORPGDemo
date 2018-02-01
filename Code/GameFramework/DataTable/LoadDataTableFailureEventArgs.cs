@@ -1,6 +1,11 @@
-﻿using XFramework.Base;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.DataTable
+namespace GameFramework.DataTable
 {
     /// <summary>
     /// 加载数据表失败事件。
@@ -47,6 +52,4 @@ namespace XFramework.DataTable
             private set;
         }
     }
-
-
 }

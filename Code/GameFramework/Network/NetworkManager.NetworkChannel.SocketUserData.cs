@@ -1,6 +1,13 @@
-﻿using System.Net.Sockets;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Network
+using System.Net.Sockets;
+
+namespace GameFramework.Network
 {
     internal partial class NetworkManager
     {

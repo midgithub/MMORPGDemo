@@ -1,9 +1,15 @@
-﻿using System;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+using System;
 using System.Net;
 using System.Net.Sockets;
-using XFramework.Base;
 
-namespace XFramework.Network
+namespace GameFramework.Network
 {
     internal partial class NetworkManager
     {
@@ -13,7 +19,6 @@ namespace XFramework.Network
         private sealed partial class NetworkChannel : INetworkChannel, IDisposable
         {
             private const float DefaultHeartBeatInterval = 30f;
-
 
             private readonly string m_Name;
             private readonly EventPool<Packet> m_EventPool;
@@ -62,7 +67,6 @@ namespace XFramework.Network
 
                 networkChannelHelper.Initialize(this);
             }
-
 
             /// <summary>
             /// 获取网络频道名称。
@@ -770,7 +774,7 @@ namespace XFramework.Network
 
             private void ReceiveCallback(IAsyncResult ar)
             {
-                Socket socket = (Socket) ar.AsyncState;
+                Socket socket = (Socket)ar.AsyncState;
                 int bytesReceived = 0;
                 try
                 {

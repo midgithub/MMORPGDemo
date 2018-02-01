@@ -1,6 +1,11 @@
-﻿using XFramework.Base;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Sound
+namespace GameFramework.Sound
 {
     /// <summary>
     /// 播放声音更新事件。

@@ -1,7 +1,14 @@
-﻿using System;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+using System;
 using System.Runtime.Serialization;
 
-namespace XFramework.Base
+namespace GameFramework
 {
     /// <summary>
     /// 游戏框架异常类。
@@ -50,5 +57,4 @@ namespace XFramework.Base
 
         }
     }
-
 }

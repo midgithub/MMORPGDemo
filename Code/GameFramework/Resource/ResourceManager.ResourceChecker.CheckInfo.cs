@@ -1,6 +1,11 @@
-﻿using XFramework.Base;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Resource
+namespace GameFramework.Resource
 {
     internal partial class ResourceManager
     {
@@ -171,9 +176,9 @@ namespace XFramework.Resource
                 }
 
                 /// <summary>
-                /// 刷新资源信息状态
+                /// 刷新资源信息状态。
                 /// </summary>
-                /// <param name="currentVariant">当前变体</param>
+                /// <param name="currentVariant">当前变体。</param>
                 public void RefreshStatus(string currentVariant)
                 {
                     if (!m_VersionInfo.Exist)
@@ -217,17 +222,8 @@ namespace XFramework.Resource
                             m_NeedRemove = m_ReadWriteInfo.Exist;
                         }
                     }
-
-
                 }
-
-
-
-
-
             }
-
-
         }
     }
 }

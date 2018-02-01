@@ -1,4 +1,11 @@
-﻿namespace XFramework.DataTable
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+namespace GameFramework.DataTable
 {
     /// <summary>
     /// 数据表辅助器接口。
@@ -25,8 +32,5 @@
         /// </summary>
         /// <param name="dataTableAsset">要释放的数据表资源。</param>
         void ReleaseDataTableAsset(object dataTableAsset);
-
     }
-
-
 }

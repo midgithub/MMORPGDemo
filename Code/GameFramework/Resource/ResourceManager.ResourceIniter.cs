@@ -1,10 +1,15 @@
-﻿using System;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.IO;
-using XFramework.Base;
-using XFramework.Util;
 
-namespace XFramework.Resource
+namespace GameFramework.Resource
 {
     internal partial class ResourceManager
     {
@@ -30,19 +35,17 @@ namespace XFramework.Resource
                 ResourceInitComplete = null;
             }
 
-
             /// <summary>
             /// 关闭并清理资源初始化器。
             /// </summary>
             public void Shutdown()
             {
-                
+
             }
 
             /// <summary>
-            /// 初始化资源
+            /// 初始化资源。
             /// </summary>
-            /// <param name="currentVariant">当前版本</param>
             public void InitResources(string currentVariant)
             {
                 m_CurrentVariant = currentVariant;
@@ -52,7 +55,7 @@ namespace XFramework.Resource
                     throw new GameFrameworkException("Resource helper is invalid.");
                 }
 
-                m_ResourceManager.m_ResourceHelper.LoadBytes(Utility.Path.GetRemotePath(m_ResourceManager.m_ReadOnlyPath,Utility.Path.GetResourceNameWithSuffix(VersionListFileName)), ParsePackageList);
+                m_ResourceManager.m_ResourceHelper.LoadBytes(Utility.Path.GetRemotePath(m_ResourceManager.m_ReadOnlyPath, Utility.Path.GetResourceNameWithSuffix(VersionListFileName)), ParsePackageList);
             }
 
             /// <summary>
@@ -204,7 +207,7 @@ namespace XFramework.Resource
                 {
                     List<string> dependencyAssetNames = new List<string>();
                     List<string> scatteredDependencyAssetNames = new List<string>();
-                          foreach (string dependencyAssetName in dependencyAssetNamesCollectionItem.Value)
+                    foreach (string dependencyAssetName in dependencyAssetNamesCollectionItem.Value)
                     {
                         AssetInfo? assetInfo = m_ResourceManager.GetAssetInfo(dependencyAssetName);
                         if (assetInfo.HasValue)
@@ -230,8 +233,6 @@ namespace XFramework.Resource
 
                 m_ResourceManager.m_ResourceInfos.Add(resourceName, new ResourceInfo(resourceName, loadType, length, hashCode, true));
             }
-
         }
-
     }
 }

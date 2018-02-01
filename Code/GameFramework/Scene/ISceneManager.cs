@@ -1,7 +1,14 @@
-﻿using System;
-using XFramework.Resource;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Scene
+using GameFramework.Resource;
+using System;
+
+namespace GameFramework.Scene
 {
     /// <summary>
     /// 场景管理器接口。
@@ -108,6 +115,5 @@ namespace XFramework.Scene
         /// <param name="sceneAssetName">场景资源名称。</param>
         /// <param name="userData">用户自定义数据。</param>
         void UnloadScene(string sceneAssetName, object userData);
-
     }
 }

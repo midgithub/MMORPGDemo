@@ -1,8 +1,15 @@
-﻿using System;
-using XFramework.Download;
-using XFramework.ObjectPool;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Resource
+using GameFramework.Download;
+using GameFramework.ObjectPool;
+using System;
+
+namespace GameFramework.Resource
 {
     /// <summary>
     /// 资源管理器接口。
@@ -10,7 +17,7 @@ namespace XFramework.Resource
     public interface IResourceManager
     {
         /// <summary>
-        /// 获取资源只读区路径
+        /// 获取资源只读区路径。
         /// </summary>
         string ReadOnlyPath
         {
@@ -18,7 +25,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取资源读写区路径
+        /// 获取资源读写区路径。
         /// </summary>
         string ReadWritePath
         {
@@ -26,7 +33,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取资源模式
+        /// 获取资源模式。
         /// </summary>
         ResourceMode ResourceMode
         {
@@ -34,7 +41,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取当前变体
+        /// 获取当前变体。
         /// </summary>
         string CurrentVariant
         {
@@ -42,7 +49,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取当前资源适用的游戏版本
+        /// 获取当前资源适用的游戏版本号。
         /// </summary>
         string ApplicableGameVersion
         {
@@ -50,7 +57,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取当前资源内部版本号
+        /// 获取当前资源内部版本号。
         /// </summary>
         int InternalResourceVersion
         {
@@ -58,7 +65,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取已准备完毕资源数量
+        /// 获取已准备完毕资源数量。
         /// </summary>
         int AssetCount
         {
@@ -66,7 +73,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取已准备完毕资源数量
+        /// 获取已准备完毕资源数量。
         /// </summary>
         int ResourceCount
         {
@@ -74,7 +81,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取资源组数量
+        /// 获取资源组数量。
         /// </summary>
         int ResourceGroupCount
         {
@@ -82,7 +89,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取或设置资源更新下载地址
+        /// 获取或设置资源更新下载地址。
         /// </summary>
         string UpdatePrefixUri
         {
@@ -91,7 +98,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取或设置资源更新重试次数
+        /// 获取或设置资源更新重试次数。
         /// </summary>
         int UpdateRetryCount
         {
@@ -100,7 +107,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取等待更新资源数量
+        /// 获取等待更新资源数量。
         /// </summary>
         int UpdateWaitingCount
         {
@@ -108,7 +115,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取正在更新资源数量
+        /// 获取正在更新资源数量。
         /// </summary>
         int UpdatingCount
         {
@@ -116,7 +123,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取加载资源代理总数量
+        /// 获取加载资源代理总数量。
         /// </summary>
         int LoadTotalAgentCount
         {
@@ -124,7 +131,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取可用的空闲加载资源代理数量。
+        /// 获取可用加载资源代理数量。
         /// </summary>
         int LoadFreeAgentCount
         {
@@ -132,7 +139,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取工作中的加载资源代理数量。
+        /// 获取工作中加载资源代理数量。
         /// </summary>
         int LoadWorkingAgentCount
         {
@@ -140,7 +147,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取等待中的加载资源任务数量
+        /// 获取等待加载资源任务数量。
         /// </summary>
         int LoadWaitingTaskCount
         {
@@ -148,7 +155,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取或设置资源对象池自动释放对象的间隔时间（单位：秒）
+        /// 获取或设置资源对象池自动释放可释放对象的间隔秒数。
         /// </summary>
         float AssetAutoReleaseInterval
         {
@@ -157,7 +164,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取或设置资源对象池的容量
+        /// 获取或设置资源对象池的容量。
         /// </summary>
         int AssetCapacity
         {
@@ -166,7 +173,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取或设置资源对象池中对象过期时间（单位：秒）
+        /// 获取或设置资源对象池对象过期秒数。
         /// </summary>
         float AssetExpireTime
         {
@@ -313,7 +320,6 @@ namespace XFramework.Resource
         /// <param name="resourceHelper">资源辅助器。</param>
         void SetResourceHelper(IResourceHelper resourceHelper);
 
-
         /// <summary>
         /// 增加加载资源代理辅助器。
         /// </summary>
@@ -437,6 +443,5 @@ namespace XFramework.Resource
         /// </summary>
         /// <param name="resourceGroupName">要检查的资源组名称。</param>
         float GetResourceGroupProgress(string resourceGroupName);
-
     }
 }

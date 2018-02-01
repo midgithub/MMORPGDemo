@@ -1,4 +1,11 @@
-﻿namespace XFramework.Debugger
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+namespace GameFramework.Debugger
 {
     /// <summary>
     /// 调试窗口组接口。
@@ -49,6 +56,4 @@
         /// <param name="debuggerWindow">要注册的调试窗口。</param>
         void RegisterDebuggerWindow(string path, IDebuggerWindow debuggerWindow);
     }
-
-
 }

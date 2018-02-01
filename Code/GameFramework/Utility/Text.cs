@@ -1,17 +1,23 @@
-﻿using System;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using XFramework.Base;
 
-namespace XFramework.Util
+namespace GameFramework
 {
     public static partial class Utility
-      {
-          /// <summary>
-          /// 字符相关的实用函数。
-          /// </summary>
-          public static class Text
-          {
+    {
+        /// <summary>
+        /// 字符相关的实用函数。
+        /// </summary>
+        public static class Text
+        {
             /// <summary>
             /// 将文本按行切分。
             /// </summary>
@@ -28,51 +34,6 @@ namespace XFramework.Util
                 }
 
                 return texts.ToArray();
-            }
-            /// <summary>
-            /// 读取一行文本。
-            /// </summary>
-            /// <param name="text">要读取的文本。</param>
-            /// <param name="position">开始的位置。</param>
-            /// <returns>一行文本。</returns>
-            private static string ReadLine(string text, ref int position)
-            {
-                if (text == null)
-                {
-                    return null;
-                }
-
-                int length = text.Length;
-                int offset = position;
-                while (offset < length)
-                {
-                    char ch = text[offset];
-                    switch (ch)
-                    {
-                        case '\r':
-                        case '\n':
-                            string str = text.Substring(position, offset - position);
-                            position = offset + 1;
-                            if (((ch == '\r') && (position < length)) && (text[position] == '\n'))
-                            {
-                                position++;
-                            }
-
-                            return str;
-                        default:
-                            offset++;
-                            break;
-                    }
-                }
-
-                if (offset > position)
-                {
-                    string str = text.Substring(position, offset - position);
-                    position = offset;
-                    return str;
-                }
-
-                return null;
             }
 
             /// <summary>
@@ -120,7 +81,51 @@ namespace XFramework.Util
                 return str;
             }
 
-        }
+            /// <summary>
+            /// 读取一行文本。
+            /// </summary>
+            /// <param name="text">要读取的文本。</param>
+            /// <param name="position">开始的位置。</param>
+            /// <returns>一行文本。</returns>
+            private static string ReadLine(string text, ref int position)
+            {
+                if (text == null)
+                {
+                    return null;
+                }
 
-      }
-  }
+                int length = text.Length;
+                int offset = position;
+                while (offset < length)
+                {
+                    char ch = text[offset];
+                    switch (ch)
+                    {
+                        case '\r':
+                        case '\n':
+                            string str = text.Substring(position, offset - position);
+                            position = offset + 1;
+                            if (((ch == '\r') && (position < length)) && (text[position] == '\n'))
+                            {
+                                position++;
+                            }
+
+                            return str;
+                        default:
+                            offset++;
+                            break;
+                    }
+                }
+
+                if (offset > position)
+                {
+                    string str = text.Substring(position, offset - position);
+                    position = offset;
+                    return str;
+                }
+
+                return null;
+            }
+        }
+    }
+}

@@ -1,9 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using XFramework.Base;
-using XFramework.Util;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.ObjectPool
+using System;
+using System.Collections.Generic;
+
+namespace GameFramework.ObjectPool
 {
     /// <summary>
     /// 对象池管理器。
@@ -17,7 +22,7 @@ namespace XFramework.ObjectPool
         private readonly Dictionary<string, ObjectPoolBase> m_ObjectPools;
 
         /// <summary>
-        /// 初始化对象池管理器的新实例
+        /// 初始化对象池管理器的新实例。
         /// </summary>
         public ObjectPoolManager()
         {

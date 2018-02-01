@@ -1,8 +1,14 @@
-﻿using System;
-using System.IO;
-using XFramework.Base;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Download
+using System;
+using System.IO;
+
+namespace GameFramework.Download
 {
     internal partial class DownloadManager
     {
@@ -129,7 +135,6 @@ namespace XFramework.Download
                 m_Helper.DownloadAgentHelperError += OnDownloadAgentHelperError;
             }
 
-
             /// <summary>
             /// 下载代理轮询。
             /// </summary>
@@ -167,7 +172,7 @@ namespace XFramework.Download
             {
                 if (task == null)
                 {
-                    throw new GameFrameworkException("DownloadTask is invalid.");
+                    throw new GameFrameworkException("Task is invalid.");
                 }
 
                 m_Task = task;
@@ -192,7 +197,7 @@ namespace XFramework.Download
                             Directory.CreateDirectory(directory);
                         }
 
-                        m_FileStream = new FileStream(downloadFile,FileMode.Create,FileAccess.Write);
+                        m_FileStream = new FileStream(downloadFile, FileMode.Create, FileAccess.Write);
                         m_StartLength = m_SavedLength = m_DownloadedLength = 0;
                     }
 
@@ -363,8 +368,6 @@ namespace XFramework.Download
 
                 m_Task.Done = true;
             }
-
         }
-
     }
 }

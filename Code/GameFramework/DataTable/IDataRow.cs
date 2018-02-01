@@ -1,7 +1,14 @@
-﻿namespace XFramework.DataTable
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+namespace GameFramework.DataTable
 {
     /// <summary>
-    /// 数据表行接口
+    /// 数据表行接口。
     /// </summary>
     public interface IDataRow
     {

@@ -1,15 +1,21 @@
-﻿using System;
-using XFramework.ObjectPool;
-using XFramework.Resource;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Entity
+using GameFramework.ObjectPool;
+using GameFramework.Resource;
+using System;
+
+namespace GameFramework.Entity
 {
     /// <summary>
     /// 实体管理器接口。
     /// </summary>
     public interface IEntityManager
     {
-
         /// <summary>
         /// 获取实体数量。
         /// </summary>
@@ -374,6 +380,5 @@ namespace XFramework.Entity
         /// <param name="entity">实体。</param>
         /// <param name="priority">实体实例优先级。</param>
         void SetInstancePriority(IEntity entity, int priority);
-
     }
 }

@@ -1,9 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using XFramework.Base;
-using XFramework.Resource;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Sound
+using GameFramework.Resource;
+using System;
+using System.Collections.Generic;
+
+namespace GameFramework.Sound
 {
     /// <summary>
     /// 声音管理器。
@@ -597,6 +603,5 @@ namespace XFramework.Sound
                 m_PlaySoundDependencyAssetEventHandler(this, new PlaySoundDependencyAssetEventArgs(playSoundInfo.SerialId, soundAssetName, playSoundInfo.SoundGroup.Name, playSoundInfo.PlaySoundParams, dependencyAssetName, loadedCount, totalCount, playSoundInfo.UserData));
             }
         }
-
     }
 }

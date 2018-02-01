@@ -1,7 +1,14 @@
-﻿using System;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 
-namespace XFramework.Base
+namespace GameFramework
 {
     /// <summary>
     /// 游戏框架入口。
@@ -58,7 +65,7 @@ namespace XFramework.Base
         /// <remarks>如果要获取的游戏框架模块不存在，则自动创建该游戏框架模块。</remarks>
         public static T GetModule<T>() where T : class
         {
-            Type interfaceType = typeof (T);
+            Type interfaceType = typeof(T);
             if (!interfaceType.IsInterface)
             {
                 throw new GameFrameworkException(string.Format("You must get module by interface, but '{0}' is not.", interfaceType.FullName));
@@ -69,7 +76,6 @@ namespace XFramework.Base
                 throw new GameFrameworkException(string.Format("You must get a Game Framework module, but '{0}' is not.", interfaceType.FullName));
             }
 
-
             string moduleName = string.Format("{0}.{1}", interfaceType.Namespace, interfaceType.Name.Substring(1));
             Type moduleType = Type.GetType(moduleName);
             if (moduleType == null)
@@ -79,7 +85,6 @@ namespace XFramework.Base
 
             return GetModule(moduleType) as T;
         }
-
 
         /// <summary>
         /// 获取游戏框架模块。

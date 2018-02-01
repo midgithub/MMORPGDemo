@@ -1,6 +1,13 @@
-﻿using System.Net;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Network
+using System.Net;
+
+namespace GameFramework.Network
 {
     /// <summary>
     /// 网络频道接口。
@@ -169,6 +176,5 @@ namespace XFramework.Network
         /// <param name="packet">要发送的消息包。</param>
         /// <param name="userData">用户自定义数据。</param>
         void Send<T>(T packet, object userData) where T : Packet;
-
     }
 }

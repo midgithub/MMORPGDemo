@@ -1,6 +1,11 @@
-﻿using XFramework.Base;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Network
+namespace GameFramework.Network
 {
     /// <summary>
     /// 网络连接成功事件。
@@ -36,5 +41,4 @@ namespace XFramework.Network
             private set;
         }
     }
-
 }

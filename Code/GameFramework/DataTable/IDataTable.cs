@@ -1,7 +1,14 @@
-﻿using System;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 
-namespace XFramework.DataTable
+namespace GameFramework.DataTable
 {
     /// <summary>
     /// 数据表接口。

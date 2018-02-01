@@ -1,8 +1,14 @@
-﻿using System;
-using XFramework.Base;
-using XFramework.Fsm;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Procedure
+using GameFramework.Fsm;
+using System;
+
+namespace GameFramework.Procedure
 {
     /// <summary>
     /// 流程管理器。
@@ -195,6 +201,5 @@ namespace XFramework.Procedure
 
             return (ProcedureBase)m_ProcedureFsm.GetState(procedureType);
         }
-
     }
 }

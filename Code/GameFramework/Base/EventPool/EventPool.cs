@@ -1,9 +1,15 @@
-﻿using System;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 
-namespace XFramework.Base
+namespace GameFramework
 {
-
     /// <summary>
     /// 事件池。
     /// </summary>
@@ -140,7 +146,6 @@ namespace XFramework.Base
                 eventHandler += handler;
                 m_EventHandlers[id] = eventHandler;
             }
-
         }
 
         /// <summary>

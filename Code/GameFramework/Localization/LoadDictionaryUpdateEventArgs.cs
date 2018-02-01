@@ -1,8 +1,12 @@
-﻿using XFramework.Base;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Localization
+namespace GameFramework.Localization
 {
-
     /// <summary>
     /// 加载字典更新事件。
     /// </summary>

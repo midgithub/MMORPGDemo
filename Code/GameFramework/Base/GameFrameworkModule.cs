@@ -1,4 +1,11 @@
-﻿namespace XFramework.Base
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
+
+namespace GameFramework
 {
     /// <summary>
     /// 游戏框架模块抽象类。
@@ -28,6 +35,5 @@
         /// 关闭并清理游戏框架模块。
         /// </summary>
         internal abstract void Shutdown();
-
     }
 }

@@ -1,10 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using XFramework.Base;
-using XFramework.ObjectPool;
-using XFramework.Resource;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Entity
+using GameFramework.ObjectPool;
+using GameFramework.Resource;
+using System;
+using System.Collections.Generic;
+
+namespace GameFramework.Entity
 {
     /// <summary>
     /// 实体管理器。
@@ -990,8 +996,7 @@ namespace XFramework.Entity
             return null;
         }
 
-        private void InternalShowEntity(int entityId, string entityAssetName, EntityGroup entityGroup,
-            object entityInstance, bool isNewInstance, float duration, object userData)
+        private void InternalShowEntity(int entityId, string entityAssetName, EntityGroup entityGroup, object entityInstance, bool isNewInstance, float duration, object userData)
         {
             try
             {
@@ -1070,9 +1075,6 @@ namespace XFramework.Entity
                 throw new GameFrameworkException("Show entity info is invalid.");
             }
 
-            EntityInstanceObject entityInstanceObject = new EntityInstanceObject(entityAssetName, entityAsset, m_EntityHelper.InstantiateEntity(entityAsset), m_EntityHelper);
-            showEntityInfo.EntityGroup.RegisterEntityInstanceObject(entityInstanceObject, true);
-
             m_EntitiesBeingLoaded.Remove(showEntityInfo.EntityId);
             if (m_EntitiesToReleaseOnLoad.Contains(showEntityInfo.EntityId))
             {
@@ -1081,6 +1083,9 @@ namespace XFramework.Entity
                 m_EntityHelper.ReleaseEntity(entityAsset, null);
                 return;
             }
+
+            EntityInstanceObject entityInstanceObject = new EntityInstanceObject(entityAssetName, entityAsset, m_EntityHelper.InstantiateEntity(entityAsset), m_EntityHelper);
+            showEntityInfo.EntityGroup.RegisterEntityInstanceObject(entityInstanceObject, true);
 
             InternalShowEntity(showEntityInfo.EntityId, entityAssetName, showEntityInfo.EntityGroup, entityInstanceObject.Target, true, duration, showEntityInfo.UserData);
         }
@@ -1132,6 +1137,5 @@ namespace XFramework.Entity
                 m_ShowEntityDependencyAssetEventHandler(this, new ShowEntityDependencyAssetEventArgs(showEntityInfo.EntityId, entityAssetName, showEntityInfo.EntityGroup.Name, dependencyAssetName, loadedCount, totalCount, showEntityInfo.UserData));
             }
         }
-
     }
 }

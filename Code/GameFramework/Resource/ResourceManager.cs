@@ -1,11 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using XFramework.Base;
-using XFramework.Download;
-using XFramework.ObjectPool;
-using XFramework.Util;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Resource
+using GameFramework.Download;
+using GameFramework.ObjectPool;
+using System;
+using System.Collections.Generic;
+
+namespace GameFramework.Resource
 {
     /// <summary>
     /// 资源管理器。
@@ -126,7 +131,7 @@ namespace XFramework.Resource
         }
 
         /// <summary>
-        /// 获取资源模式
+        /// 获取资源模式。
         /// </summary>
         public ResourceMode ResourceMode
         {
@@ -146,7 +151,6 @@ namespace XFramework.Resource
                 return m_CurrentVariant;
             }
         }
-
 
         /// <summary>
         /// 获取当前资源适用的游戏版本号。
@@ -180,7 +184,6 @@ namespace XFramework.Resource
                 return m_AssetInfos.Count;
             }
         }
-
 
         /// <summary>
         /// 获取已准备完毕资源数量。
@@ -470,7 +473,6 @@ namespace XFramework.Resource
             }
         }
 
-
         /// <summary>
         /// 资源检查完成事件。
         /// </summary>
@@ -707,7 +709,6 @@ namespace XFramework.Resource
             {
                 throw new GameFrameworkException("You can not change resource mode at this time.");
             }
-
         }
 
         /// <summary>
@@ -851,7 +852,6 @@ namespace XFramework.Resource
 
             return m_VersionListProcessor.CheckVersionList(latestInternalResourceVersion);
         }
-
 
         /// <summary>
         /// 使用可更新模式并更新版本资源列表。
@@ -1338,6 +1338,5 @@ namespace XFramework.Resource
                 m_ResourceUpdateAllCompleteEventHandler(this, new ResourceUpdateAllCompleteEventArgs());
             }
         }
-
     }
 }

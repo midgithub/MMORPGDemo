@@ -1,6 +1,13 @@
-﻿using System;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Setting
+using System;
+
+namespace GameFramework.Setting
 {
     /// <summary>
     /// 配置管理器辅助器接口。

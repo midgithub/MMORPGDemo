@@ -1,8 +1,14 @@
-﻿using System.Collections.Generic;
-using XFramework.Base;
-using XFramework.ObjectPool;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Entity
+using GameFramework.ObjectPool;
+using System.Collections.Generic;
+
+namespace GameFramework.Entity
 {
     internal partial class EntityManager
     {
@@ -26,9 +32,7 @@ namespace XFramework.Entity
             /// <param name="instancePriority">实体实例对象池的优先级。</param>
             /// <param name="entityGroupHelper">实体组辅助器。</param>
             /// <param name="objectPoolManager">对象池管理器。</param>
-            public EntityGroup(string name, float instanceAutoReleaseInterval, int instanceCapacity,
-                float instanceExpireTime, int instancePriority, IEntityGroupHelper entityGroupHelper,
-                IObjectPoolManager objectPoolManager)
+            public EntityGroup(string name, float instanceAutoReleaseInterval, int instanceCapacity, float instanceExpireTime, int instancePriority, IEntityGroupHelper entityGroupHelper, IObjectPoolManager objectPoolManager)
             {
                 if (string.IsNullOrEmpty(name))
                 {
@@ -319,8 +323,6 @@ namespace XFramework.Entity
             {
                 m_InstancePool.SetPriority(entity, priority);
             }
-
         }
-
     }
 }

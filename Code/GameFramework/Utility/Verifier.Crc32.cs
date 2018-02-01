@@ -1,6 +1,13 @@
-﻿using System.Security.Cryptography;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Util
+using System.Security.Cryptography;
+
+namespace GameFramework
 {
     public static partial class Utility
     {
@@ -131,8 +138,6 @@ namespace XFramework.Util
                     return new byte[] { (byte)((x >> 24) & 0xff), (byte)((x >> 16) & 0xff), (byte)((x >> 8) & 0xff), (byte)(x & 0xff) };
                 }
             }
-
         }
-
     }
 }

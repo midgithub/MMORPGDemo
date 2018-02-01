@@ -1,9 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using XFramework.Base;
-using XFramework.Resource;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Localization
+using GameFramework.Resource;
+using System;
+using System.Collections.Generic;
+
+namespace GameFramework.Localization
 {
     /// <summary>
     /// 本地化管理器。

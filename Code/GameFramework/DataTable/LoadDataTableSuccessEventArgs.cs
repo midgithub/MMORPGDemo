@@ -1,6 +1,11 @@
-﻿using XFramework.Base;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.DataTable
+namespace GameFramework.DataTable
 {
     /// <summary>
     /// 加载数据表成功事件。
@@ -13,7 +18,7 @@ namespace XFramework.DataTable
         /// <param name="dataTableAssetName">数据表资源名称。</param>
         /// <param name="duration">加载持续时间。</param>
         /// <param name="userData">用户自定义数据。</param>
-        public LoadDataTableSuccessEventArgs(string dataTableAssetName,float duration,object userData)
+        public LoadDataTableSuccessEventArgs(string dataTableAssetName, float duration, object userData)
         {
             DataTableAssetName = dataTableAssetName;
             Duration = duration;
@@ -47,5 +52,4 @@ namespace XFramework.DataTable
             private set;
         }
     }
-
 }

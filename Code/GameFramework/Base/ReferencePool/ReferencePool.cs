@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace XFramework.Base
+namespace GameFramework
 {
     /// <summary>
     /// 引用池。

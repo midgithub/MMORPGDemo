@@ -1,8 +1,14 @@
-﻿using System;
-using System.Text;
-using XFramework.Base;
+﻿//------------------------------------------------------------
+// Game Framework v3.x
+// Copyright © 2013-2018 Jiang Yin. All rights reserved.
+// Homepage: http://gameframework.cn/
+// Feedback: mailto:jiangyin@gameframework.cn
+//------------------------------------------------------------
 
-namespace XFramework.Util
+using System;
+using System.Text;
+
+namespace GameFramework
 {
     public static partial class Utility
     {
@@ -15,7 +21,7 @@ namespace XFramework.Util
             private const float CentimetersToInches = 1f / InchesToCentimeters; // 1 cm = 0.3937 inches
 
             /// <summary>
-            /// 获取数据在此计算机结构中存储时的字节顺序(是否是低位优先)。
+            /// 获取数据在此计算机结构中存储时的字节顺序。
             /// </summary>
             public static bool IsLittleEndian
             {
@@ -429,7 +435,5 @@ namespace XFramework.Util
                 return Encoding.UTF8.GetString(value, 0, value.Length);
             }
         }
-
-
     }
 }
