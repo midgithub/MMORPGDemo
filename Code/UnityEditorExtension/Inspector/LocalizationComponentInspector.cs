@@ -1,9 +1,8 @@
 ﻿using UnityEditor;
-using UnityEditorExtension.Inspector;
 using UnityEditorExtension.Misc;
 using UnityGameFramework.Runtime;
 
-namespace UnityGameFramework.Editor
+namespace UnityEditorExtension.Inspector
 {
     [CustomEditor(typeof(LocalizationComponent))]
     internal sealed class LocalizationComponentInspector : GameFrameworkInspector

@@ -1,9 +1,8 @@
 ﻿using UnityEditor;
-using UnityEditorExtension.Inspector;
 using UnityGameFramework.Runtime;
 using XFramework.DataNode;
 
-namespace UnityGameFramework.Editor
+namespace UnityEditorExtension.Inspector
 {
     [CustomEditor(typeof(DataNodeComponent))]
     internal sealed class DataNodeComponentInspector : GameFrameworkInspector

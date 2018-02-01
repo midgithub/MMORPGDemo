@@ -1,11 +1,10 @@
 ﻿using UnityEditor;
-using UnityEditorExtension.Inspector;
 using UnityEditorExtension.Misc;
 using UnityGameFramework.Runtime;
 using XFramework.DataTable;
 using XFramework.Util;
 
-namespace UnityGameFramework.Editor
+namespace UnityEditorExtension.Inspector
 {
     [CustomEditor(typeof(DataTableComponent))]
     internal sealed class DataTableComponentInspector : GameFrameworkInspector

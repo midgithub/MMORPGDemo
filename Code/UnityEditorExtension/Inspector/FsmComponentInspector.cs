@@ -1,10 +1,9 @@
 ﻿using UnityEditor;
-using UnityEditorExtension.Inspector;
 using UnityGameFramework.Runtime;
 using XFramework.Fsm;
 using XFramework.Util;
 
-namespace UnityGameFramework.Editor
+namespace UnityEditorExtension.Inspector
 {
     [CustomEditor(typeof(FsmComponent))]
     internal sealed class FsmComponentInspector : GameFrameworkInspector

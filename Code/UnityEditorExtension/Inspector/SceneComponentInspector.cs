@@ -1,9 +1,8 @@
 ﻿using UnityEditor;
-using UnityEditorExtension.Inspector;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
-namespace UnityGameFramework.Editor
+namespace UnityEditorExtension.Inspector
 {
     [CustomEditor(typeof(SceneComponent))]
     internal sealed class SceneComponentInspector : GameFrameworkInspector

@@ -1,8 +1,7 @@
 ﻿using UnityEditor;
-using UnityEditorExtension.Inspector;
 using UnityGameFramework.Runtime;
 
-namespace UnityGameFramework.Editor
+namespace UnityEditorExtension.Inspector
 {
     [CustomEditor(typeof(DebuggerComponent))]
     internal sealed class DebuggerComponentInspector : GameFrameworkInspector

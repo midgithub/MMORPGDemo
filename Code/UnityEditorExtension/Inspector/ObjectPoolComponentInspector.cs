@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEditor;
-using UnityEditorExtension.Inspector;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 using XFramework.ObjectPool;
 using XFramework.Util;
 
-namespace UnityGameFramework.Editor
+namespace UnityEditorExtension.Inspector
 {
     [CustomEditor(typeof(ObjectPoolComponent))]
     internal sealed class ObjectPoolComponentInspector : GameFrameworkInspector

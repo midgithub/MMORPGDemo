@@ -1,9 +1,8 @@
 ﻿using UnityEditor;
-using UnityEditorExtension.Inspector;
 using UnityGameFramework.Runtime;
 using XFramework.Network;
 
-namespace UnityGameFramework.Editor
+namespace UnityEditorExtension.Inspector
 {
     [CustomEditor(typeof(NetworkComponent))]
     internal sealed class NetworkComponentInspector : GameFrameworkInspector

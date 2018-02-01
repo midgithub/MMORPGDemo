@@ -44,6 +44,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssetBundleBuilder\IBuildEventHandler.cs" />
+    <Compile Include="AssetBundleCollection\Asset.cs" />
+    <Compile Include="AssetBundleCollection\AssetBundle.cs" />
+    <Compile Include="AssetBundleCollection\AssetBundleCollection.cs" />
+    <Compile Include="AssetBundleCollection\AssetBundleCollectionConfigPathAttribute.cs" />
+    <Compile Include="AssetBundleCollection\AssetBundleLoadType.cs" />
+    <Compile Include="AssetBundleCollection\AssetBundleType.cs" />
     <Compile Include="Inspector\BaseComponentInspector.cs" />
     <Compile Include="Inspector\DataNodeComponentInspector.cs" />
     <Compile Include="Inspector\DataTableComponentInspector.cs" />

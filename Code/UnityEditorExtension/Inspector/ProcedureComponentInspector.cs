@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
-using UnityEditorExtension.Inspector;
 using UnityEditorExtension.Misc;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 using XFramework.Procedure;
 
-namespace UnityGameFramework.Editor
+namespace UnityEditorExtension.Inspector
 {
     [CustomEditor(typeof(ProcedureComponent))]
     internal sealed class ProcedureComponentInspector : GameFrameworkInspector
