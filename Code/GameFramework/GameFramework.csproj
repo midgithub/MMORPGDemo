@@ -11,6 +11,7 @@
     <AssemblyName>GameFramework</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -295,4 +296,10 @@
     <Compile Include="WebRequest\WebRequestStartEventArgs.cs" />
     <Compile Include="WebRequest\WebRequestSuccessEventArgs.cs" />
   </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>cd $(SolutionDir)Build
+
+.Project$(ProjectName).py $(ConfigurationName) $(TargetDir) $(TargetName)
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>

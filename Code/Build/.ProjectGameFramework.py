@@ -13,7 +13,7 @@ if(platform.system() =="Windows"):
     isWin = True
 
 
-resPath = currentPath + "/../../Project/Assets/Plugins/Runtime/"
+resPath = currentPath + "/../../Project/Assets/GameFramework/Libraries/"
 
 def mkdirs(path):
     path=path.strip()
