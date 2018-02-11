@@ -373,9 +373,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116470}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1799.9998, y: -1349.9998, z: 0}
+  m_LocalScale: {x: 1.8749999, y: 1.8749999, z: 1.8749999}
   m_Children:
   - {fileID: 455962}
   - {fileID: 465000}
@@ -596,8 +596,9 @@ MonoBehaviour:
   m_Script: {fileID: 1950136716, guid: c6060e8ed8f5f144886c7196d8145370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AvailableProcedureTypeNames: []
-  m_EntranceProcedureTypeName: 
+  m_AvailableProcedureTypeNames:
+  - GameMain.ProcedureShowDialog
+  m_EntranceProcedureTypeName: GameMain.ProcedureShowDialog
 --- !u!114 &11413340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -793,8 +794,8 @@ MonoBehaviour:
   m_Script: {fileID: 87270844, guid: c6060e8ed8f5f144886c7196d8145370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ResourceMode: 2
-  m_ReadWritePathType: 0
+  m_ResourceMode: 1
+  m_ReadWritePathType: 2
   m_UnloadUnusedAssetsInterval: 60
   m_AssetAutoReleaseInterval: 60
   m_AssetCapacity: 64
@@ -824,7 +825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EditorResourceMode: 1
-  m_EditorLanguage: 0
+  m_EditorLanguage: 8
   m_LogHelperTypeName: UnityGameFramework.Runtime.LogHelper
   m_ZipHelperTypeName: UnityGameFramework.Runtime.ZipHelper
   m_JsonHelperTypeName: UnityGameFramework.Runtime.JsonHelper
@@ -880,7 +881,7 @@ MonoBehaviour:
   m_InstanceRoot: {fileID: 0}
   m_UIFormHelperTypeName: UnityGameFramework.Runtime.DefaultUIFormHelper
   m_CustomUIFormHelper: {fileID: 0}
-  m_UIGroupHelperTypeName: UnityGameFramework.Runtime.DefaultUIGroupHelper
+  m_UIGroupHelperTypeName: GameMain.FairyGuiGroupHelper
   m_CustomUIGroupHelper: {fileID: 0}
   m_UIGroups:
   - m_Name: Default

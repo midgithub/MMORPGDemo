@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8E90FF95-73D0-4BDB-8EBB-EBAB92737015}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GUISystem</RootNamespace>
+    <AssemblyName>GUISystem</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UNITY_5_3_OR_NEWER;UNITY_5</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5;UNITY_5_3_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DOTween">
+      <HintPath>..\Libs\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEditor">
+      <HintPath>..\Libs\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\Libs\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FairyGUI\Core\BlendMode.cs" />
+    <Compile Include="FairyGUI\Core\CaptureCamera.cs" />
+    <Compile Include="FairyGUI\Core\Container.cs" />
+    <Compile Include="FairyGUI\Core\DisplayObject.cs" />
+    <Compile Include="FairyGUI\Core\DisplayOptions.cs" />
+    <Compile Include="FairyGUI\Core\FillUtils.cs" />
+    <Compile Include="FairyGUI\Core\GoWrapper.cs" />
+    <Compile Include="FairyGUI\Core\HitTest\BoxColliderHitTest.cs" />
+    <Compile Include="FairyGUI\Core\HitTest\ColliderHitTest.cs" />
+    <Compile Include="FairyGUI\Core\HitTest\HitTestContext.cs" />
+    <Compile Include="FairyGUI\Core\HitTest\IHitTest.cs" />
+    <Compile Include="FairyGUI\Core\HitTest\MeshColliderHitTest.cs" />
+    <Compile Include="FairyGUI\Core\HitTest\PixelHitTest.cs" />
+    <Compile Include="FairyGUI\Core\HitTest\RectHitTest.cs" />
+    <Compile Include="FairyGUI\Core\Image.cs" />
+    <Compile Include="FairyGUI\Core\MaterialManager.cs" />
+    <Compile Include="FairyGUI\Core\MaterialPool.cs" />
+    <Compile Include="FairyGUI\Core\MovieClip.cs" />
+    <Compile Include="FairyGUI\Core\NGraphics.cs" />
+    <Compile Include="FairyGUI\Core\NMaterial.cs" />
+    <Compile Include="FairyGUI\Core\NTexture.cs" />
+    <Compile Include="FairyGUI\Core\PlayState.cs" />
+    <Compile Include="FairyGUI\Core\ShaderConfig.cs" />
+    <Compile Include="FairyGUI\Core\Shape.cs" />
+    <Compile Include="FairyGUI\Core\Stage.cs" />
+    <Compile Include="FairyGUI\Core\StageCamera.cs" />
+    <Compile Include="FairyGUI\Core\StageEngine.cs" />
+    <Compile Include="FairyGUI\Core\Stats.cs" />
+    <Compile Include="FairyGUI\Core\Text\BaseFont.cs" />
+    <Compile Include="FairyGUI\Core\Text\BitmapFont.cs" />
+    <Compile Include="FairyGUI\Core\Text\CopyPastePatch.cs" />
+    <Compile Include="FairyGUI\Core\Text\DynamicFont.cs" />
+    <Compile Include="FairyGUI\Core\Text\Emoji.cs" />
+    <Compile Include="FairyGUI\Core\Text\FontManager.cs" />
+    <Compile Include="FairyGUI\Core\Text\IKeyboard.cs" />
+    <Compile Include="FairyGUI\Core\Text\InputTextField.cs" />
+    <Compile Include="FairyGUI\Core\Text\RichTextField.cs" />
+    <Compile Include="FairyGUI\Core\Text\SelectionShape.cs" />
+    <Compile Include="FairyGUI\Core\Text\TextField.cs" />
+    <Compile Include="FairyGUI\Core\Text\TextFormat.cs" />
+    <Compile Include="FairyGUI\Core\Text\TouchScreenKeyboard.cs" />
+    <Compile Include="FairyGUI\Core\Text\TypingEffect.cs" />
+    <Compile Include="FairyGUI\Core\UpdateContext.cs" />
+    <Compile Include="FairyGUI\Editor\EditorToolSet.cs" />
+    <Compile Include="FairyGUI\Editor\PackagesWindow.cs" />
+    <Compile Include="FairyGUI\Editor\StageCameraEditor.cs" />
+    <Compile Include="FairyGUI\Editor\UIConfigEditor.cs" />
+    <Compile Include="FairyGUI\Editor\UIContentScalerEditor.cs" />
+    <Compile Include="FairyGUI\Editor\UIPainterEditor.cs" />
+    <Compile Include="FairyGUI\Editor\UIPanelEditor.cs" />
+    <Compile Include="FairyGUI\Event\EventBridge.cs" />
+    <Compile Include="FairyGUI\Event\EventContext.cs" />
+    <Compile Include="FairyGUI\Event\EventDispatcher.cs" />
+    <Compile Include="FairyGUI\Event\EventListener.cs" />
+    <Compile Include="FairyGUI\Event\IEventDispatcher.cs" />
+    <Compile Include="FairyGUI\Event\InputEvent.cs" />
+    <Compile Include="FairyGUI\Filter\BlurFilter.cs" />
+    <Compile Include="FairyGUI\Filter\ColorFilter.cs" />
+    <Compile Include="FairyGUI\Filter\IFilter.cs" />
+    <Compile Include="FairyGUI\Gesture\LongPressGesture.cs" />
+    <Compile Include="FairyGUI\Gesture\PinchGesture.cs" />
+    <Compile Include="FairyGUI\Gesture\RotationGesture.cs" />
+    <Compile Include="FairyGUI\Gesture\SwipeGesture.cs" />
+    <Compile Include="FairyGUI\UI\Action\ChangePageAction.cs" />
+    <Compile Include="FairyGUI\UI\Action\ControllerAction.cs" />
+    <Compile Include="FairyGUI\UI\Action\PlayTransitionAction.cs" />
+    <Compile Include="FairyGUI\UI\Controller.cs" />
+    <Compile Include="FairyGUI\UI\DragDropManager.cs" />
+    <Compile Include="FairyGUI\UI\EMRenderSupport.cs" />
+    <Compile Include="FairyGUI\UI\FieldTypes.cs" />
+    <Compile Include="FairyGUI\UI\GButton.cs" />
+    <Compile Include="FairyGUI\UI\GComboBox.cs" />
+    <Compile Include="FairyGUI\UI\GComponent.cs" />
+    <Compile Include="FairyGUI\UI\Gears\GearAnimation.cs" />
+    <Compile Include="FairyGUI\UI\Gears\GearBase.cs" />
+    <Compile Include="FairyGUI\UI\Gears\GearColor.cs" />
+    <Compile Include="FairyGUI\UI\Gears\GearDisplay.cs" />
+    <Compile Include="FairyGUI\UI\Gears\GearIcon.cs" />
+    <Compile Include="FairyGUI\UI\Gears\GearLook.cs" />
+    <Compile Include="FairyGUI\UI\Gears\GearSize.cs" />
+    <Compile Include="FairyGUI\UI\Gears\GearText.cs" />
+    <Compile Include="FairyGUI\UI\Gears\GearXY.cs" />
+    <Compile Include="FairyGUI\UI\Gears\IAnimationGear.cs" />
+    <Compile Include="FairyGUI\UI\Gears\IColorGear.cs" />
+    <Compile Include="FairyGUI\UI\GGraph.cs" />
+    <Compile Include="FairyGUI\UI\GGroup.cs" />
+    <Compile Include="FairyGUI\UI\GImage.cs" />
+    <Compile Include="FairyGUI\UI\GLabel.cs" />
+    <Compile Include="FairyGUI\UI\GList.cs" />
+    <Compile Include="FairyGUI\UI\GLoader.cs" />
+    <Compile Include="FairyGUI\UI\GMovieClip.cs" />
+    <Compile Include="FairyGUI\UI\GObject.cs" />
+    <Compile Include="FairyGUI\UI\GObjectPool.cs" />
+    <Compile Include="FairyGUI\UI\GProgressBar.cs" />
+    <Compile Include="FairyGUI\UI\GRichTextField.cs" />
+    <Compile Include="FairyGUI\UI\GRoot.cs" />
+    <Compile Include="FairyGUI\UI\GScrollBar.cs" />
+    <Compile Include="FairyGUI\UI\GSlider.cs" />
+    <Compile Include="FairyGUI\UI\GTextField.cs" />
+    <Compile Include="FairyGUI\UI\GTextInput.cs" />
+    <Compile Include="FairyGUI\UI\IUISource.cs" />
+    <Compile Include="FairyGUI\UI\Margin.cs" />
+    <Compile Include="FairyGUI\UI\PackageItem.cs" />
+    <Compile Include="FairyGUI\UI\PageOption.cs" />
+    <Compile Include="FairyGUI\UI\PopupMenu.cs" />
+    <Compile Include="FairyGUI\UI\RelationItem.cs" />
+    <Compile Include="FairyGUI\UI\Relations.cs" />
+    <Compile Include="FairyGUI\UI\ScrollPane.cs" />
+    <Compile Include="FairyGUI\UI\Transition.cs" />
+    <Compile Include="FairyGUI\UI\Tree\ITreeListener.cs" />
+    <Compile Include="FairyGUI\UI\Tree\TreeNode.cs" />
+    <Compile Include="FairyGUI\UI\Tree\TreeView.cs" />
+    <Compile Include="FairyGUI\UI\UIConfig.cs" />
+    <Compile Include="FairyGUI\UI\UIContentScaler.cs" />
+    <Compile Include="FairyGUI\UI\UIObjectFactory.cs" />
+    <Compile Include="FairyGUI\UI\UIPackage.cs" />
+    <Compile Include="FairyGUI\UI\UIPainter.cs" />
+    <Compile Include="FairyGUI\UI\UIPanel.cs" />
+    <Compile Include="FairyGUI\UI\Window.cs" />
+    <Compile Include="FairyGUI\Utils\ByteBuffer.cs" />
+    <Compile Include="FairyGUI\Utils\Html\HtmlButton.cs" />
+    <Compile Include="FairyGUI\Utils\Html\HtmlElement.cs" />
+    <Compile Include="FairyGUI\Utils\Html\HtmlImage.cs" />
+    <Compile Include="FairyGUI\Utils\Html\HtmlInput.cs" />
+    <Compile Include="FairyGUI\Utils\Html\HtmlLink.cs" />
+    <Compile Include="FairyGUI\Utils\Html\HtmlPageContext.cs" />
+    <Compile Include="FairyGUI\Utils\Html\HtmlParseOptions.cs" />
+    <Compile Include="FairyGUI\Utils\Html\HtmlParser.cs" />
+    <Compile Include="FairyGUI\Utils\Html\HtmlSelect.cs" />
+    <Compile Include="FairyGUI\Utils\Html\IHtmlObject.cs" />
+    <Compile Include="FairyGUI\Utils\Html\IHtmlPageContext.cs" />
+    <Compile Include="FairyGUI\Utils\Timers.cs" />
+    <Compile Include="FairyGUI\Utils\ToolSet.cs" />
+    <Compile Include="FairyGUI\Utils\UBBParser.cs" />
+    <Compile Include="FairyGUI\Utils\XML.cs" />
+    <Compile Include="FairyGUI\Utils\XMLIterator.cs" />
+    <Compile Include="FairyGUI\Utils\XMLList.cs" />
+    <Compile Include="FairyGUI\Utils\XMLUtils.cs" />
+    <Compile Include="FairyGUI\Utils\ZipReader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>cd $(SolutionDir)Build
+
+.Project$(ProjectName).py $(ConfigurationName) $(TargetDir) $(TargetName)
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

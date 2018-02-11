@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityRuntimeFramework", "Un
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEditorExtension", "UnityEditorExtension\UnityEditorExtension.csproj", "{28FF7B3E-B34F-4839-9761-EA444B609EE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUISystem", "GUISystem\GUISystem.csproj", "{8E90FF95-73D0-4BDB-8EBB-EBAB92737015}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameMain", "GameMain\GameMain.csproj", "{2B4800A4-FA33-4D7F-A212-3802B43B5256}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameView", "GameView\GameView.csproj", "{5E8648A4-E72A-432D-9CCD-01619DBCCAAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +33,18 @@ Global
 		{28FF7B3E-B34F-4839-9761-EA444B609EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28FF7B3E-B34F-4839-9761-EA444B609EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28FF7B3E-B34F-4839-9761-EA444B609EE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E90FF95-73D0-4BDB-8EBB-EBAB92737015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E90FF95-73D0-4BDB-8EBB-EBAB92737015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E90FF95-73D0-4BDB-8EBB-EBAB92737015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E90FF95-73D0-4BDB-8EBB-EBAB92737015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B4800A4-FA33-4D7F-A212-3802B43B5256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B4800A4-FA33-4D7F-A212-3802B43B5256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B4800A4-FA33-4D7F-A212-3802B43B5256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B4800A4-FA33-4D7F-A212-3802B43B5256}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E8648A4-E72A-432D-9CCD-01619DBCCAAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E8648A4-E72A-432D-9CCD-01619DBCCAAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E8648A4-E72A-432D-9CCD-01619DBCCAAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E8648A4-E72A-432D-9CCD-01619DBCCAAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
