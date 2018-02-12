@@ -22,7 +22,7 @@ namespace GameMain
             base.OnEnter(procedureOwner);
 
             //设置下一个场景为Login
-            procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId,(int)SceneId.Login);
+            procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId,(int)SceneId.Logo);
 
         }
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)

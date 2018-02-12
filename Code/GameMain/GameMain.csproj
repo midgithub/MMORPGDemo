@@ -47,11 +47,17 @@
     <Compile Include="Base\GameEntry.cs" />
     <Compile Include="Base\GameEntry.Custom.cs" />
     <Compile Include="DataTable\DataTableExtension.cs" />
+    <Compile Include="DataTable\DREntity.cs" />
     <Compile Include="DataTable\DRMusic.cs" />
     <Compile Include="DataTable\DRScene.cs" />
     <Compile Include="DataTable\DRUIForm.cs" />
     <Compile Include="DataTable\DRUISound.cs" />
     <Compile Include="Definition\Constant\Constant.ProcedureData.cs" />
+    <Compile Include="Entity\EntityData\EntityData.cs" />
+    <Compile Include="Entity\EntityData\LogoEntityData.cs" />
+    <Compile Include="Entity\EntityExtension.cs" />
+    <Compile Include="Entity\EntityLogic\Entity.cs" />
+    <Compile Include="Entity\EntityLogic\LogoEntity.cs" />
     <Compile Include="Localization\LocalizationExtension.cs" />
     <Compile Include="Procedure\ProcedureBase.cs" />
     <Compile Include="Procedure\ProcedureChangeScene.cs" />

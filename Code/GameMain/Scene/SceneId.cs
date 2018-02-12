@@ -8,9 +8,14 @@
         Undefined = 0,
 
         /// <summary>
+        /// Logo场景
+        /// </summary>
+        Logo = 1,
+
+        /// <summary>
         /// Login登陆场景
         /// </summary>
-        Login = 1,
+        Login = 2,
     }
 
 
