@@ -373,9 +373,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116470}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1799.9998, y: -1349.9998, z: 0}
-  m_LocalScale: {x: 1.8749999, y: 1.8749999, z: 1.8749999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 455962}
   - {fileID: 465000}
@@ -597,8 +597,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AvailableProcedureTypeNames:
+  - GameMain.ProcedureChangeScene
+  - GameMain.ProcedureLaunch
+  - GameMain.ProcedureLogin
+  - GameMain.ProcedurePreload
   - GameMain.ProcedureShowDialog
-  m_EntranceProcedureTypeName: GameMain.ProcedureShowDialog
+  - GameMain.ProcedureSplash
+  m_EntranceProcedureTypeName: GameMain.ProcedureLaunch
 --- !u!114 &11413340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -884,6 +889,8 @@ MonoBehaviour:
   m_UIGroupHelperTypeName: GameMain.FairyGuiGroupHelper
   m_CustomUIGroupHelper: {fileID: 0}
   m_UIGroups:
+  - m_Name: Common
+    m_Depth: 1
   - m_Name: Default
     m_Depth: 0
 --- !u!114 &114967677140151710

@@ -5,17 +5,15 @@
     /// </summary>
     public enum SceneId
     {
-        Undefined = 0,
-
         /// <summary>
-        /// Logo场景
+        /// 未定义
         /// </summary>
-        Logo = 1,
+        Undefined = 0,
 
         /// <summary>
         /// Login登陆场景
         /// </summary>
-        Login = 2,
+        Login = 1,
     }
 
 

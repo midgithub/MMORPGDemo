@@ -58,6 +58,9 @@ namespace GameMain
                 return;
             }
 
+            //打开加载进度界面
+            GameEntry.UI.OpenUIForm(UIFormId.LoadingForm, sceneId);
+
             GameEntry.Scene.LoadScene(AssetUtility.GetSceneAsset(drScene.AssetName),this);
             m_BackgroundMusicId = drScene.BackgroundMusicId;
         }
@@ -89,7 +92,7 @@ namespace GameMain
             switch (CurLoadedSceneId)
             {
                 case SceneId.Login:
-
+                    ChangeState<ProcedureLogin>(procedureOwner);
                     break;
             }
         }
@@ -110,6 +113,7 @@ namespace GameMain
             }
 
             m_IsChangeSceneComplete = true;
+            GameEntry.UI.CloseUIForm(UIFormId.LoadingForm);
         }
 
         private void OnLoadSceneFailure(object sender, GameEventArgs e)

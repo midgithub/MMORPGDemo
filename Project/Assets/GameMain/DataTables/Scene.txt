@@ -2,5 +2,4 @@
 #	Id		AssetName	BackgroundMusicId
 #	int		string	int
 #	场景编号	备注	资源名称	背景音乐编号
-	1	Logo场景	Logo	1
-	2	Login场景	Login	2
+	1	Login场景	Login	1

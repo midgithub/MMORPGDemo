@@ -1,4 +1,5 @@
-﻿using UnityGameFramework.Runtime;
+﻿using UnityEngine;
+using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
 namespace GameMain
@@ -8,7 +9,8 @@ namespace GameMain
     /// </summary>
     public class ProcedureSplash : ProcedureBase
     {
-        private int logoEntityID = 0;
+        private string logoPrefabPath = "Logo/Logo";
+        private GameObject logoGo = null;
 
         public override bool UseNativeDialog
         {
@@ -22,9 +24,9 @@ namespace GameMain
         {
             base.OnEnter(procedureOwner);
 
-            logoEntityID = GameEntry.Entity.GenerateSerialId();
-            LogoEntityData data = new LogoEntityData(logoEntityID, 10000);
-            GameEntry.Entity.ShowEntity(typeof(LogoEntity), "LogoEntity", data);
+            logoGo = GameObject.Instantiate(Resources.Load<GameObject>(logoPrefabPath));
+
+            procedureOwner.SetData<VarGameObject>(Constant.ProcedureData.SplashGo, logoGo);
         }
 
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
@@ -40,7 +42,12 @@ namespace GameMain
         {
             base.OnLeave(procedureOwner, isShutdown);
 
-            GameEntry.Entity.DetachEntity(logoEntityID);
+            //GameObject.Destroy(logoGo);
+        }
+
+        private void OnProcedurePreloadOver(ProcedureOwner fsm, object sender, object userData)
+        {
+
         }
 
     }

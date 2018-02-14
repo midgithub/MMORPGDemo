@@ -72,7 +72,8 @@
     <Compile Include="UI\Base\FairyGuiForm.cs" />
     <Compile Include="UI\Base\FairyGuiGroupHelper.cs" />
     <Compile Include="UI\Base\FairyGuiStage.cs" />
-    <Compile Include="UI\Define\DialogParams.cs" />
+    <Compile Include="UI\Define\DialogFormParams.cs" />
+    <Compile Include="UI\Define\LoginFormParams.cs" />
     <Compile Include="UI\Define\UIFormId.cs" />
     <Compile Include="UI\Util\UIExtension.cs" />
     <Compile Include="Utility\AssetUtility.cs" />

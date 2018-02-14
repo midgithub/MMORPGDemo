@@ -42,6 +42,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonForm\LoadingForm.cs" />
+    <Compile Include="Login\LoginForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommonForm\DialogForm.cs" />
   </ItemGroup>

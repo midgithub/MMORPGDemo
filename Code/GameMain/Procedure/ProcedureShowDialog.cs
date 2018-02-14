@@ -18,7 +18,7 @@ namespace GameMain
 
             GameEntry.Event.Subscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
 
-            DialogParams parms = new DialogParams();
+            DialogFormParams parms = new DialogFormParams();
             parms.Title = "Title";
             parms.Message = "是否退出游戏？";
             parms.Mode = 3;

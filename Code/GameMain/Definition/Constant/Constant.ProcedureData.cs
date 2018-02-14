@@ -1,5 +1,6 @@
 ﻿
 
+using UnityEngine;
 namespace GameMain
 {
     public static partial class Constant
@@ -8,6 +9,8 @@ namespace GameMain
         {
             public const string NextSceneId = "NextSceneId";
             public const string GameMode = "GameMode";
+            public const string SplashGo = "Logo";
+
         }
 
 

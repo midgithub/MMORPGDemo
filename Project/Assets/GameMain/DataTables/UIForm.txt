@@ -2,7 +2,6 @@
 #	Id		AssetName	UIGroupName	AllowMultiInstance	PauseCoveredUIForm
 #	int		string	string	bool	bool
 #	界面编号	策划备注	资源名称	界面组名称	是否允许多个界面实例	是否暂停被其覆盖的界面
-	1	弹出框	FormPrefabs/Common/DialogForm	Default	TRUE	TRUE
-	100	主菜单	MenuForm	Default	FALSE	TRUE
-	101	设置	SettingForm	Default	FALSE	TRUE
-	102	关于	AboutForm	Default	FALSE	TRUE
+	1001	加载进度	FormPrefabs/Common/LoadingForm	Common	TRUE	TRUE
+	1002	对话框界面	FormPrefabs/Common/DialogForm	Common	FALSE	TRUE
+	1003	登陆框界面	FormPrefabs/Common/LoginForm	Default	FALSE	TRUE

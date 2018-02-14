@@ -92,34 +92,34 @@ namespace GameView
         {
             base.OnOpen(userData);
 
-            DialogParams dialogParams = (DialogParams)userData;
-            if (dialogParams == null)
+            DialogFormParams data = (DialogFormParams)userData;
+            if (data == null)
             {
-                Log.Warning("DialogParams is invalid.");
+                Log.Warning("DialogFormParams is invalid.");
                 return;
             }
 
-            m_DialogMode = dialogParams.Mode;
+            m_DialogMode = data.Mode;
             RefreshDialogMode();
 
-            m_TitleText.text = dialogParams.Title;
-            m_MessageText.text = dialogParams.Message;
+            m_TitleText.text = data.Title;
+            m_MessageText.text = data.Message;
 
-            m_PauseGame = dialogParams.PauseGame;
+            m_PauseGame = data.PauseGame;
             RefreshPauseGame();
 
-            m_UserData = dialogParams.UserData;
+            m_UserData = data.UserData;
 
-            RefreshConfirmText(dialogParams.ConfirmText);
-            m_OnClickConfirm = dialogParams.OnClickConfirm;
+            RefreshConfirmText(data.ConfirmText);
+            m_OnClickConfirm = data.OnClickConfirm;
             m_ConfirmButton.onClick.Add((obj) => m_OnClickConfirm.Invoke(obj));
 
-            RefreshCancelText(dialogParams.CancelText);
-            m_OnClickCancel = dialogParams.OnClickCancel;
+            RefreshCancelText(data.CancelText);
+            m_OnClickCancel = data.OnClickCancel;
             m_CancelButton.onClick.Add((obj) => m_OnClickCancel.Invoke(obj));
 
-            RefreshOtherText(dialogParams.OtherText);
-            m_OnClickOther = dialogParams.OnClickOther;
+            RefreshOtherText(data.OtherText);
+            m_OnClickOther = data.OnClickOther;
             m_OtherButton.onClick.Add((obj) => m_OnClickOther.Invoke(obj));
         }
 
@@ -138,12 +138,15 @@ namespace GameView
 
             RefreshConfirmText(string.Empty);
             m_OnClickConfirm = null;
+            m_ConfirmButton.onClick.Clear();
 
             RefreshCancelText(string.Empty);
             m_OnClickCancel = null;
+            m_CancelButton.onClick.Clear();
 
             RefreshOtherText(string.Empty);
             m_OnClickOther = null;
+            m_OtherButton.onClick.Clear();
 
             base.OnClose(userData);
         }

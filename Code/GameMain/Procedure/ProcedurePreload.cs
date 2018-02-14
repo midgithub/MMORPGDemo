@@ -1,6 +1,7 @@
 ﻿using GameFramework;
 using GameFramework.Event;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
@@ -37,12 +38,18 @@ namespace GameMain
 
         protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
         {
+            base.OnLeave(procedureOwner, isShutdown);
+
             GameEntry.Event.Unsubscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
             GameEntry.Event.Unsubscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
             GameEntry.Event.Unsubscribe(LoadDictionarySuccessEventArgs.EventId, OnLoadDictionarySuccess);
             GameEntry.Event.Unsubscribe(LoadDictionaryFailureEventArgs.EventId, OnLoadDictionaryFailure);
 
-            base.OnLeave(procedureOwner, isShutdown);
+            GameObject logoGo = procedureOwner.GetData<VarGameObject>(Constant.ProcedureData.SplashGo);
+            if (logoGo != null)
+            {
+                GameObject.Destroy(logoGo);
+            }
         }
 
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
@@ -58,6 +65,7 @@ namespace GameMain
                 }
             }
 
+         //   GameEntry.Event.Fire(this,)
             ChangeState<ProcedureChangeScene>(procedureOwner);
         }
 

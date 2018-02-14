@@ -11,8 +11,18 @@
         Undefined = 0,
 
         /// <summary>
-        /// 弹出框。
+        /// 加载进度界面
         /// </summary>
-        DialogForm = 1,
+        LoadingForm = 1001,
+
+        /// <summary>
+        /// 对话框界面
+        /// </summary>
+        DialogForm = 1002,
+
+        /// <summary>
+        /// 登陆界面
+        /// </summary>
+        LoginForm = 1003,
     }
 }
