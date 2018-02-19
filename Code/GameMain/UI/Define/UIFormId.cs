@@ -24,5 +24,10 @@
         /// 登陆界面
         /// </summary>
         LoginForm = 1003,
+
+        /// <summary>
+        /// 创建角色
+        /// </summary>
+        CreateRole  = 1004,
     }
 }

@@ -175,8 +175,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &392718867
-RectTransform:
+--- !u!4 &392718867
+Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -188,11 +188,6 @@ RectTransform:
   m_Father: {fileID: 148599565}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &560612698
 Prefab:
   m_ObjectHideFlags: 0
@@ -200,6 +195,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 148599565}
     m_Modifications:
+    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_AvailableProcedureTypeNames.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 433714, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -237,6 +236,30 @@ Prefab:
       propertyPath: m_InstanceRoot
       value: 
       objectReference: {fileID: 1940344621}
+    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_AvailableProcedureTypeNames.Array.data[1]
+      value: GameMain.ProcedureCreateRole
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_AvailableProcedureTypeNames.Array.data[2]
+      value: GameMain.ProcedureLaunch
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_AvailableProcedureTypeNames.Array.data[3]
+      value: GameMain.ProcedureLogin
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_AvailableProcedureTypeNames.Array.data[4]
+      value: GameMain.ProcedurePreload
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_AvailableProcedureTypeNames.Array.data[5]
+      value: GameMain.ProcedureShowDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_AvailableProcedureTypeNames.Array.data[6]
+      value: GameMain.ProcedureSplash
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
   m_IsPrefabParent: 0
@@ -259,8 +282,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &738456886
-RectTransform:
+--- !u!4 &738456886
+Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -272,11 +295,6 @@ RectTransform:
   m_Father: {fileID: 148599565}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1143633548
 GameObject:
   m_ObjectHideFlags: 0

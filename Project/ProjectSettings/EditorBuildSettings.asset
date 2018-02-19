@@ -12,5 +12,5 @@ EditorBuildSettings:
     path: Assets/GameMain/Scenes/Login.unity
     guid: 250ffce6f353abd4a9f298f9b655b399
   - enabled: 1
-    path: Assets/GameMain/Scenes/Logo.unity
-    guid: fd75feafe2d10ca4897ab5c8317adec8
+    path: Assets/GameMain/Scenes/CreateRole.unity
+    guid: 08ca1c85d85eaf549b6f9552e2e7721a

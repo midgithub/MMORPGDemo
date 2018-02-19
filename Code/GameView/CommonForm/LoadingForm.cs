@@ -39,8 +39,10 @@ namespace GameView
                 Log.Warning("LoadingFormParams is invalid.");
                 return;
             }
-
-            m_BgCtrl.selectedIndex = sceneId;
+            int index = 0;
+            if (sceneId < 6 && sceneId > 0)
+                index = sceneId - 1;
+            m_BgCtrl.selectedIndex = index;
         }
 
         protected override void OnClose(object userData)

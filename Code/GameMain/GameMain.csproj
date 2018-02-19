@@ -61,6 +61,7 @@
     <Compile Include="Localization\LocalizationExtension.cs" />
     <Compile Include="Procedure\ProcedureBase.cs" />
     <Compile Include="Procedure\ProcedureChangeScene.cs" />
+    <Compile Include="Procedure\ProcedureCreateRole.cs" />
     <Compile Include="Procedure\ProcedureLaunch.cs" />
     <Compile Include="Procedure\ProcedureLogin.cs" />
     <Compile Include="Procedure\ProcedurePreload.cs" />
@@ -72,9 +73,10 @@
     <Compile Include="UI\Base\FairyGuiForm.cs" />
     <Compile Include="UI\Base\FairyGuiGroupHelper.cs" />
     <Compile Include="UI\Base\FairyGuiStage.cs" />
-    <Compile Include="UI\Define\DialogFormParams.cs" />
-    <Compile Include="UI\Define\LoginFormParams.cs" />
+    <Compile Include="UI\FormParams\DialogFormParams.cs" />
+    <Compile Include="UI\FormParams\LoginFormParams.cs" />
     <Compile Include="UI\Define\UIFormId.cs" />
+    <Compile Include="UI\FormParams\RoleCreateFormParams.cs" />
     <Compile Include="UI\Util\UIExtension.cs" />
     <Compile Include="Utility\AssetUtility.cs" />
   </ItemGroup>

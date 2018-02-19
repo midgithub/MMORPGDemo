@@ -94,6 +94,9 @@ namespace GameMain
                 case SceneId.Login:
                     ChangeState<ProcedureLogin>(procedureOwner);
                     break;
+                case SceneId.CreateRole:
+                    ChangeState<ProcedureCreateRole>(procedureOwner);
+                    break;
             }
         }
 

@@ -75,6 +75,6 @@ MonoBehaviour:
   rotation: {x: 0, y: 0, z: 0}
   fairyBatching: 0
   touchDisabled: 0
-  cachedUISize: {x: 1920, y: 1080}
+  cachedUISize: {x: 2047, y: 1080}
   hitTestMode: 0
   setNativeChildrenOrder: 0

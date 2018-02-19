@@ -46,6 +46,7 @@
     <Compile Include="Login\LoginForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommonForm\DialogForm.cs" />
+    <Compile Include="RoleCreate\RoleCreateForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GameFramework\GameFramework.csproj">
