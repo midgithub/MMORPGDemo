@@ -16,7 +16,13 @@ namespace GameMain
         private Vector3 m_Position = Vector3.zero;
 
         [SerializeField]
+        private Vector3 m_LocalPosition = Vector3.zero;
+
+        [SerializeField]
         private Quaternion m_Rotation = Quaternion.identity;
+
+        [SerializeField]
+        private Vector3 m_Scale = Vector3.one;
 
         public EntityData(int entityId, int typeId)
         {
@@ -62,6 +68,21 @@ namespace GameMain
         }
 
         /// <summary>
+        /// 实体自身位置
+        /// </summary>
+        public Vector3 LocalPosition
+        {
+            get
+            {
+                return m_LocalPosition;
+            }
+            set
+            {
+                m_LocalPosition = value;
+            }
+        }
+
+        /// <summary>
         /// 实体朝向。
         /// </summary>
         public Quaternion Rotation
@@ -73,6 +94,21 @@ namespace GameMain
             set
             {
                 m_Rotation = value;
+            }
+        }
+
+        /// <summary>
+        /// 实体大小
+        /// </summary>
+        public Vector3 Scale
+        {
+            get
+            {
+                return m_Scale;
+            }
+            set
+            {
+                m_Scale = value;
             }
         }
 

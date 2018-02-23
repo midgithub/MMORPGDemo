@@ -75,9 +75,12 @@ namespace GameMain
             LoadDataTable("Scene");
             //LoadDataTable("Sound");
             LoadDataTable("Music");
-            //LoadDataTable("Entity");
+            LoadDataTable("Entity");
             LoadDataTable("UIForm");
             LoadDataTable("UISound");
+            LoadDataTable("RoleName");
+
+            LoadDataTable("PoseRole");
         }
 
         private void LoadDataTable(string dataTableName)

@@ -28,7 +28,7 @@ namespace GameView
             base.OnOpen(userData);
 
             GameMain.GameEntry.Event.Subscribe(LoadSceneUpdateEventArgs.EventId, OnLoadSceneUpdate);
-
+           
              int sceneId  = 0;
             try
             {
@@ -58,11 +58,6 @@ namespace GameView
         private void OnLoadSceneUpdate(object sender, GameEventArgs e)
         {
             LoadSceneUpdateEventArgs ne = (LoadSceneUpdateEventArgs)e;
-            if (ne.UserData != this)
-            {
-                return;
-            }
-
             m_LoadingBar.value = ne.Progress;
             m_TipsText.text =  ne.SceneAssetName;
         }

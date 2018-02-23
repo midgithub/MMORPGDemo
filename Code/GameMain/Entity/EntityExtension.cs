@@ -13,7 +13,23 @@ namespace GameMain
         // 负值用于本地生成的临时实体（如特效、FakeObject等）
         private static int s_SerialId = 0;
 
-        public static Entity GetGameEntity(this EntityComponent entityComponent, int entityId)
+        /// <summary>
+        /// 生成实体序列ID（正值）
+        /// </summary>
+        public static int GenerateSerialId(this EntityComponent entityComponent)
+        {
+            return ++s_SerialId;
+        }
+
+        /// <summary>
+        /// 生成临时实体序列ID（负值）
+        /// </summary>
+        public static int GenerateTempSerialId(this EntityComponent entityComponent)
+        {
+            return --s_SerialId;
+        }
+
+        public static EntityBase GetGameEntity(this EntityComponent entityComponent, int entityId)
         {
             UnityGameFramework.Runtime.Entity entity = entityComponent.GetEntity(entityId);
             if (entity == null)
@@ -21,15 +37,15 @@ namespace GameMain
                 return null;
             }
 
-            return (Entity) entity.Logic;
+            return (EntityBase) entity.Logic;
         }
 
-        public static void HideEntity(this EntityComponent entityComponent, Entity entity)
+        public static void HideEntity(this EntityComponent entityComponent, EntityBase entity)
         {
             entityComponent.HideEntity(entity.Entity);
         }
 
-        public static void AttachEntity(this EntityComponent entityComponent, Entity entity, int ownerId,
+        public static void AttachEntity(this EntityComponent entityComponent, EntityBase entity, int ownerId,
             string parentTransformPath = null, object userData = null)
         {
             entityComponent.AttachEntity(entity.Entity, ownerId, parentTransformPath, userData);
@@ -40,6 +56,12 @@ namespace GameMain
             if (data == null)
             {
                 Log.Warning("Data is invalid.");
+                return;
+            }
+
+            if (entityComponent.HasEntity(data.Id))
+            {
+                Log.Warning(string.Format("Entity {0} is exit.", data.Id));
                 return;
             }
 
@@ -54,11 +76,17 @@ namespace GameMain
             entityComponent.ShowEntity(data.Id, logicType, AssetUtility.GetEntityAsset(drEntity.AssetName), entityGroup, data);
         }
 
-        public static int GenerateSerialId(this EntityComponent entityComponent)
+
+        //-----------------简化调用函数----------------
+        public static void ShowEffect(this EntityComponent entityComponent, EffectData data)
         {
-            return --s_SerialId;
+            entityComponent.ShowEntity(typeof(Effect), "Effect", data);
         }
 
+        public static void ShowPoseRole(this EntityComponent entityComponent,PoseRoleData data)
+        {
+            entityComponent.ShowEntity(typeof(PoseRole), "PoseRole", data);
+        }
 
     }
 }

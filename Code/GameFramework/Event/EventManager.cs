@@ -21,7 +21,7 @@ namespace GameFramework.Event
         /// </summary>
         public EventManager()
         {
-            m_EventPool = new EventPool<GameEventArgs>(EventPoolMode.AllowNoHandler | EventPoolMode.AllowMultiHandler);
+            m_EventPool = new EventPool<GameEventArgs>(EventPoolMode.AllowNoHandler | EventPoolMode.AllowMultiHandler|EventPoolMode.AllowDuplicateHandler);
         }
 
         /// <summary>

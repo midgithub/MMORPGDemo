@@ -4,6 +4,7 @@ using GameFramework.DataTable;
 using GameFramework.Event;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
+using FairyGUI;
 
 namespace GameMain
 {
@@ -139,6 +140,7 @@ namespace GameMain
             }
 
             Log.Info("Load scene '{0}' update, progress '{1}'.", ne.SceneAssetName, ne.Progress.ToString("P2"));
+
         }
 
         private void OnLoadSceneDependencyAsset(object sender, GameEventArgs e)
