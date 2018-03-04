@@ -22,6 +22,9 @@ namespace GameFramework.Resource
             private readonly Dictionary<string, object> m_SceneToAssetMap;
             private IObjectPool<AssetObject> m_AssetPool;
             private IObjectPool<ResourceObject> m_ResourcePool;
+            private string m_ReadOnlyPath;
+            private string m_ReadWritePath;
+            private ILoadResourceAgentHelper m_SyncLoadResourceHelper;
 
             /// <summary>
             /// 初始化加载资源器的新实例。
@@ -34,6 +37,8 @@ namespace GameFramework.Resource
                 m_SceneToAssetMap = new Dictionary<string, object>();
                 m_AssetPool = null;
                 m_ResourcePool = null;
+                m_ReadOnlyPath = m_ResourceManager.ReadOnlyPath;
+                m_ReadWritePath = m_ResourceManager.ReadWritePath;
             }
 
             /// <summary>
@@ -246,6 +251,9 @@ namespace GameFramework.Resource
 
                 LoadResourceAgent agent = new LoadResourceAgent(loadResourceAgentHelper, resourceHelper, m_AssetPool, m_ResourcePool, this, readOnlyPath, readWritePath, decryptResourceCallback ?? DefaultDecryptResourceCallback);
                 m_TaskPool.AddAgent(agent);
+
+                if (m_SyncLoadResourceHelper == null)
+                    m_SyncLoadResourceHelper = loadResourceAgentHelper;
             }
 
             /// <summary>
@@ -290,6 +298,93 @@ namespace GameFramework.Resource
                 }
 
                 m_TaskPool.AddTask(mainTask);
+            }
+
+            public object LoadAssetSync(string assetName, IResourceHelper resourceHelper)
+            {
+                ResourceInfo? resourceInfo = null;
+                string[] dependencyAssetNames = null;
+                string[] scatteredDependencyAssetNames = null;
+                string resourceChildName = null;
+
+                if (!CheckAsset(assetName, out resourceInfo, out dependencyAssetNames, out scatteredDependencyAssetNames, out resourceChildName))
+                {
+                    string errorMessage = string.Format("Can not load asset '{0}'.", assetName);
+                    Log.Warning(errorMessage);
+                    return null;
+                }
+
+                if (resourceInfo == null)
+                {
+                    string errorMessage = string.Format("Can no checkAsset :", assetName);
+                    throw new GameFrameworkException(errorMessage);
+                }
+
+                AssetObject assetObject = m_AssetPool.Spawn(assetName);
+                if (assetObject != null)
+                {
+                    return assetObject.Target;
+                }
+
+                object[] dependencyAssets = new object[dependencyAssetNames.Length];
+                for (int i = 0; i < dependencyAssetNames.Length; i++)
+                {
+                    object asset = LoadDependencyAssetSync(dependencyAssetNames[i], resourceHelper);
+                    if (asset != null)
+                    {
+                        dependencyAssets[i] = asset;
+                    }
+                    else
+                    {
+                        string errorMessage = string.Format(
+                            "Can not load dependency asset '{0}' when load asset '{1}'.", dependencyAssetNames[i],
+                            assetName);
+                        throw new GameFrameworkException(errorMessage);
+                    }
+                }
+
+                ResourceObject resourceObject = m_ResourcePool.Spawn(resourceInfo.Value.ResourceName.Name);
+                if (resourceObject != null)
+                {
+                    object asset = m_SyncLoadResourceHelper.LoadAssetSync(resourceObject.Target, resourceChildName);
+                    AssetObject assetObj = new AssetObject(assetName, asset, dependencyAssets, resourceObject.Target,
+                        m_AssetPool, m_ResourcePool, resourceHelper);
+                    m_AssetPool.Register(assetObj, true);
+                    return asset;
+                }
+
+                string fullPath =
+                    Utility.Path.GetCombinePath(
+                        resourceInfo.Value.StorageInReadOnly ? m_ReadOnlyPath : m_ReadWritePath,
+                        Utility.Path.GetResourceNameWithSuffix(resourceInfo.Value.ResourceName.FullName));
+                object resourceObj = null;
+                if (resourceInfo.Value.LoadType == LoadType.LoadFromFile)
+                {
+                    resourceObj = m_SyncLoadResourceHelper.ReadFileSync(fullPath);
+                }
+                else
+                {
+                    byte[] bytes = m_SyncLoadResourceHelper.ReadBytesSync(fullPath, (int) resourceInfo.Value.LoadType);
+                    resourceObj = m_SyncLoadResourceHelper.ParseBytesSync(bytes);
+                }
+
+                if (resourceObj != null)
+                {
+                    ResourceObject resObject = new ResourceObject(resourceInfo.Value.ResourceName.Name, resourceObj,
+                        resourceHelper);
+                    m_ResourcePool.Register(resObject,true);
+
+                    object asset = m_SyncLoadResourceHelper.LoadAssetSync(resObject.Target, resourceChildName);
+                    AssetObject assetObj = new AssetObject(assetName, asset, dependencyAssets, resObject.Target, m_AssetPool, m_ResourcePool, resourceHelper);
+                    m_AssetPool.Register(assetObj, true);
+                    return asset;
+                }
+                else
+                {
+                    string errorMessage = string.Format("Can not load asset '{0}' when load asset '{1}'.", assetName);
+                    throw new GameFrameworkException(errorMessage);
+                }
+
             }
 
             /// <summary>
@@ -402,6 +497,83 @@ namespace GameFramework.Resource
 
                 m_TaskPool.AddTask(dependencyTask);
                 return true;
+            }
+
+            private object LoadDependencyAssetSync(string assetName, IResourceHelper resourceHelper)
+            {
+                ResourceInfo? resourceInfo = null;
+                string[] dependencyAssetNames = null;
+                string[] scatteredDependencyAssetNames = null;
+                string resourceChildName = null;
+
+                if (!CheckAsset(assetName, out resourceInfo, out dependencyAssetNames, out scatteredDependencyAssetNames, out resourceChildName))
+                {
+                    Log.Debug("Can not load asset '{0}'.", assetName);
+                    return false;
+                }
+
+                AssetObject assetObject = m_AssetPool.Spawn(assetName);
+                if (assetObject != null)
+                {
+                    return true;
+                }
+
+                object[] dependencyAssets = new object[dependencyAssetNames.Length];
+                for (int i = 0; i < dependencyAssetNames.Length; i++)
+                {
+                    object asset = LoadDependencyAssetSync(dependencyAssetNames[i], resourceHelper);
+                    if (asset != null)
+                    {
+                        dependencyAssets[i] = asset;
+                    }
+                    else
+                    {
+                        string errorMessage = string.Format(
+                            "Can not load dependency asset '{0}' when load asset '{1}'.", dependencyAssetNames[i],
+                            assetName);
+                        throw new GameFrameworkException(errorMessage);
+                    }
+                }
+
+                ResourceObject resourceObject = m_ResourcePool.Spawn(resourceInfo.Value.ResourceName.Name);
+                if (resourceObject != null)
+                {
+                    object asset = m_SyncLoadResourceHelper.LoadAssetSync(resourceObject.Target, resourceChildName);
+                    AssetObject assetObj = new AssetObject(assetName, asset, dependencyAssets, resourceObject.Target, m_AssetPool, m_ResourcePool, resourceHelper);
+                    m_AssetPool.Register(assetObj, true);
+                    return true;
+                }
+
+                string fullPath =
+                   Utility.Path.GetCombinePath(
+                       resourceInfo.Value.StorageInReadOnly ? m_ReadOnlyPath : m_ReadWritePath,
+                       Utility.Path.GetResourceNameWithSuffix(resourceInfo.Value.ResourceName.FullName));
+                object resourceObj = null;
+                if (resourceInfo.Value.LoadType == LoadType.LoadFromFile)
+                {
+                    resourceObj = m_SyncLoadResourceHelper.ReadFileSync(fullPath);
+                }
+                else
+                {
+                    resourceObj = m_SyncLoadResourceHelper.ReadBytesSync(fullPath, (int)resourceInfo.Value.LoadType);
+                }
+
+                if (resourceObj != null)
+                {
+                    ResourceObject resObject = new ResourceObject(resourceInfo.Value.ResourceName.Name, resourceObj,
+                        resourceHelper);
+                    m_ResourcePool.Register(resObject, true);
+
+                    object asset = m_SyncLoadResourceHelper.LoadAssetSync(resObject.Target, resourceChildName);
+                    AssetObject assetObj = new AssetObject(assetName, asset, dependencyAssets, resObject.Target, m_AssetPool, m_ResourcePool, resourceHelper);
+                    m_AssetPool.Register(assetObj, true);
+                    return true;
+                }
+                else
+                {
+                    string errorMessage = string.Format("Can not load asset '{0}' when load asset '{1}'.", assetName);
+                    throw new GameFrameworkException(errorMessage);
+                }
             }
 
             private bool CheckAsset(string assetName, out ResourceInfo? resourceInfo, out string[] dependencyAssetNames, out string[] scatteredDependencyAssetNames, out string resourceChildName)

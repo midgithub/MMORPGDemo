@@ -14,7 +14,7 @@ namespace GameMain
         private PoseRoleData m_PoseRoleData = null;
 
         private Animator m_Animator = null;
-        private bool isShowing = false;
+        private bool m_IsShowing = false;
 
         protected override void OnInit(object userData)
         {
@@ -26,7 +26,7 @@ namespace GameMain
                 return;
             }
 
-            m_Animator = CachedTransform.GetComponent<Animator>();           
+            m_Animator = CachedTransform.GetComponent<Animator>();
         }
 
         protected override void OnShow(object userData)
@@ -38,16 +38,16 @@ namespace GameMain
             CachedTransform.rotation = Quaternion.identity;
             CachedTransform.localScale = Vector3.one;
 
-            if (!isShowing)
+            if (!m_IsShowing)
             {
                 StartCoroutine(ShowPose());
-                isShowing = false;
+                m_IsShowing = false;
             }
         }
 
         IEnumerator ShowPose()
         {
-            isShowing = true;
+            m_IsShowing = true;
             m_Animator.SetTrigger("pose");
             float delay01 = m_PoseRoleData.Effect01Data.DelayTime;
             float delay02 = m_PoseRoleData.Effect02Data.DelayTime;
@@ -57,6 +57,7 @@ namespace GameMain
                 GameEntry.Entity.ShowEffect(m_PoseRoleData.Effect02Data);
                 yield return new WaitForSeconds(delay01 - delay02);
                 GameEntry.Entity.ShowEffect(m_PoseRoleData.Effect01Data);
+                GameEntry.Sound.PlaySound(m_PoseRoleData.SoundId);
             }
             else
             {
@@ -64,6 +65,7 @@ namespace GameMain
                 GameEntry.Entity.ShowEffect(m_PoseRoleData.Effect01Data);
                 yield return new WaitForSeconds(delay02 - delay01);
                 GameEntry.Entity.ShowEffect(m_PoseRoleData.Effect02Data);
+                GameEntry.Sound.PlaySound(m_PoseRoleData.SoundId);
             }
         }
 

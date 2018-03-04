@@ -5519,6 +5519,18 @@ Prefab:
       propertyPath: InitialModule.startSpeed.minScalar
       value: -0.8500
       objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: be89d3c986b372b429cd307c31a2db45, type: 2}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: -0.8500
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: be89d3c986b372b429cd307c31a2db45, type: 2}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: -0.8500
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: be89d3c986b372b429cd307c31a2db45, type: 2}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: -0.8500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be89d3c986b372b429cd307c31a2db45, type: 2}
   m_IsPrefabParent: 0
@@ -7386,7 +7398,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1199396007}
-  m_LocalRotation: {x: 0.2583312, y: 0.016459005, z: -0.6168308, w: 0.7433127}
+  m_LocalRotation: {x: 0.25833124, y: 0.016459007, z: -0.6168309, w: 0.7433128}
   m_LocalPosition: {x: 0.92060757, y: 5.99815, z: 18.872108}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -10865,6 +10877,18 @@ Prefab:
     - target: {fileID: 400002, guid: 747406f0a0e446841bbaeb652cb75fcd, type: 2}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 747406f0a0e446841bbaeb652cb75fcd, type: 2}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 1.3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 747406f0a0e446841bbaeb652cb75fcd, type: 2}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 1.3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 747406f0a0e446841bbaeb652cb75fcd, type: 2}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 1.3000
       objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: 747406f0a0e446841bbaeb652cb75fcd, type: 2}
       propertyPath: InitialModule.startLifetime.minScalar

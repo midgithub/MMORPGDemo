@@ -373,6 +373,12 @@ namespace GameFramework.Resource
         void LoadAsset(string assetName, LoadAssetCallbacks loadAssetCallbacks, object userData);
 
         /// <summary>
+        /// 同步加载资源
+        /// </summary>
+        /// <param name="assetName">要加载资源的名称</param>
+        object LoadAssetSync(string assetName);
+
+        /// <summary>
         /// 卸载资源。
         /// </summary>
         /// <param name="asset">要卸载的资源。</param>

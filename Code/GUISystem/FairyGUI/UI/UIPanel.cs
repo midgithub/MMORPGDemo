@@ -48,7 +48,7 @@ namespace FairyGUI
 		public int sortingOrder;
 
 		[SerializeField]
-		string packagePath;
+		public string packagePath;
 		[SerializeField]
 		RenderMode renderMode = RenderMode.ScreenSpaceOverlay;
 		[SerializeField]
@@ -132,6 +132,7 @@ namespace FairyGUI
 		{
 			if (screenSizeVer != StageCamera.screenSizeVer)
 				HandleScreenSizeChanged();
+            transform.localScale = Vector3.one;
 		}
 
 		void OnDestroy()

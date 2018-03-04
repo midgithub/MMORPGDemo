@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 19804888}
   - component: {fileID: 19907116}
   m_Layer: 0
-  m_Name: ice_Circle
+  m_Name: Ice_Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

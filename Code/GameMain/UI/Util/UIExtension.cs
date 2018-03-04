@@ -152,7 +152,7 @@ namespace GameMain
             return uiComponent.OpenUIForm(assetName, drUIForm.UIGroupName, drUIForm.PauseCoveredUIForm, userData);
         }
 
-        public static void OpenDialog(this UIComponent uiComponent, DialogFormParams dialogParams)
+        public static void OpenDialog(this UIComponent uiComponent, DialogParams dialogParams)
         {
             if (((ProcedureBase)GameEntry.Procedure.CurrentProcedure).UseNativeDialog)
             {
@@ -164,7 +164,7 @@ namespace GameMain
             }
         }
 
-        private static void OpenNativeDialog(DialogFormParams dialogParams)
+        private static void OpenNativeDialog(DialogParams dialogParams)
         {
             // TODO：这里应该弹出原生对话框，先简化实现为直接按确认按钮
             if (dialogParams.OnClickConfirm != null)

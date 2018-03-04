@@ -8,7 +8,7 @@ namespace GameMain
     public class DialogFormParams
     {
         /// <summary>
-        /// 模式，即按钮数量。取值 1、2、3。
+        /// 模式，即按钮数量。取值 0、1、2、3。
         /// </summary>
         public int Mode
         {

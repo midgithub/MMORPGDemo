@@ -1,7 +1,7 @@
 {
   "GameVersion": "0.1.0",
   "InternalApplicationVersion": 1,
-  "CheckVersionUrl": "http://github.com/XuYongGuang/GameResources/blob/master/version.txt",
+  "CheckVersionUrl": "http://gameframework.cn/starforce/version.txt",
   "StandaloneAppUrl": "http://gameframework.cn",
   "IosAppUrl": "http://gameframework.cn",
   "AndroidAppUrl": "http://gameframework.cn",

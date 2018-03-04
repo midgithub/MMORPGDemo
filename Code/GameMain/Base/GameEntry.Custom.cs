@@ -7,8 +7,20 @@
     {
         private static void InitCustomComponents()
         {
-            //FairyGui = UnityGameFramework.Runtime.GameEntry.GetComponent<FairyGuiComponent>();
-            //HPBar = UnityGameFramework.Runtime.GameEntry.GetComponent<HPBarComponent>();
+            Config = UnityGameFramework.Runtime.GameEntry.GetComponent<ConfigComponent>();
+            FairyGui = UnityGameFramework.Runtime.GameEntry.GetComponent<FairyGuiComponent>();   
+        }
+
+        public static FairyGuiComponent FairyGui
+        {
+            get;
+            private set;
+        }
+
+        public static ConfigComponent Config
+        {
+            get;
+            private set;
         }
     }
 }

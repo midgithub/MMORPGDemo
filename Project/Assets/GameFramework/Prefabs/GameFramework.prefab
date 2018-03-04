@@ -658,7 +658,7 @@ MonoBehaviour:
   m_EnableLoadSceneSuccessEvent: 1
   m_EnableLoadSceneFailureEvent: 1
   m_EnableLoadSceneUpdateEvent: 1
-  m_EnableLoadSceneDependencyAssetEvent: 1
+  m_EnableLoadSceneDependencyAssetEvent: 0
   m_EnableUnloadSceneSuccessEvent: 1
   m_EnableUnloadSceneFailureEvent: 1
 --- !u!114 &11420954
@@ -848,7 +848,7 @@ MonoBehaviour:
   m_ProfilerHelperTypeName: UnityGameFramework.Runtime.ProfilerHelper
   m_FrameRate: 30
   m_GameSpeed: 1
-  m_RunInBackground: 0
+  m_RunInBackground: 1
   m_NeverSleep: 1
 --- !u!1001 &100100000
 Prefab:
@@ -901,9 +901,9 @@ MonoBehaviour:
   m_CustomUIGroupHelper: {fileID: 0}
   m_UIGroups:
   - m_Name: Common
-    m_Depth: 1
-  - m_Name: Default
     m_Depth: 0
+  - m_Name: Default
+    m_Depth: 1
 --- !u!114 &114967677140151710
 MonoBehaviour:
   m_ObjectHideFlags: 1

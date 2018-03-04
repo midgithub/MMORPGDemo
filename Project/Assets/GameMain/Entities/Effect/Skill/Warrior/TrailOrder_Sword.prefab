@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400000}
   m_Layer: 0
-  m_Name: trail_Sword2
+  m_Name: TrailOrder_Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0.69130933, y: -0.328019, z: -0.52391, w: 0.3741835}
-  m_LocalPosition: {x: -0.069, y: 0.268, z: 0.40354344}
+  m_LocalPosition: {x: 0.05, y: 0.268, z: 0.40354344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -181,7 +181,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1130670621
+  randomSeed: -1534848275
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3543,7 +3543,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1153613723
+  randomSeed: 892718266
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6905,7 +6905,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -114412460
+  randomSeed: 1040863122
   InitialModule:
     serializedVersion: 3
     enabled: 1

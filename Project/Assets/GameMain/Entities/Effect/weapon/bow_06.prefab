@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400002}
   m_Layer: 0
-  m_Name: bow_06
+  m_Name: Bow_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,24 +178,29 @@ MonoBehaviour:
   - m_bEnabled: 1
     m_CurveName: 
     m_AniCurve:
+      serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 2
+        time: 0
         value: 0.95
         inSlope: 0
         outSlope: 0
         tangentMode: 0
-      - time: 0.5
+      - serializedVersion: 2
+        time: 0.5
         value: 0.2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
-      - time: 1
+      - serializedVersion: 2
+        time: 1
         value: 0.95
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       m_PreInfinity: 1
       m_PostInfinity: 1
+      m_RotationOrder: 4
     m_ApplyType: 4
     m_bApplyOption: 
     m_bRecursively: 0

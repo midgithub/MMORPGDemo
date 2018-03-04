@@ -59,8 +59,8 @@ namespace FairyGUI
 		bool _fBatching;
 		List<DisplayObject> _descendants;
 
-		internal bool _disabled;
-		internal int _panelOrder;
+		public bool _disabled;
+		public int _panelOrder;
 
 		/// <summary>
 		/// 

@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUISystem", "GUISystem\GUIS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameMain", "GameMain\GameMain.csproj", "{2B4800A4-FA33-4D7F-A212-3802B43B5256}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameView", "GameView\GameView.csproj", "{5E8648A4-E72A-432D-9CCD-01619DBCCAAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XLuaSrc", "XLuaSrc\XLuaSrc.csproj", "{BD14B82A-311E-46CF-8684-788F4D2760DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{2B4800A4-FA33-4D7F-A212-3802B43B5256}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B4800A4-FA33-4D7F-A212-3802B43B5256}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B4800A4-FA33-4D7F-A212-3802B43B5256}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5E8648A4-E72A-432D-9CCD-01619DBCCAAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E8648A4-E72A-432D-9CCD-01619DBCCAAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E8648A4-E72A-432D-9CCD-01619DBCCAAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E8648A4-E72A-432D-9CCD-01619DBCCAAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD14B82A-311E-46CF-8684-788F4D2760DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD14B82A-311E-46CF-8684-788F4D2760DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD14B82A-311E-46CF-8684-788F4D2760DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD14B82A-311E-46CF-8684-788F4D2760DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

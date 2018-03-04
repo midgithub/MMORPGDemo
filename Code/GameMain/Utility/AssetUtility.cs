@@ -1,4 +1,6 @@
-﻿namespace GameMain
+﻿using UnityEngine;
+
+namespace GameMain
 {
     public static class AssetUtility
     {
@@ -42,14 +44,14 @@
             return string.Format("Assets/GameMain/UI/UIForms/{0}.prefab", assetName);
         }
 
-        public static string GetUISpriteAsset(string assetName)
+        public static string GetFairyGuiPackageAsset(string packageName)
         {
-            return string.Format("Assets/GameMain/UI/UISprites/{0}.png", assetName);
+            return string.Format("Assets/GameMain/UI/{0}", packageName);
         }
 
-        public static string GetUISoundAsset(string assetName)
+        public static string GetLuaAsset(string assetName)
         {
-            return string.Format("Assets/GameMain/UI/UISounds/{0}.wav", assetName);
+            return string.Format("Assets/GameMain/Lua/{0}", assetName);
         }
 
     }

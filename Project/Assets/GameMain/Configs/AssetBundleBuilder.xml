@@ -17,8 +17,8 @@
       <IgnoreTypeTreeChangesSelected>False</IgnoreTypeTreeChangesSelected>
       <AppendHashToAssetBundleNameSelected>False</AppendHashToAssetBundleNameSelected>
       <ChunkBasedCompressionSelected>True</ChunkBasedCompressionSelected>
-      <BuildEventHandlerTypeName>StarForce.Editor.StarForceBuildEventHandler</BuildEventHandlerTypeName>
-      <OutputDirectory>E:/_Unity3D项目/StarForce/AssetBundle</OutputDirectory>
+      <BuildEventHandlerTypeName>GameMain.Editor.MMORPGDemoBuildEventHandler</BuildEventHandlerTypeName>
+      <OutputDirectory>E:/_Unity3D项目/MMORPGDemo/AssetBundle</OutputDirectory>
     </Settings>
   </AssetBundleBuilder>
 </UnityGameFramework>

@@ -15,6 +15,12 @@ namespace GameMain
         [SerializeField]
         private EffectData m_Effect02Data;
 
+        [SerializeField]
+        private int m_SoundId;
+
+        [SerializeField]
+        private float m_SoundDelay;
+
         public PoseRoleData(int entityId, int typeId,ProfessionType professionType)
             : base(entityId, typeId)
         {
@@ -30,6 +36,8 @@ namespace GameMain
             m_ProfessionType = drPoseRole.ProfessionType;
             m_Effect01Data = new EffectData(GameEntry.Entity.GenerateTempSerialId(),drPoseRole.Effect01,drPoseRole.Effect01Duration,drPoseRole.Effect01Delay);
             m_Effect02Data = new EffectData(GameEntry.Entity.GenerateTempSerialId(), drPoseRole.Effect02, drPoseRole.Effect02Duration, drPoseRole.Effect02Delay);
+            m_SoundId = drPoseRole.SoundId;
+            m_SoundDelay = drPoseRole.SoundDelay;
         }
 
         /// <summary>
@@ -62,6 +70,30 @@ namespace GameMain
             get 
             {
                 return m_Effect02Data;
+            }
+        }
+
+        /// <summary>
+        /// 音效id
+        /// </summary>
+        public int SoundId
+        {
+            get
+            {
+                return m_SoundId;
+                
+            }
+        }
+
+        /// <summary>
+        /// 音效延迟
+        /// </summary>
+        public float SoundDelay
+        {
+            get
+            {
+                return m_SoundDelay;
+                
             }
         }
 

@@ -26,6 +26,42 @@ namespace GameMain
             private set;
         }
 
+        /// <summary>
+        /// 优先级
+        /// </summary>
+        public int Priority
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 是否循环
+        /// </summary>
+        public bool Loop
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 音量(0~1)
+        /// </summary>
+        public float Volume
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 淡入淡出时间
+        /// </summary>
+        public float FadeTime
+        {
+            get;
+            private set;
+        }
+
         public void ParseDataRow(string dataRowText)
         {
             string[] text = DataTableExtension.SplitDataRow(dataRowText);
@@ -34,6 +70,10 @@ namespace GameMain
             Id = int.Parse(text[index++]);
             index++;
             AssetName = text[index++];
+            Priority = int.Parse(text[index++]);
+            Loop = bool.Parse(text[index++]);
+            Volume = float.Parse(text[index++]);
+            FadeTime = float.Parse(text[index++]);
         }
 
         private void AvoidJIT()

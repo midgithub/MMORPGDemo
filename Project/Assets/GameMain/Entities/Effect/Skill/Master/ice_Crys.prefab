@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4683994380203678}
   m_Layer: 0
-  m_Name: ice_Crys
+  m_Name: Ice_Crys
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

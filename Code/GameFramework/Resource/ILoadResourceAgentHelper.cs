@@ -72,6 +72,32 @@ namespace GameFramework.Resource
         void LoadAsset(object resource, string resourceChildName, bool isScene);
 
         /// <summary>
+        /// 通过加载资源代理辅助器开始同步读取资源文件。
+        /// </summary>
+        /// <param name="fullPath">要加载资源的完整路径名。</param>
+        object ReadFileSync(string fullPath);
+
+        /// <summary>
+        /// 通过加载资源代理辅助器开始同步读取资源二进制流。
+        /// </summary>
+        /// <param name="fullPath">要加载资源的完整路径名。</param>
+        /// <param name="loadType">资源加载方式。</param>
+        byte[] ReadBytesSync(string fullPath, int loadType);
+
+        /// <summary>
+        /// 通过加载资源代理辅助器开始同步将资源二进制流转换为加载对象。
+        /// </summary>
+        /// <param name="bytes">要加载资源的二进制流。</param>
+        object ParseBytesSync(byte[] bytes);
+
+        /// <summary>
+        /// 通过加载资源代理辅助器开始异步加载资源。
+        /// </summary>
+        /// <param name="resource">资源。</param>
+        /// <param name="resourceChildName">要加载的子资源名。</param>
+        object LoadAssetSync(object resource, string resourceChildName);
+
+        /// <summary>
         /// 重置加载资源代理辅助器。
         /// </summary>
         void Reset();

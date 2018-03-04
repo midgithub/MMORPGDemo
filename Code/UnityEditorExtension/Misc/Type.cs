@@ -29,7 +29,7 @@ namespace UnityGameFramework.Editor
         {
 #if UNITY_2017
             "UnityGameFramework.Editor",
-            
+            "GameMain"
 #endif
            // "Assembly-CSharp-Editor"
         };

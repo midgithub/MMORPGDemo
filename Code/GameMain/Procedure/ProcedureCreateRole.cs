@@ -1,8 +1,6 @@
 ﻿using GameFramework;
 using GameFramework.DataTable;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
 namespace GameMain

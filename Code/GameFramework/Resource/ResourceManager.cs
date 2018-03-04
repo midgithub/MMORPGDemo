@@ -969,6 +969,15 @@ namespace GameFramework.Resource
         }
 
         /// <summary>
+        /// 同步加载资源
+        /// </summary>
+        /// <param name="assetName">资源名字</param>
+        public object LoadAssetSync(string assetName)
+        {
+            return m_ResourceLoader.LoadAssetSync(assetName, m_ResourceHelper);
+        }
+
+        /// <summary>
         /// 卸载资源。
         /// </summary>
         /// <param name="asset">要卸载的资源。</param>

@@ -10,7 +10,9 @@ namespace GameMain
     public class FairyGuiGroupHelper : UIGroupHelperBase
     {
         public const int DepthFactor = 10000;
+
         private int m_Depth = 0;
+        private GComponent m_CachedUI = null;
 
         /// <summary>
         /// 设置界面组深度
@@ -19,7 +21,7 @@ namespace GameMain
         public override void SetDepth(int depth)
         {
             m_Depth = depth;
-            SetSortingOrder(depth);
+            SetSortingOrder(DepthFactor * depth);
         }
 
         private void Start()
@@ -29,15 +31,15 @@ namespace GameMain
             transform.localRotation = Quaternion.identity;
             transform.localScale = Vector3.one;
 
-            SetSortingOrder(m_Depth);
+            SetSortingOrder(DepthFactor * m_Depth);
         }
 
         private void SetSortingOrder(int depth)
         {
-            UIPanel[] panels = GetComponentsInChildren<UIPanel>();
-            for (int i = 0; i < panels.Length; i++)
+            FairyGuiForm[] forms = GetComponentsInChildren<FairyGuiForm>();
+            for (int i = 0; i < forms.Length; i++)
             {
-                panels[i].ui.sortingOrder = DepthFactor * depth;
+                forms[i].SetSortingOrder(depth,true);
             }
         }
 

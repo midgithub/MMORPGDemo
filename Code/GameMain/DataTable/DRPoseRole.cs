@@ -80,6 +80,24 @@ namespace GameMain
             protected set;
         }
 
+        /// <summary>
+        /// 音效ID
+        /// </summary>
+        public int SoundId
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 音效延迟
+        /// </summary>
+        public float SoundDelay
+        {
+            get;
+            private set;
+        }
+
         public void ParseDataRow(string dataRowText)
         {
             string[] text = DataTableExtension.SplitDataRow(dataRowText);
@@ -95,6 +113,8 @@ namespace GameMain
             Effect02 = int.Parse(text[index++]);
             Effect02Delay = float.Parse(text[index++]);
             Effect02Duration = float.Parse(text[index++]);
+            SoundId = int.Parse(text[index++]);
+            SoundDelay = float.Parse(text[index++]);
         }
 
         private void AvoidJIT()
