@@ -83,6 +83,10 @@ namespace GameMain
             }
         }
 
+        /// <summary>
+        /// 界面初始化。
+        /// </summary>
+        /// <param name="userData">用户自定义数据。</param>
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
@@ -124,6 +128,10 @@ namespace GameMain
             transform.localScale = Vector3.one;
         }
 
+        /// <summary>
+        /// 界面打开。
+        /// </summary>
+        /// <param name="userData">用户自定义数据。</param>
         protected override void OnOpen(object userData)
         {
             base.OnOpen(userData);
@@ -146,6 +154,10 @@ namespace GameMain
             StartCoroutine(UI.FadeToAlpha(1f, m_FadeTime));
         }
 
+        /// <summary>
+        /// 界面关闭。
+        /// </summary>
+        /// <param name="userData">用户自定义数据。</param>
         protected override void OnClose(object userData)
         {
             base.OnClose(userData);
@@ -159,11 +171,17 @@ namespace GameMain
                 EMRenderSupport.Remove(this);
         }
 
+        /// <summary>
+        /// 界面暂停。
+        /// </summary>
         protected override void OnPause()
         {
             base.OnPause();
         }
 
+        /// <summary>
+        /// 界面暂停恢复。
+        /// </summary>
         protected override void OnResume()
         {
             base.OnResume();
@@ -173,21 +191,36 @@ namespace GameMain
             StartCoroutine(UI.FadeToAlpha(1f, m_FadeTime));
         }
 
+        /// <summary>
+        /// 界面遮挡。
+        /// </summary>
         protected override void OnCover()
         {
             base.OnCover();
         }
 
+        /// <summary>
+        /// 界面遮挡恢复。
+        /// </summary>
         protected override void OnReveal()
         {
             base.OnReveal();
         }
 
+        /// <summary>
+        /// 界面激活。
+        /// </summary>
+        /// <param name="userData">用户自定义数据。</param>
         protected override void OnRefocus(object userData)
         {
             base.OnRefocus(userData);
         }
 
+        /// <summary>
+        /// 界面轮询。
+        /// </summary>
+        /// <param name="elapseSeconds">逻辑流逝时间，以秒为单位。</param>
+        /// <param name="realElapseSeconds">真实流逝时间，以秒为单位。</param>
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
@@ -197,6 +230,11 @@ namespace GameMain
             transform.localScale = Vector3.one;
         }
 
+        /// <summary>
+        /// 界面深度改变。
+        /// </summary>
+        /// <param name="uiGroupDepth">界面组深度。</param>
+        /// <param name="depthInUIGroup">界面在界面组中的深度。</param>
         protected override void OnDepthChanged(int uiGroupDepth, int depthInUIGroup)
         {
             int oldDepth = Depth;
@@ -204,6 +242,32 @@ namespace GameMain
             int deltaDepth = FairyGuiGroupHelper.DepthFactor * uiGroupDepth + m_DepthFactor * depthInUIGroup - oldDepth + OriginalDepth;
             UI.sortingOrder += deltaDepth;
             m_SortingOrder = UI.sortingOrder;
+        }
+
+        /// <summary>
+        /// 界面销毁
+        /// </summary>
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+
+            if (m_Container != null)
+            {
+                if (!Application.isPlaying)
+                    EMRenderSupport.Remove(this);
+
+                if (_ui != null)
+                {
+                    _ui.Dispose();
+                    _ui = null;
+                }
+
+                GameEntry.FairyGui.RemovePackage(m_PackagePath);
+                m_Container.Dispose();
+                m_Container = null;
+            }
+
+            _renders = null;
         }
 
         private IEnumerator CloseCo(float duration)
@@ -231,27 +295,6 @@ namespace GameMain
             }
         }
 
-        void OnDestroy()
-        {
-            if (m_Container != null)
-            {
-                if (!Application.isPlaying)
-                    EMRenderSupport.Remove(this);
-
-                if (_ui != null)
-                {
-                    _ui.Dispose();
-                    _ui = null;
-                }
-
-                m_Container.Dispose();
-                m_Container = null;
-
-                GameEntry.FairyGui.RemovePackage(m_PackagePath);
-            }
-
-            _renders = null;
-        }
 
         void CreateContainer()
         {

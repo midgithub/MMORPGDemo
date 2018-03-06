@@ -8,7 +8,8 @@
         private static void InitCustomComponents()
         {
             Config = UnityGameFramework.Runtime.GameEntry.GetComponent<ConfigComponent>();
-            FairyGui = UnityGameFramework.Runtime.GameEntry.GetComponent<FairyGuiComponent>();   
+            FairyGui = UnityGameFramework.Runtime.GameEntry.GetComponent<FairyGuiComponent>(); 
+            Lua = UnityGameFramework.Runtime.GameEntry.GetComponent<XLuaComponent>();
         }
 
         public static FairyGuiComponent FairyGui
@@ -18,6 +19,12 @@
         }
 
         public static ConfigComponent Config
+        {
+            get;
+            private set;
+        }
+
+        public static XLuaComponent Lua
         {
             get;
             private set;

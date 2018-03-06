@@ -150,5 +150,13 @@ namespace UnityGameFramework.Runtime
         {
 
         }
+
+        /// <summary>
+        /// 界面销毁
+        /// </summary>
+        protected internal virtual void OnDestroy()
+        {
+
+        }
     }
 }

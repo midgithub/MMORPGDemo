@@ -10,19 +10,8 @@ namespace GameMain
     [DisallowMultipleComponent]
     public class FairyGuiComponent : GameFrameworkComponent
     {
-        private class MyUIPackage
-        {
-            private UIPackage UIPackage { get; set; }
-            public int ReferenceCount { get; set; }
-
-            public MyUIPackage(UIPackage package,int reference)
-            {
-                UIPackage = package;
-                ReferenceCount = reference;
-            }
-        }
-
-        private Dictionary<string, MyUIPackage> m_UIPackages = null; 
+        private Dictionary<string, MyUIPackage> m_UIPackages = null;
+        private Dictionary<int, string> m_LuaForms = null;
 
         private void Start()
         {
@@ -82,11 +71,61 @@ namespace GameMain
             }
         }
 
+        /// <summary>
+        /// 注册Lua界面
+        /// </summary>
+        public void RegisterLuaForm(int formId,string formName)
+        {
+            if(!m_LuaForms.ContainsKey(formId))
+            {
+                m_LuaForms.Add(formId, formName);
+            }
+            else
+            {
+                string errorMessage = string.Format("LuaForm {0} is Exit.ID:{1}", formName, formId);
+                throw new GameFrameworkException(errorMessage);
+            }
+        }
+
+        /// <summary>
+        /// 获取Lua界面
+        /// </summary>
+        /// <param name="formId"></param>
+        /// <returns></returns>
+        public string GetLuaForm(int formId)
+        {
+            string luaForm;
+            if (m_LuaForms.TryGetValue(formId, out luaForm))
+            {
+                return luaForm;
+            }
+            else
+            {
+                string errorMessage = string.Format("LuaForm not Exit, Please register first.ID:{1}", formId);
+                throw new GameFrameworkException(errorMessage);
+            }
+        }
+
         private object LoadPackageAsset(string name, string extension, Type type)
         {
             return GameEntry.Resource.LoadAssetSync(name + extension);
         }
 
 
+
+
+
+
+        private class MyUIPackage
+        {
+            private UIPackage UIPackage { get; set; }
+            public int ReferenceCount { get; set; }
+
+            public MyUIPackage(UIPackage package, int reference)
+            {
+                UIPackage = package;
+                ReferenceCount = reference;
+            }
+        }
     }
 }

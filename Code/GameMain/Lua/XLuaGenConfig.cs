@@ -1,14 +1,19 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using XLua;
 
+/// <summary>
+/// XLua 配置
+/// </summary>
 public static class XLuaGenConfig
 {
     //lua中要使用到C#库的配置，比如C#标准库，或者Unity API，第三方库等。
     [LuaCallCSharp]
     public static List<Type> LuaCallCSharp = new List<Type>() {
-                typeof(System.Object),
+        #region *****Unity*****
                 typeof(UnityEngine.Object),
                 typeof(Vector2),
                 typeof(Vector3),
@@ -33,10 +38,29 @@ public static class XLuaGenConfig
                 typeof(SkinnedMeshRenderer),
                 typeof(Renderer),
                 typeof(WWW),
+                typeof(UnityEngine.Debug),
+        #endregion
+
+        #region *****C# System*****
                 typeof(System.Collections.Generic.List<int>),
                 typeof(Action<string>),
-                typeof(UnityEngine.Debug)
-            };
+                typeof(System.Object),
+                typeof(Array),
+                typeof(IList),
+                typeof(IDictionary),
+                typeof(Activator),
+                typeof(Type),
+                typeof(BindingFlags),
+        #endregion
+
+        #region *****GameFramework*****
+                typeof(XLuaHelper),
+        #endregion
+
+        #region *****Other*****
+
+        #endregion
+    };
 
     //C#静态调用Lua的配置（包括事件的原型），仅可以配delegate，interface
     [CSharpCallLua]

@@ -114,6 +114,7 @@
     <Compile Include="Sound\SoundExtension.cs" />
     <Compile Include="UI\Base\FairyGuiForm.cs" />
     <Compile Include="UI\Base\FairyGuiGroupHelper.cs" />
+    <Compile Include="UI\Base\FairyGuiLuaForm.cs" />
     <Compile Include="UI\Base\FairyGuiStage.cs" />
     <Compile Include="UI\EventArgs\LoadingFormUpdateProgressEventArgs.cs" />
     <Compile Include="UI\FormParams\DialogFormParams.cs" />

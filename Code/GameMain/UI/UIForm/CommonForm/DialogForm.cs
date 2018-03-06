@@ -81,7 +81,7 @@ namespace GameMain
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
-
+          
             m_ModeController = UI.GetController("dialogMode");
             m_TitleText = UI.GetChild("frame/title").asTextField;
             m_MessageText = UI.GetChild("message").asTextField;
