@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExcelConfigExport>
+  <ConfigItem ExcelFile="../Excel/UI界面配置表.xlsx" SheetName="UI界面配置表">
+    <ConfigInfo>
+      <Client>../DataTableOutput/UIForm.txt</Client>
+      <Server>../../ServerRun/LogicSettings/</Server>
+    </ConfigInfo>
+    <SourceInfo>
+      <CS ClassName="DRUIForm" Manager="None">
+        <FilePath>../CodeOutput/DRUIForm.cs</FilePath>
+      </CS>
+      <CPP ClassName="" Manager="None" Capacity="1024" StepSize="512" KeyCount="64" GroupSize="64">
+        <FilePath>../../Server/Servers/GameLogic/GameConfig/</FilePath>
+      </CPP>
+    </SourceInfo>
+  </ConfigItem>
+  <ConfigItem ExcelFile="../Excel/背景音乐配置表.xlsx" SheetName="背景音乐配置表">
+    <ConfigInfo>
+      <Client>../DataTableOutput/Music.txt</Client>
+      <Server />
+    </ConfigInfo>
+    <SourceInfo>
+      <CS ClassName="DRMusic" Manager="None">
+        <FilePath>../CodeOutput/DRMusic.cs</FilePath>
+      </CS>
+      <CPP ClassName="" Manager="None" Capacity="1024" StepSize="512" KeyCount="64" GroupSize="64">
+        <FilePath />
+      </CPP>
+    </SourceInfo>
+  </ConfigItem>
+  <ConfigItem ExcelFile="../Excel/场景配置表.xlsx" SheetName="场景配置">
+    <ConfigInfo>
+      <Client>../DataTableOutput/Scene.txt</Client>
+      <Server />
+    </ConfigInfo>
+    <SourceInfo>
+      <CS ClassName="DRScene" Manager="None">
+        <FilePath>../CodeOutput/DRScene.cs</FilePath>
+      </CS>
+      <CPP ClassName="" Manager="None" Capacity="1024" StepSize="512" KeyCount="64" GroupSize="64">
+        <FilePath>../../Server/Servers/GameLogic/GameConfig/</FilePath>
+      </CPP>
+    </SourceInfo>
+  </ConfigItem>
+  <ConfigItem ExcelFile="../Excel/角色取名配置表.xlsx" SheetName="角色取名配置表">
+    <ConfigInfo>
+      <Client>../DataTableOutput/RoleName.txt</Client>
+      <Server />
+    </ConfigInfo>
+    <SourceInfo>
+      <CS ClassName="DRRoleName" Manager="None">
+        <FilePath>../CodeOutput/DRRoleName.cs</FilePath>
+      </CS>
+      <CPP ClassName="" Manager="None" Capacity="1024" StepSize="512" KeyCount="64" GroupSize="64">
+        <FilePath />
+      </CPP>
+    </SourceInfo>
+  </ConfigItem>
+  <ConfigItem ExcelFile="../Excel/实体配置表.xlsx" SheetName="实体配置表">
+    <ConfigInfo>
+      <Client>../DataTableOutput/Entity.txt</Client>
+      <Server />
+    </ConfigInfo>
+    <SourceInfo>
+      <CS ClassName="DREntity" Manager="None">
+        <FilePath>../CodeOutput/DREntity.cs</FilePath>
+      </CS>
+      <CPP ClassName="" Manager="None" Capacity="1024" StepSize="512" KeyCount="64" GroupSize="64">
+        <FilePath />
+      </CPP>
+    </SourceInfo>
+  </ConfigItem>
+  <ConfigItem ExcelFile="../Excel/武器配置表.xlsx" SheetName="武器配置表">
+    <ConfigInfo>
+      <Client>../DataTableOutput/Weapon.txt</Client>
+      <Server>../../ServerRun/LogicSettings/</Server>
+    </ConfigInfo>
+    <SourceInfo>
+      <CS ClassName="DRWeapon" Manager="None">
+        <FilePath>../CodeOutput/DRWeapon.cs</FilePath>
+      </CS>
+      <CPP ClassName="" Manager="None" Capacity="1024" StepSize="512" KeyCount="64" GroupSize="64">
+        <FilePath />
+      </CPP>
+    </SourceInfo>
+  </ConfigItem>
+  <ConfigItem ExcelFile="../Excel/音效配置表.xlsx" SheetName="音效配置表">
+    <ConfigInfo>
+      <Client>../DataTableOutput/Sound.txt</Client>
+      <Server />
+    </ConfigInfo>
+    <SourceInfo>
+      <CS ClassName="DRSound" Manager="None">
+        <FilePath>../CodeOutput/DRSound.cs</FilePath>
+      </CS>
+      <CPP ClassName="" Manager="None" Capacity="1024" StepSize="512" KeyCount="64" GroupSize="64">
+        <FilePath />
+      </CPP>
+    </SourceInfo>
+  </ConfigItem>
+  <ConfigItem ExcelFile="../Excel/职业创建配置表.xlsx" SheetName="职业创建配置表">
+    <ConfigInfo>
+      <Client>../DataTableOutput/PoseRole.txt</Client>
+      <Server />
+    </ConfigInfo>
+    <SourceInfo>
+      <CS ClassName="DRPoseRole" Manager="None">
+        <FilePath>../CodeOutput/DRPoseRole.cs</FilePath>
+      </CS>
+      <CPP ClassName="" Manager="None" Capacity="1024" StepSize="512" KeyCount="64" GroupSize="64">
+        <FilePath />
+      </CPP>
+    </SourceInfo>
+  </ConfigItem>
+</ExcelConfigExport>

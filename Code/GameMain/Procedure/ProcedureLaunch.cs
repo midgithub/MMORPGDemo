@@ -151,6 +151,9 @@ namespace GameMain
 
             LuaDebuggerWindow luaDebuggerWindow = new LuaDebuggerWindow();
             GameEntry.Debugger.RegisterDebuggerWindow("Other/Lua", luaDebuggerWindow);
+
+            DataTableDebuggerWindow dataTableDebuggerWindow = new DataTableDebuggerWindow();
+            GameEntry.Debugger.RegisterDebuggerWindow("Other/DataTable", dataTableDebuggerWindow);
         }
 
     }

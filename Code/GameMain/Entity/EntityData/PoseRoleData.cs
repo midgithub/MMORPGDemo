@@ -33,7 +33,7 @@ namespace GameMain
                 return;
             }
 
-            m_ProfessionType = drPoseRole.ProfessionType;
+            m_ProfessionType = (ProfessionType) drPoseRole.ProfessionType;
             m_Effect01Data = new EffectData(GameEntry.Entity.GenerateTempSerialId(),drPoseRole.Effect01,drPoseRole.Effect01Duration,drPoseRole.Effect01Delay);
             m_Effect02Data = new EffectData(GameEntry.Entity.GenerateTempSerialId(), drPoseRole.Effect02, drPoseRole.Effect02Duration, drPoseRole.Effect02Delay);
             m_SoundId = drPoseRole.SoundId;

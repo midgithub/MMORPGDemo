@@ -62,6 +62,7 @@
     <Compile Include="Config\AppConfigComponent.cs" />
     <Compile Include="Config\DeviceModelConfig.cs" />
     <Compile Include="Debugger\ChangeLanguageDebuggerWindow.cs" />
+    <Compile Include="Debugger\DataTableDebuggerWindow.cs" />
     <Compile Include="Debugger\LuaDebuggerWindow.cs" />
     <Compile Include="Definition\Constant\Constant.Layer.cs" />
     <Compile Include="Definition\DataStruct\VersionInfo.cs" />
@@ -87,7 +88,6 @@
     <Compile Include="DataTable\DRScene.cs" />
     <Compile Include="DataTable\DRSound.cs" />
     <Compile Include="DataTable\DRUIForm.cs" />
-    <Compile Include="DataTable\DRUISound.cs" />
     <Compile Include="Definition\Constant\Constant.ProcedureData.cs" />
     <Compile Include="Definition\Constant\Constant.Setting.cs" />
     <Compile Include="Definition\DataStruct\BuildInfo.cs" />

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GameMain
 {
-    public class LuaDebuggerWindow : IDebuggerWindow
+    public class DataTableDebuggerWindow : IDebuggerWindow
     {
         private Vector2 m_ScrollPosition = Vector2.zero;
 
@@ -44,8 +44,9 @@ namespace GameMain
         {
             if (GUILayout.Button("Reload", GUILayout.Height(30)))
             {
-                GameEntry.Lua.ReloadMain();
+                GameEntry.DataTable.ReloadDataTable();
             }
         }
+
     }
 }
