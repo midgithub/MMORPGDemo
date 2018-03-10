@@ -2,7 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using FairyGUI;
+using GameFramework;
+using GameMain;
 using UnityEngine;
+using UnityGameFramework.Runtime;
 using XLua;
 
 /// <summary>
@@ -13,7 +17,7 @@ public static class XLuaGenConfig
     //lua中要使用到C#库的配置，比如C#标准库，或者Unity API，第三方库等。
     [LuaCallCSharp]
     public static List<Type> LuaCallCSharp = new List<Type>() {
-        #region *****Unity*****
+        #region ***** Unity *****
                 typeof(UnityEngine.Object),
                 typeof(Vector2),
                 typeof(Vector3),
@@ -41,7 +45,7 @@ public static class XLuaGenConfig
                 typeof(UnityEngine.Debug),
         #endregion
 
-        #region *****C# System*****
+        #region ***** System *****
                 typeof(System.Collections.Generic.List<int>),
                 typeof(Action<string>),
                 typeof(System.Object),
@@ -53,8 +57,79 @@ public static class XLuaGenConfig
                 typeof(BindingFlags),
         #endregion
 
-        #region *****GameFramework*****
+        #region ***** GameMain *****
+                //---GameFramework---
+                typeof(Log),
+                typeof(DataTableComponent),
+                typeof(EntityComponent),
+                typeof(EventComponent),
+                typeof(FairyGuiComponent),
+                typeof(LocalizationComponent),
+                typeof(ProcedureComponent),
+                typeof(SceneComponent),
+                typeof(SettingComponent),
+                typeof(SoundComponent),
+                typeof(UIComponent),
+
+                //---Action---
+                typeof(GameFrameworkAction),
+                typeof(GameFrameworkAction<object>),
+                typeof(GameFrameworkAction<int>),
+                typeof(GameFrameworkAction<float>),
+                typeof(GameFrameworkAction<string>),
+                typeof(GameFrameworkAction<object,object>),
+                typeof(GameFrameworkAction<int,int>),
+                typeof(GameFrameworkAction<int,float>),
+                typeof(GameFrameworkAction<int,string>),
+                typeof(GameFrameworkAction<float,float>),
+
+                //---UI---
+                typeof(FairyGuiLuaForm),
+
+                //---EventArgs---
+                typeof(LoadSceneSuccessEventArgs),
+                typeof(LoadSceneFailureEventArgs),
+
+                //---Misc---
                 typeof(XLuaHelper),
+        #endregion
+
+        #region ***** FairyGUI *****
+                typeof(EventContext),
+                typeof(EventDispatcher),
+                typeof(EventListener),
+                typeof(InputEvent),
+                typeof(DisplayObject),
+                typeof(Container),
+                typeof(Stage),
+                typeof(Controller),
+                typeof(GObject),
+                typeof(GGraph),
+                typeof(GGroup),
+                typeof(GImage),
+                typeof(GLoader),
+                typeof(PlayState),
+                typeof(GMovieClip),
+                typeof(TextFormat),
+                typeof(GTextField),
+                typeof(GRichTextField),
+                typeof(GTextInput),
+                typeof(GComponent),
+                typeof(GList),
+                typeof(GRoot),
+                typeof(GLabel),
+                typeof(GButton),
+                typeof(GComboBox),
+                typeof(GProgressBar),
+                typeof(GSlider),
+                typeof(PopupMenu),
+                typeof(ScrollPane),
+                typeof(Transition),
+                typeof(UIPackage),
+                typeof(Window),
+                typeof(GObjectPool),
+                typeof(Relations),
+                typeof(RelationType),
         #endregion
 
         #region *****Other*****
@@ -65,6 +140,12 @@ public static class XLuaGenConfig
     //C#静态调用Lua的配置（包括事件的原型），仅可以配delegate，interface
     [CSharpCallLua]
     public static List<Type> CSharpCallLua = new List<Type>() {
+        #region ***** Unity *****
+
+        #endregion
+
+        #region ***** System *****
+                typeof(System.Object),
                 typeof(Action),
                 typeof(Action<int>),
                 typeof(Action<string>),
@@ -72,7 +153,31 @@ public static class XLuaGenConfig
                 typeof(Action<double,double>),
                 typeof(Func<double, double, double>),
                 typeof(UnityEngine.Events.UnityAction),
-                typeof(System.Collections.IEnumerator)
+                typeof(System.Collections.IEnumerator),
+        #endregion
+
+        #region ***** GameMain *****
+                //-----Action----
+                typeof(GameFrameworkAction),
+                typeof(GameFrameworkAction<object>),
+                typeof(GameFrameworkAction<int>),
+                typeof(GameFrameworkAction<float>),
+                typeof(GameFrameworkAction<string>),
+                typeof(GameFrameworkAction<object,object>),
+                typeof(GameFrameworkAction<int,int>),
+                typeof(GameFrameworkAction<int,float>),
+                typeof(GameFrameworkAction<int,string>),
+                typeof(GameFrameworkAction<float,float>),
+
+                //----UIFormParams----
+                typeof(LoginFormParams),
+
+        #endregion
+
+        #region ***** FairyGUI *****
+                typeof(EventCallback0),
+                typeof(EventCallback1),
+        #endregion
             };
 
     //黑名单

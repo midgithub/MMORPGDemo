@@ -41,7 +41,7 @@ namespace GameMain
             data.RandomNameQueue = namesQueue;
             data.OnClickRoleType = OnClickRoleType;
             data.OnClickCreateRole = OnClickCreateRole;
-            GameEntry.UI.OpenUIForm(UIFormId.CreateRole, data);
+            GameEntry.UI.OpenUIForm(UIFormId.CreateRoleForm, data);
         }
 
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
@@ -53,7 +53,7 @@ namespace GameMain
         protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
         {
             base.OnLeave(procedureOwner, isShutdown);
-            GameEntry.UI.CloseUIForm(UIFormId.CreateRole);
+            GameEntry.UI.CloseUIForm(UIFormId.CreateRoleForm);
         }
 
         private void InitData()

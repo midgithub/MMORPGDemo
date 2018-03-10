@@ -63,7 +63,7 @@ namespace GameMain
         /// <summary>
         /// 填充加载界面更新事件
         /// </summary>
-        public LoadingFormUpdateProgressEventArgs Fill(int backgroundIndex,string description,float progress,object userData)
+        public LoadingFormUpdateProgressEventArgs Fill(string description,float progress,object userData)
         {
             this.Description = description;
             this.Progress = progress;

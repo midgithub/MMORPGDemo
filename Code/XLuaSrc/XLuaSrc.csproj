@@ -45,6 +45,7 @@
     <Compile Include="CodeEmit.cs" />
     <Compile Include="CopyByValue.cs" />
     <Compile Include="DelegateBridge.cs" />
+    <Compile Include="Extension\LuaFunction.cs" />
     <Compile Include="GenAttributes.cs" />
     <Compile Include="InternalGlobals.cs" />
     <Compile Include="LuaBase.cs" />
@@ -66,7 +67,6 @@
     <Compile Include="TypeExtensions.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>cd $(SolutionDir)Build

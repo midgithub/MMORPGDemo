@@ -65,7 +65,6 @@ namespace GameMain
                 }
             }
 
-         //   GameEntry.Event.Fire(this,)
             ChangeState<ProcedureChangeScene>(procedureOwner);
         }
 

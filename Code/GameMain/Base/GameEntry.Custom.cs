@@ -5,29 +5,32 @@
     /// </summary>
     public partial class GameEntry
     {
-        private static void InitCustomComponents()
-        {
-            Config = UnityGameFramework.Runtime.GameEntry.GetComponent<ConfigComponent>();
-            FairyGui = UnityGameFramework.Runtime.GameEntry.GetComponent<FairyGuiComponent>(); 
-            Lua = UnityGameFramework.Runtime.GameEntry.GetComponent<XLuaComponent>();
-        }
-
         public static FairyGuiComponent FairyGui
         {
             get;
             private set;
         }
 
-        public static ConfigComponent Config
+        public static AppConfigComponent AppConfig
         {
             get;
             private set;
         }
 
-        public static XLuaComponent Lua
+        public static LuaComponent Lua
         {
             get;
             private set;
+        }
+
+        private static void InitCustomComponents()
+        {
+            AppConfig = UnityGameFramework.Runtime.GameEntry.GetComponent<AppConfigComponent>();
+            FairyGui = UnityGameFramework.Runtime.GameEntry.GetComponent<FairyGuiComponent>();
+            Lua = UnityGameFramework.Runtime.GameEntry.GetComponent<LuaComponent>();
+
+            FairyGui.Init();
+            Lua.Init();
         }
     }
 }

@@ -160,6 +160,34 @@ MonoBehaviour:
   m_Script: {fileID: 1179428245, guid: a9142b59253c13b4dafb66aa3ef17c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &193407643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 193407644}
+  m_Layer: 0
+  m_Name: meObjectct
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &193407644
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 193407643}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 585999580}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &392718866
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,10 +223,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 148599565}
     m_Modifications:
-    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_AvailableProcedureTypeNames.Array.size
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 433714, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -236,65 +260,77 @@ Prefab:
       propertyPath: m_InstanceRoot
       value: 
       objectReference: {fileID: 1940344621}
-    - target: {fileID: 11413340, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_SoundGroups.Array.data[0].m_Mute
+    - target: {fileID: 455962, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11499388, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_EditorResourceMode
-      value: 0
+    - target: {fileID: 450964, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 18
       objectReference: {fileID: 0}
-    - target: {fileID: 11497722, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_ResourceMode
-      value: 1
+    - target: {fileID: 490662, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_AvailableProcedureTypeNames.Array.data[1]
-      value: GameMain.ProcedureChangeScene
+    - target: {fileID: 463618, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
       objectReference: {fileID: 0}
-    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_AvailableProcedureTypeNames.Array.data[2]
-      value: GameMain.ProcedureCheckVersion
+    - target: {fileID: 486648, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_AvailableProcedureTypeNames.Array.data[3]
-      value: GameMain.ProcedureCreateRole
+    - target: {fileID: 432002, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_AvailableProcedureTypeNames.Array.data[4]
-      value: GameMain.ProcedureLaunch
+    - target: {fileID: 472962, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_AvailableProcedureTypeNames.Array.data[5]
-      value: GameMain.ProcedureLogin
+    - target: {fileID: 449996, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_AvailableProcedureTypeNames.Array.data[6]
-      value: GameMain.ProcedurePreload
+    - target: {fileID: 404872, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_AvailableProcedureTypeNames.Array.data[7]
-      value: GameMain.ProcedureShowDialog
+    - target: {fileID: 430602, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
       objectReference: {fileID: 0}
-    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_AvailableProcedureTypeNames.Array.data[8]
-      value: GameMain.ProcedureSplash
+    - target: {fileID: 407686, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 11499388, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_JsonHelperTypeName
-      value: GameMain.LitJsonHelper
+    - target: {fileID: 465000, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11461470, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_LocalizationHelperTypeName
-      value: GameMain.XmlLocalizationHelper
+    - target: {fileID: 472238, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_AvailableProcedureTypeNames.Array.data[0]
-      value: GameMain.Procedure.ProcedureInitResource
+    - target: {fileID: 449550, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 11405216, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
-      propertyPath: m_AvailableProcedureTypeNames.Array.data[9]
-      value: GameMain.ProcedureUpdateResource
+    - target: {fileID: 401796, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261537195361972, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 431700, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 447378, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 2}
@@ -328,9 +364,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 810834020}
   - {fileID: 749365744}
   - {fileID: 2042085097}
-  - {fileID: 810834020}
   m_Father: {fileID: 148599565}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -361,7 +397,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738456886}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &749365745
 MonoBehaviour:
@@ -410,7 +446,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738456886}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &810834021
 MonoBehaviour:
@@ -420,11 +456,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 810834019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -371560238, guid: a9142b59253c13b4dafb66aa3ef17c8e, type: 3}
+  m_Script: {fileID: 279000035, guid: a9142b59253c13b4dafb66aa3ef17c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  luaScript: {fileID: 4900000, guid: fbe12453d477f9a4abdfd08fba9ff9e0, type: 3}
-  injections: []
 --- !u!1 &1811065319
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +637,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738456886}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2042085098
 MonoBehaviour:

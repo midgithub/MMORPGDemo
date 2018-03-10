@@ -14,6 +14,7 @@ namespace GameMain
 
         private bool m_IsChangeSceneComplete = false;
         private int m_BackgroundMusicId = 0;    
+        private string m_SceneName = String.Empty;
 
         public override bool UseNativeDialog
         {
@@ -63,7 +64,9 @@ namespace GameMain
             GameEntry.UI.OpenUIForm(UIFormId.LoadingForm, sceneId);
 
             GameEntry.Scene.LoadScene(AssetUtility.GetSceneAsset(drScene.AssetName),this);
+
             m_BackgroundMusicId = drScene.BackgroundMusicId;
+            m_SceneName = drScene.SceneName;
         }
 
         protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
@@ -141,6 +144,12 @@ namespace GameMain
 
             Log.Info("Load scene '{0}' update, progress '{1}'.", ne.SceneAssetName, ne.Progress.ToString("P2"));
 
+            string description = string.Format("正在加载场景：[{0}],加载进度：[{1}]。", m_SceneName, ne.Progress.ToString("P2"));
+            float progress = ne.Progress * 100;
+            LoadingFormUpdateProgressEventArgs uiArgs = new LoadingFormUpdateProgressEventArgs();
+            uiArgs.Fill(description, progress, null);
+
+            GameEntry.Event.Fire(this, uiArgs);
         }
 
         private void OnLoadSceneDependencyAsset(object sender, GameEventArgs e)

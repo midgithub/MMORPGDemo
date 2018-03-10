@@ -17,13 +17,19 @@ namespace GameMain
             protected set;
         }
 
+        public string SceneName
+        {
+            get;
+            protected set;
+        }
+
         /// <summary>
         /// 资源名称。
         /// </summary>
         public string AssetName
         {
             get;
-            private set;
+            protected set;
         }
 
         /// <summary>
@@ -32,7 +38,7 @@ namespace GameMain
         public int BackgroundMusicId
         {
             get;
-            private set;
+            protected set;
         }
 
         public void ParseDataRow(string dataRowText)
@@ -42,6 +48,7 @@ namespace GameMain
             index++;
             Id = int.Parse(text[index++]);
             index++;
+            SceneName = text[index++];
             AssetName = text[index++];
             BackgroundMusicId = int.Parse(text[index++]);
         }

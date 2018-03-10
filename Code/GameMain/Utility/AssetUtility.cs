@@ -4,6 +4,7 @@ namespace GameMain
 {
     public static class AssetUtility
     {
+
         public static string GetDataTableAsset(string assetName)
         {
             return string.Format("Assets/GameMain/DataTables/{0}.txt", assetName);
@@ -46,7 +47,7 @@ namespace GameMain
 
         public static string GetFairyGuiPackageAsset(string packageName)
         {
-            return string.Format("Assets/GameMain/UI/{0}", packageName);
+            return string.Format("Assets/GameMain/UI/UIPackage/{0}", packageName);
         }
 
         public static string GetLuaAsset(string assetName)

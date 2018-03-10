@@ -62,13 +62,13 @@ namespace GameMain
         {
             string url = null;
 #if UNITY_EDITOR
-            url = GameEntry.Config.BuildInfo.StandaloneAppUrl;
+            url = GameEntry.AppConfig.BuildInfo.StandaloneAppUrl;
 #elif UNITY_IOS
-            url = GameEntry.Config.BuildInfo.IosAppUrl;
+            url = GameEntry.AppConfig.BuildInfo.IosAppUrl;
 #elif UNITY_ANDROID
-            url = GameEntry.Config.BuildInfo.AndroidAppUrl;
+            url = GameEntry.AppConfig.BuildInfo.AndroidAppUrl;
 #else
-            url = GameEntry.Config.BuildInfo.StandaloneAppUrl;
+            url = GameEntry.AppConfig.BuildInfo.StandaloneAppUrl;
 #endif
             Application.OpenURL(url);
         }
@@ -127,7 +127,7 @@ namespace GameMain
             wwwForm.AddField("ScreenResolution", WebUtility.EscapeString(screenResolution));
             wwwForm.AddField("UseWifi", WebUtility.EscapeString(useWifi));
 
-            GameEntry.WebRequest.AddWebRequest(GameEntry.Config.BuildInfo.CheckVersionUrl, wwwForm, this);
+            GameEntry.WebRequest.AddWebRequest(GameEntry.AppConfig.BuildInfo.CheckVersionUrl, wwwForm, this);
         }
 
         private void UpdateVersion()

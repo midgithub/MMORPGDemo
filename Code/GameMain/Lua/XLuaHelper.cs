@@ -38,14 +38,24 @@ public static class XLuaHelper
 
     #region Create EventHandler
     // 注意：重载函数的定义顺序很重要：从更具体类型（Type）到不具体类型（object）,xlua生成导出代码和lua侧函数调用匹配时都是从上到下的，如果不具体类型（object）写在上面，则永远也匹配不到更具体类型（Type）的重载函数。
-    public static EventHandler CreateEventHandler(Type type, string methodName, params Type[] paramTypes)
+    public static EventHandler CreateActionEventHandler(Type type, string methodName, params Type[] paramTypes)
     {
         return InnerCreateDelegate(MakeGenericActionType, null, type, methodName, paramTypes);
     }
 
-    public static EventHandler CreateActionDelegate(object target, string methodName, params Type[] paramTypes)
+    public static EventHandler CreateActionEventHandler(object target, string methodName, params Type[] paramTypes)
     {
         return InnerCreateDelegate(MakeGenericActionType, target, null, methodName, paramTypes);
+    }
+
+    public static EventHandler CreateGameFrameworkActionEventHandler(Type type, string methodName, params Type[] paramTypes)
+    {
+        return InnerCreateDelegate(MakeGenericGameFrameworkActionType, null, type, methodName, paramTypes);
+    }
+
+    public static EventHandler CreateGameFrameworkActionEventHandler(object target, string methodName, params Type[] paramTypes)
+    {
+        return InnerCreateDelegate(MakeGenericGameFrameworkActionType, target, null, methodName, paramTypes);
     }
     #endregion
 

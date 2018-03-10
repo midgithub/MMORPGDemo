@@ -84,6 +84,7 @@
     <Compile Include="AssetBundleEditor\SourceAsset.cs" />
     <Compile Include="AssetBundleEditor\SourceFolder.cs" />
     <Compile Include="Inspector\BaseComponentInspector.cs" />
+    <Compile Include="Inspector\ConfigComponentInspector.cs" />
     <Compile Include="Inspector\DataNodeComponentInspector.cs" />
     <Compile Include="Inspector\DataTableComponentInspector.cs" />
     <Compile Include="Inspector\DebuggerComponentInspector.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Inspector\NetworkComponentInspector.cs" />
     <Compile Include="Inspector\ObjectPoolComponentInspector.cs" />
     <Compile Include="Inspector\ProcedureComponentInspector.cs" />
+    <Compile Include="Inspector\ReferencePoolComponentInspector.cs" />
     <Compile Include="Inspector\ResourceComponentInspector.cs" />
     <Compile Include="Inspector\SceneComponentInspector.cs" />
     <Compile Include="Inspector\SettingComponentInspector.cs" />

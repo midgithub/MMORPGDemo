@@ -28,6 +28,6 @@
         /// <summary>
         /// 创建角色
         /// </summary>
-        CreateRole  = 1004,
+        CreateRoleForm  = 1004,
     }
 }

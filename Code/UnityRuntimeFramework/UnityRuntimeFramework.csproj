@@ -56,7 +56,16 @@
     <Compile Include="Base\BaseComponent.cs" />
     <Compile Include="Base\GameEntry.cs" />
     <Compile Include="Base\GameFrameworkComponent.cs" />
+    <Compile Include="Base\ReferencePoolComponent.cs" />
     <Compile Include="Base\ShutdownType.cs" />
+    <Compile Include="Config\ConfigComponent.cs" />
+    <Compile Include="Config\ConfigHelperBase.cs" />
+    <Compile Include="Config\DefaultConfigHelper.cs" />
+    <Compile Include="Config\LoadConfigDependencyAssetEventArgs.cs" />
+    <Compile Include="Config\LoadConfigFailureEventArgs.cs" />
+    <Compile Include="Config\LoadConfigInfo.cs" />
+    <Compile Include="Config\LoadConfigSuccessEventArgs.cs" />
+    <Compile Include="Config\LoadConfigUpdateEventArgs.cs" />
     <Compile Include="DataNode\DataNodeComponent.cs" />
     <Compile Include="DataTable\DataTableComponent.cs" />
     <Compile Include="DataTable\DataTableHelperBase.cs" />

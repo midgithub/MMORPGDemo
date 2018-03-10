@@ -61,7 +61,7 @@ namespace GameMain
 
             if (entityComponent.HasEntity(data.Id))
             {
-                Log.Warning(string.Format("Entity {0} is exit.", data.Id));
+                Log.Warning(string.Format("Entity {0} is exist.", data.Id));
                 return;
             }
 

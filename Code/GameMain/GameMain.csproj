@@ -57,9 +57,12 @@
     <Compile Include="Base\GameEntry.Builtin.cs" />
     <Compile Include="Base\GameEntry.cs" />
     <Compile Include="Base\GameEntry.Custom.cs" />
-    <Compile Include="Config\ConfigComponent.cs" />
+    <Compile Include="Base\MonoSingleton.cs" />
+    <Compile Include="Base\Singleton.cs" />
+    <Compile Include="Config\AppConfigComponent.cs" />
     <Compile Include="Config\DeviceModelConfig.cs" />
     <Compile Include="Debugger\ChangeLanguageDebuggerWindow.cs" />
+    <Compile Include="Debugger\LuaDebuggerWindow.cs" />
     <Compile Include="Definition\Constant\Constant.Layer.cs" />
     <Compile Include="Definition\DataStruct\VersionInfo.cs" />
     <Compile Include="Editor\DeviceModelConfigEditorWindow.cs" />
@@ -67,11 +70,14 @@
     <Compile Include="Editor\MMORPGDemoBuildEventHandler.cs" />
     <Compile Include="Config\PathConfigs.cs" />
     <Compile Include="Editor\ProjectSaver.cs" />
+    <Compile Include="Lua\CoroutineRunner.cs" />
     <Compile Include="Lua\XLuaGenConfig.cs" />
-    <Compile Include="Lua\XLuaComponent.cs" />
+    <Compile Include="Lua\LuaComponent.cs" />
+    <Compile Include="Lua\XLuaHelper.cs" />
     <Compile Include="Procedure\ProcedureCheckVersion.cs" />
     <Compile Include="Procedure\ProcedureInitResource.cs" />
     <Compile Include="Procedure\ProcedureUpdateResource.cs" />
+    <Compile Include="Resource\ResourceComponentExtension.cs" />
     <Compile Include="UI\Base\FairyGuiComponent.cs" />
     <Compile Include="DataTable\DataTableExtension.cs" />
     <Compile Include="DataTable\DREntity.cs" />
@@ -154,7 +160,6 @@
       <Name>XLuaSrc</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>cd $(SolutionDir)Build

@@ -79,7 +79,7 @@ namespace GameMain
         {
             if (m_UpdateResourceForm == null)
             {
-                m_UpdateResourceForm = Object.Instantiate(GameEntry.Config.UpdateResourceFormTemplate);
+                m_UpdateResourceForm = Object.Instantiate(GameEntry.AppConfig.UpdateResourceFormTemplate);
             }
 
             GameEntry.Resource.UpdateResources();

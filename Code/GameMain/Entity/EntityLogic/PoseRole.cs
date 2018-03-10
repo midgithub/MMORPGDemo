@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityGameFramework.Runtime;
 
 namespace GameMain
 {
@@ -15,6 +16,7 @@ namespace GameMain
 
         private Animator m_Animator = null;
         private bool m_IsShowing = false;
+        private Coroutine m_showCoroutine = null;
 
         protected override void OnInit(object userData)
         {
@@ -40,9 +42,26 @@ namespace GameMain
 
             if (!m_IsShowing)
             {
-                StartCoroutine(ShowPose());
+                m_showCoroutine = StartCoroutine(ShowPose());
                 m_IsShowing = false;
             }
+        }
+
+        protected override void OnHide(object userData)
+        {
+            base.OnHide(userData);
+            if (m_showCoroutine != null)
+            {
+                StopCoroutine(m_showCoroutine);
+            }
+            Entity effect01 = GameEntry.Entity.GetEntity(m_PoseRoleData.Effect01Data.Id);
+            Entity effect02 = GameEntry.Entity.GetEntity(m_PoseRoleData.Effect02Data.Id);
+
+            if (effect01 != null)
+                GameEntry.Entity.HideEntity(effect01);
+
+            if (effect02 != null)
+                GameEntry.Entity.HideEntity(effect02);
         }
 
         IEnumerator ShowPose()

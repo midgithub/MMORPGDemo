@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using GameFramework;
+using GameFramework.DataTable;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
@@ -13,9 +14,10 @@ namespace GameMain
         private Dictionary<string, MyUIPackage> m_UIPackages = null;
         private Dictionary<int, string> m_LuaForms = null;
 
-        private void Start()
+        public void Init()
         {
             m_UIPackages = new Dictionary<string, MyUIPackage>();
+            m_LuaForms = new Dictionary<int, string>();
         }
 
         /// <summary>
@@ -79,11 +81,35 @@ namespace GameMain
             if(!m_LuaForms.ContainsKey(formId))
             {
                 m_LuaForms.Add(formId, formName);
+                //Log.Warning("Register luaform id: {0} name:{1}", formId, formName);
             }
             else
             {
-                string errorMessage = string.Format("LuaForm {0} is Exit.ID:{1}", formName, formId);
-                throw new GameFrameworkException(errorMessage);
+                string errorMessage = string.Format("LuaForm {0} is Exist.ID:{1}", formName, formId);
+               // throw new GameFrameworkException(errorMessage);
+                Log.Warning(errorMessage);
+            }
+        }
+
+        /// <summary>
+        /// 重载Lua界面
+        /// </summary>
+        public void ReloadLuaForm()
+        {
+            foreach(KeyValuePair<int,string> luaFormInfo in m_LuaForms)
+            {
+                IDataTable<DRUIForm> dt = GameEntry.DataTable.GetDataTable<DRUIForm>();
+                string formGroup = dt.GetDataRow(luaFormInfo.Key).UIGroupName;
+                FairyGuiLuaForm luaForm = GameEntry.UI.GetUIForm(luaFormInfo.Key,formGroup) as FairyGuiLuaForm;
+                if (luaForm == null)
+                {
+                    string errorMessage = string.Format("LuaForm not Exit, Please register first.ID:{1}",
+                        luaFormInfo.Key);
+                    Log.Error(errorMessage);
+                    return;
+                }
+
+                luaForm.Reload();
             }
         }
 

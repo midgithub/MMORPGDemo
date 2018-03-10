@@ -22,7 +22,7 @@ namespace GameMain
             base.OnEnter(procedureOwner);
 
             // 构建信息：发布版本时，把一些数据以 Json 的格式写入 Assets/GameMain/Configs/BuildInfo.txt，供游戏逻辑读取。
-            GameEntry.Config.InitBuildInfo();
+            GameEntry.AppConfig.InitBuildInfo();
             procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId,(int)SceneId.Login);
 
             // 语言配置：设置当前使用的语言，如果不设置，则默认使用操作系统语言。
@@ -39,8 +39,10 @@ namespace GameMain
 
             // 默认字典：加载默认字典文件 Assets/GameMain/Configs/DefaultDictionary.xml。
             // 此字典文件记录了资源更新前使用的各种语言的字符串，会随 App 一起发布，故不可更新。
-            GameEntry.Config.InitDefaultDictionary();
+            GameEntry.AppConfig.InitDefaultDictionary();
 
+            // 初始化调试窗口
+            InitDebuggerWindow();
         }
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
         {
@@ -123,7 +125,7 @@ namespace GameMain
 
         private void InitQualitySettings()
         {
-            QualityLevelType defaultQuality = GameEntry.Config.DeviceModelConfig.GetDefaultQualityLevel();
+            QualityLevelType defaultQuality = GameEntry.AppConfig.DeviceModelConfig.GetDefaultQualityLevel();
             int qualityLevel = GameEntry.Setting.GetInt(Constant.Setting.QualityLevel, (int)defaultQuality);
             QualitySettings.SetQualityLevel(qualityLevel, true);
 
@@ -141,5 +143,15 @@ namespace GameMain
 
             Log.Info("Init sound settings complete.");
         }
+
+        private void InitDebuggerWindow()
+        {
+            ChangeLanguageDebuggerWindow changeLanguageDebuggerWindow = new ChangeLanguageDebuggerWindow();
+            GameEntry.Debugger.RegisterDebuggerWindow("Other/Setting", changeLanguageDebuggerWindow);
+
+            LuaDebuggerWindow luaDebuggerWindow = new LuaDebuggerWindow();
+            GameEntry.Debugger.RegisterDebuggerWindow("Other/Lua", luaDebuggerWindow);
+        }
+
     }
 }

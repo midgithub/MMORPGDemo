@@ -58,7 +58,7 @@ namespace GameMain
         {
             LoadingFormUpdateProgressEventArgs ne = (LoadingFormUpdateProgressEventArgs)e;
             m_LoadingBar.value = ne.Progress;
-            m_TipsText.text = ne.Description;
+            m_LoadInfoText.text = ne.Description;
         }
 
         public void SetProgress(float progress, string description)

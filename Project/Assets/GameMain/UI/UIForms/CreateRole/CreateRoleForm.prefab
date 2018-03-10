@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4327561164740464}
-  - component: {fileID: 114237036268406330}
+  - component: {fileID: 114575460192200048}
   m_Layer: 5
   m_Name: CreateRoleForm
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114237036268406330
+--- !u!114 &114575460192200048
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -48,10 +48,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1046416615076584}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1740178292, guid: b8184e1d4b31c124aa521b42317e9251, type: 3}
+  m_Script: {fileID: 1175937589, guid: a9142b59253c13b4dafb66aa3ef17c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PackagePath: UIPackage/CreateRole/CreateRole
+  m_FormId: 0
+  m_PackagePath: CreateRole/CreateRole
   m_PackageName: CreateRole
   m_ComponentName: CreateRoleForm
   m_FitScreen: 1

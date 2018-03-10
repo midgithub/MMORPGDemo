@@ -697,7 +697,6 @@ namespace UnityGameFramework.Runtime
                 Log.Error("Asset name is invalid.");
                 return null;
             }
-
 #if UNITY_EDITOR
             UnityEngine.Object asset = AssetDatabase.LoadMainAssetAtPath(assetName);
             if (asset != null)
@@ -706,7 +705,7 @@ namespace UnityGameFramework.Runtime
             }
             else
             {
-                Log.Warning("Can not load this asset:{0} from asset database.", assetName);
+                //Log.Warning("Can not load this asset:{0} from asset database.", assetName);
                 return null;
             }
 #endif

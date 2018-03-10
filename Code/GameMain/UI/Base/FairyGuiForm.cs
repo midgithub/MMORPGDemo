@@ -26,7 +26,9 @@ namespace GameMain
     public class FairyGuiForm : UIFormLogic, EMRenderTarget
     {             
         public Container m_Container { get; private set; }
-
+        
+        [SerializeField]
+        protected int m_FormId = 0;
         [SerializeField]
         protected string m_PackagePath;
         [SerializeField]
@@ -36,7 +38,7 @@ namespace GameMain
         [SerializeField]
         protected FitScreen m_FitScreen;
         [SerializeField]
-        public int m_DepthFactor = 100;
+        protected int m_DepthFactor = 100;
         [SerializeField]
         protected int m_SortingOrder;
         [SerializeField]
@@ -343,9 +345,9 @@ namespace GameMain
         }
 
         /// <summary>
-        /// 
+        /// 界面根组件
         /// </summary>
-        protected GComponent UI
+        public GComponent UI
         {
             get
             {

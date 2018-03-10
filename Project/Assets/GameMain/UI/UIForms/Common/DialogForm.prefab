@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4814882725516628}
-  - component: {fileID: 114219122016327220}
+  - component: {fileID: 114909059479264006}
   m_Layer: 5
   m_Name: DialogForm
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114219122016327220
+--- !u!114 &114909059479264006
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1692525049140238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1778476787, guid: b8184e1d4b31c124aa521b42317e9251, type: 3}
+  m_Script: {fileID: -360693308, guid: a9142b59253c13b4dafb66aa3ef17c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_PackagePath: 

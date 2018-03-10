@@ -150,6 +150,8 @@ namespace UnityGameFramework.Runtime
         /// <returns></returns>
         public override object ReadFileSync(string fullPath)
         {
+            m_FileFullPath = fullPath;
+
             return AssetBundle.LoadFromFile(fullPath);
         }
 
@@ -183,6 +185,10 @@ namespace UnityGameFramework.Runtime
 
             fs.Read(buffur, 0, buffur.Length);
             fs.Close();
+
+            m_BytesFullPath = fullPath;
+            m_LoadType = loadType;
+
             return buffur;
         }
 

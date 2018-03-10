@@ -1,4 +1,5 @@
 ﻿using GameFramework;
+using UnityEngine;
 using XLua;
 
 namespace GameMain
@@ -6,7 +7,6 @@ namespace GameMain
     /// <summary>
     /// Lua界面，管理lua界面的生命周期等
     /// </summary>
-    [LuaCallCSharp]
     public class FairyGuiLuaForm : FairyGuiForm
     {
         private GameFrameworkAction<object> luaOnInit;
@@ -20,7 +20,27 @@ namespace GameMain
         private GameFrameworkAction<float,float> luaOnUpdate;
         private GameFrameworkAction<int, int> luaOnDepthChanged;
         private GameFrameworkAction luaOnDestroy;
-        private LuaTable luaForm;
+        private LuaTable m_luaForm;
+        private LuaEnv m_luaEnv;
+        private object m_UserData;
+        private bool m_visible;
+
+        /// <summary>
+        /// 界面重载
+        /// </summary>
+        public void Reload()
+        {
+            luaOnInit?.Invoke(m_UserData);
+
+            if (m_visible)
+            {
+                luaOnOpen?.Invoke(m_UserData);
+            }
+            else
+            {
+                luaOnClose?.Invoke(m_UserData);
+            }
+        }
 
         /// <summary>
         /// 界面初始化。
@@ -29,34 +49,61 @@ namespace GameMain
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
-            LuaEnv m_luaEnv = GameEntry.Lua.LuaEnv;
-            string luaFormName = GameEntry.FairyGui.GetLuaForm(UIForm.SerialId);
+            m_UserData = userData;
+
+            m_luaEnv = GameEntry.Lua.LuaEnv;
+            string luaFormName = GameEntry.FairyGui.GetLuaForm(m_FormId);
             if (string.IsNullOrEmpty(luaFormName))
             {
-                Log.Error("luaForm is invalid. ID:{0}", UIForm.SerialId);
+                Log.Error("luaForm is invalid. ID:{0}", m_FormId);
                 return;
             }
-            string luaScript = string.Format("require '{0}'", luaFormName);
-            m_luaEnv.DoString(luaScript);
 
-            luaForm = m_luaEnv.Global.Get<LuaTable>(luaFormName);
-            if (luaForm == null)
+            string assetName = AssetUtility.GetLuaAsset(luaFormName);
+            string script = string.Empty;
+
+            if (GameEntry.Base.EditorResourceMode)
             {
-                Log.Error("Can no get luaForm. Key:{0}", luaFormName);
+                script = GameEntry.Resource.LoadTextAsset(assetName);
+            }
+            else
+            {
+                TextAsset asset = GameEntry.Resource.LoadAssetSync(assetName) as TextAsset;
+                if (asset == null)
+                {
+                    Log.Error("Can no load Lua file:{0}", assetName);
+                    return;
+                }
+                script = asset.text;
+            }
+
+            if (string.IsNullOrEmpty(script))
+            {
+                Log.Error("Lua script file is empty. file:{0}", assetName);
                 return;
             }
-            luaForm.Set("self", this);
-            luaOnInit = luaForm.Get<GameFrameworkAction<object>>("OnInit");
-            luaOnOpen = luaForm.Get<GameFrameworkAction<object>>("OnOpen");
-            luaOnClose = luaForm.Get<GameFrameworkAction<object>>("OnClose");
-            luaOnPause = luaForm.Get<GameFrameworkAction>("OnPause");
-            luaOnResume = luaForm.Get<GameFrameworkAction>("OnResume");
-            luaOnCover = luaForm.Get<GameFrameworkAction>("OnCover");
-            luaOnReveal = luaForm.Get<GameFrameworkAction>("OnReveal");
-            luaOnRefocus = luaForm.Get<GameFrameworkAction>("OnRefocus");
-            luaOnUpdate = luaForm.Get<GameFrameworkAction<float, float>>("OnUpdate");
-            luaOnDepthChanged = luaForm.Get<GameFrameworkAction<int, int>>("OnDepthChanged");
-            luaOnDestroy = luaForm.Get<GameFrameworkAction>("OnDestroy");
+
+            m_luaForm = m_luaEnv.NewTable();
+
+            LuaTable meta = m_luaEnv.NewTable();
+            meta.Set("__index",m_luaEnv.Global);
+            m_luaForm.SetMetaTable(meta);
+            meta.Dispose();
+
+            m_luaForm.Set("self", this);
+            m_luaEnv.DoString(script, luaFormName, m_luaForm);
+
+            luaOnInit = m_luaForm.Get<GameFrameworkAction<object>>("OnInit");
+            luaOnOpen = m_luaForm.Get<GameFrameworkAction<object>>("OnOpen");
+            luaOnClose = m_luaForm.Get<GameFrameworkAction<object>>("OnClose");
+            luaOnPause = m_luaForm.Get<GameFrameworkAction>("OnPause");
+            luaOnResume = m_luaForm.Get<GameFrameworkAction>("OnResume");
+            luaOnCover = m_luaForm.Get<GameFrameworkAction>("OnCover");
+            luaOnReveal = m_luaForm.Get<GameFrameworkAction>("OnReveal");
+            luaOnRefocus = m_luaForm.Get<GameFrameworkAction>("OnRefocus");
+            luaOnUpdate = m_luaForm.Get<GameFrameworkAction<float, float>>("OnUpdate");
+            luaOnDepthChanged = m_luaForm.Get<GameFrameworkAction<int, int>>("OnDepthChanged");
+            luaOnDestroy = m_luaForm.Get<GameFrameworkAction>("OnDestroy");
 
             luaOnInit?.Invoke(userData);
         }
@@ -68,6 +115,8 @@ namespace GameMain
         protected override void OnOpen(object userData)
         {
             base.OnOpen(userData);
+            m_visible = true;
+
             luaOnOpen?.Invoke(userData);
         }
 
@@ -78,6 +127,8 @@ namespace GameMain
         protected override void OnClose(object userData)
         {
             base.OnClose(userData);
+            m_visible = false;
+
             luaOnClose?.Invoke(userData);
         }
 
@@ -167,7 +218,7 @@ namespace GameMain
             luaOnUpdate = null;
             luaOnDepthChanged = null;
             luaOnDestroy = null;
-            luaForm.Dispose();
+            m_luaForm.Dispose();
 
             base.OnDestroy();
         }
