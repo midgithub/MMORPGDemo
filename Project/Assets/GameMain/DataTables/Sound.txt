@@ -1,4 +1,0 @@
-#	Id	AssetName	Priority	Loop	Volume	SpatialBlend	MaxDistance
-11001	Player/Buff_Common	0	False	1	0	100
-11002	Player/Buff_Boy	1	False	1	0	100
-11003	Player/Buff_Girl	0	False	1	0	100

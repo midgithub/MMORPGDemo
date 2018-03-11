@@ -1,4 +1,0 @@
-#	Id	SceneName	AssetName	BackgroundMusicId
-1	Login场景	Login	1
-2	角色创建场景	CreateRole	2
-3	主城场景	MainCity	3

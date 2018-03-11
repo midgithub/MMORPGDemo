@@ -1,5 +1,0 @@
-#	Id	AssetName	UIGroupName	AllowMultiInstance	PauseCoveredUIForm
-1001	Common/LoadingForm	Common	False	False
-1002	Common/DialogForm	Common	False	True
-1003	Login/LoginForm	Default	True	False
-1004	CreateRole/CreateRoleForm	Default	False	False

@@ -1,4 +1,0 @@
-#	Id	AssetName	Priority	Loop	Volume	FadeTime
-1	MainCity	64	True	1	1
-2	MainCity	64	True	1	1
-3	MainCity	64	True	1	1
